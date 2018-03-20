@@ -1,6 +1,0 @@
-bathroom_temperature:
-  name: "Bathroom disired temperature"
-  min: 18
-  max: 25
-  step: 0.5
-  unit_of_measurement: "°C"
