@@ -1,6 +1,7 @@
 platform: darksky
 api_key: !secret darksky_api_key
 monitored_conditions:
+  - summary
   - wind_speed
   - wind_bearing
   - cloud_cover
@@ -8,3 +9,19 @@ monitored_conditions:
   - ozone
   - temperature_max
   - temperature_min
+  - precip_type
+  - precip_intensity
+  - precip_probability
+  - precip_accumulation
+  - temperature
+  - apparent_temperature
+  - dew_point
+  - humidity
+  - pressure
+  - minutely_summary
+  - hourly_summary
+  - daily_summary
+  - apparent_temperature_max
+  - apparent_temperature_min
+  - precip_intensity_max
+  - uv_index
