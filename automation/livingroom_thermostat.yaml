@@ -1,0 +1,37 @@
+- alias: Living Room Rise Temperature at 11:00
+  id: livingroom_rise_temperature_at_1100
+  trigger:
+    - platform: time
+      at: '11:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.thermostat
+        away_mode: false
+
+- alias: Living Room Rise Temperature at 17:00
+  id: livingroom_rise_temperature_at_1700
+  trigger:
+    - platform: time
+      at: '17:00:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.thermostat
+        away_mode: false
