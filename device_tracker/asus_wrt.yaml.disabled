@@ -1,6 +1,0 @@
-platform: asuswrt
-host: 192.168.1.3
-protocol: telnet
-mode: ap
-username: !secret asus_username
-password: !secret asus_password
