@@ -1,0 +1,16 @@
+gaming_lights_on:
+  name: Gaming Lights ON
+  entities:
+    - light.living_room_under_couch
+    - light.tv_light_bulb
+    - light.computer_lamp
+
+gaming_lights_off:
+  name: Gaming Lights OFF
+  entities:
+    - group.bathroom
+    - group.bedroom
+    - group.kitchen
+    - group.office
+    - group.livingroomlightscouch
+    - light.living_room_ceiling_lamp

@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/brienzfw/wind/maxspeed"
+name: Windspeed Brienz Guests
+unit_of_measurement: "m/s"

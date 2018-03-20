@@ -1,0 +1,5 @@
+work:
+  name: Work
+  entities:
+    - sensor.work_temperature
+    - sensor.work_humidity

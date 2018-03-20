@@ -1,0 +1,10 @@
+allrooms:
+  name: All Rooms
+  entities:
+    - sensor.apartment_temperature
+    - group.bedroom
+    - group.livingroom
+    - group.kitchen
+    - group.bathroom
+    - group.office
+    - group.outdoor

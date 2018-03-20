@@ -1,0 +1,8 @@
+- alias: 'Activate Flux at boot'
+  initial_state: 'on'
+  trigger:
+   - platform: homeassistant
+     event: start
+  action:
+    service: switch.turn_on
+    entity_id: switch.fluxer

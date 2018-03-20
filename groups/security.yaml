@@ -1,0 +1,6 @@
+netatmo_welcome_sensors:
+  name: Netatmo Welcome
+  entities:
+    - binary_sensor.entrance_motion
+    - binary_sensor.entrance_someone_known
+    - binary_sensor.entrance_someone_unknown

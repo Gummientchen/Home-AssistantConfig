@@ -1,0 +1,10 @@
+door_entrance:
+  name: Front door is open!
+  done_message: Front door was closed.
+  entity_id: binary_sensor.entrance__entrance_tag_open
+  state: 'on'
+  repeat: 30
+  can_acknowledge: True
+  skip_first: True
+  notifiers:
+    - steff_phone

@@ -1,0 +1,144 @@
+# Roomba start cleaning if nobody is home
+- alias: "Roomba Cleaning Schedule"
+  id: ruumba_cleaning_schedule
+  trigger:
+    platform: time
+    at: '15:00:00'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: device_tracker.404e36855fdd
+        state: not_home
+        # optional: trigger only if state was this for last X time.
+        for:
+          hours: 0
+          minutes: 30
+          seconds: 0
+      - condition: template
+        value_template: '{{ float(states.vacuum.roomba.attributes.battery_level) > 99 }}'
+  action:
+    - service: vacuum.turn_on
+      data:
+        entity_id:
+          - vacuum.roomba
+    - service: light.turn_on
+      data:
+        entity_id:
+          - group.bedroommain
+          - light.kitchen_2 # Kitchen Sink
+    - service: notify.html5
+      data:
+        message: "Roomba started cleaning cycle"
+        title: "Roomba"
+        data:
+          tag: "roomba_info"
+          actions:
+          - action: stopRoomba
+            title: Stop
+
+# Notification STOP roomba clicked
+- alias: "Roomba HTML5 Stop button clicked"
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: stopRoomba
+  action:
+    - service: vacuum.return_to_base
+      data:
+        entity_id:
+          - vacuum.roomba
+    - service: light.turn_off
+      data:
+        entity_id:
+          - group.bedroommain
+          - light.kitchen_2 # Kitchen Sink
+    - service: notify.html5
+      data:
+        message: "Roomba cleaning was cancelled by user"
+        title: "Roomba"
+        data:
+          tag: "roomba_info"
+
+# Roomba finished cleaning
+- alias: "Roomba finished Cleaning"
+  id: ruumba_finished_cleaning
+  trigger:
+    platform: state
+    entity_id: vacuum.roomba
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  condition:
+    - condition: state
+      entity_id: device_tracker.404e36855fdd
+      state: not_home
+      # optional: trigger only if state was this for last X time.
+      for:
+        hours: 0
+        minutes: 30
+        seconds: 0
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - group.bedroommain
+          - light.kitchen_2 # Kitchen Sink
+    - service: notify.html5
+      data:
+        message: "Roomba finished cleaning cycle"
+        title: "Roomba"
+        data:
+          tag: "roomba_info"
+
+
+# Roomba stop cleaning when user enters home
+- alias: "Roomba Stop Cleaning Schedule"
+  id: ruumba_stop_cleaning_schedule
+  trigger:
+    platform: state
+    entity_id: device_tracker.404e36855fdd
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+  condition:
+    - condition: state
+      entity_id: vacuum.roomba
+      state: 'on'
+  action:
+    - service: vacuum.return_to_base
+      data:
+        entity_id:
+          - vacuum.roomba
+    - service: light.turn_off
+      data:
+        entity_id:
+          - group.bedroommain
+          - light.kitchen_2 # Kitchen Sink
+
+# Roomba Wastebin is FULL Message
+- alias: "Roomba Bin is Full Message"
+  id: ruumba_bin_full_message
+  trigger:
+    - platform: state
+      entity_id: device_tracker.404e36855fdd
+      from: 'off'
+      to: 'on'
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 30
+  action:
+    - service: notify.html5
+      data:
+        message: "Roombas Bin is Full!"
+        title: "Roomba"
+        data:
+          tag: "roomba_info"

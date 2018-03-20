@@ -1,0 +1,437 @@
+binary_sensor.floorplan:
+  custom_ui_state_card: floorplan
+  config:
+    name: Demo Floorplan
+    image: /local/custom_ui/floorplan/floorplan.svg
+    stylesheet: /local/custom_ui/floorplan/floorplan.css
+    warnings:
+    date_format: DD-MM-YYYY
+    last_motion_entity: sensor.template_last_motion
+    last_motion_class: last-motion
+    groups:
+    - name: Sensors
+      entities:
+      - sensor.netatmo_bathroom_temperature
+      - sensor.netatmo_bedroom_temperature
+      - sensor.netatmo_outdoormodule_temperature
+      text_template: '${entity.state ? ""+Math.round(entity.state*100)/100+"° C" :
+        "undefined"}'
+      class_template: ' var temp = parseFloat(entity.state.replace("°", "")); if (temp
+        < 10) return "temp-low"; else if (temp < 30) return "temp-medium"; else return
+        "temp-high"; '
+    - name: Lights
+      entities:
+      - light.kitchen_1
+      - light.kitchen_2
+      - light.living_room_1
+      - light.bedroom_2
+      states:
+      - state: 'on'
+        class: light-on
+      - state: 'off'
+        class: light-off
+      action:
+        domain: homeassistant
+        service: toggle
+    - name: Switches
+      entities:
+      - switch.bathroom_heater
+      - switch.bedroom_fan
+      states:
+      - state: 'on'
+        class: doorbell-on
+      - state: 'off'
+        class: doorbell-off
+light.bedroom_2:
+  friendly_name: Bedroom Ceiling
+  icon: mdi:ceiling-light
+light.kitchen_2:
+  friendly_name: Kitchen Sink
+  icon: mdi:ceiling-light
+light.living_room_1: {}
+sensor.netatmo_bathroom_battery:
+  friendly_name: Bathroom Battery
+sensor.netatmo_bathroom_co2:
+  friendly_name: Bathroom CO2
+sensor.netatmo_bathroom_humidity:
+  friendly_name: Bathroom Humidity
+sensor.netatmo_bathroom_temperature:
+  friendly_name: Bathroom Temperature
+sensor.netatmo_bedroom_co2:
+  friendly_name: Bedroom CO2
+sensor.netatmo_bedroom_humidity:
+  friendly_name: Bedroom Humidity
+sensor.netatmo_bedroom_noise:
+  friendly_name: Bedroom Noise
+sensor.netatmo_bedroom_pressure:
+  friendly_name: Pressure
+sensor.netatmo_bedroom_temperature:
+  friendly_name: Bedroom Temperature
+sensor.netatmo_bedroom_wifi:
+  friendly_name: Bedroom Wifi
+sensor.netatmo_outdoormodule_battery:
+  friendly_name: Outdoor Battery
+sensor.netatmo_outdoormodule_humidity:
+  friendly_name: Outdoor Humidity
+sensor.netatmo_outdoormodule_radio:
+  friendly_name: Outdoor Signal
+sensor.netatmo_outdoormodule_temperature:
+  friendly_name: Outdoor Temperature
+climate.thermostat:
+  friendly_name: Living Room Thermostat
+media_player.living_room_home:
+  friendly_name: Google Home
+light.kitchen_1:
+  friendly_name: Kitchen Table
+  icon: mdi:ceiling-light
+sensor.yr_symbol:
+  friendly_name: Weather
+device_tracker.ac37434ec688:
+  friendly_name: Steff OLD
+  hidden: true
+  icon: mdi:account
+device_tracker.c48e8ff63ad1:
+  hidden: true
+sensor.netatmo_bathroom_radio:
+  friendly_name: Bathroom Radio
+light.bedroom_4:
+  friendly_name: Bedroom Bed
+  icon: mdi:led-strip
+sensor.aare_brienzwiler_discharge:
+  icon: mdi:water-pump
+sensor.aare_ringgenberg_discharge:
+  icon: mdi:water-pump
+sensor.aare_ringgenberg_waterlevel:
+  icon: mdi:chart-line
+sensor.aare_brienzwiler_waterlevel:
+  icon: mdi:chart-line
+sensor.aare_ringgenberg_danger_level:
+  icon: mdi:alert-circle
+sensor.aare_brienzwiler_danger_level:
+  icon: mdi:alert-circle
+device_tracker.64002d0506e4:
+  hidden: true
+device_tracker.64002d05071e:
+  hidden: true
+device_tracker.663138306433:
+  hidden: true
+switch.computer_lamp:
+  icon: mdi:lightbulb
+device_tracker.000136e0585a:
+  hidden: true
+light.tradfri_bulb_e27_ws_opal_980lm:
+  friendly_name: Outdoor 1
+light.office_1:
+  friendly_name: Office Ceiling
+  icon: mdi:ceiling-light
+light.outdoor_1:
+  friendly_name: Outdoor
+device_tracker.60f1898d5629:
+  hidden: true
+media_player.home_group:
+  hidden: true
+media_player.home:
+  hidden: true
+device_tracker.acafb9f4eece:
+  hidden: true
+device_tracker.7cdd90a9c560:
+  hidden: true
+device_tracker.70ee5021e7fd:
+  hidden: true
+device_tracker.phone_phone:
+  friendly_name: Steff GPS
+group.bedroommain:
+  hidden: true
+  icon: mdi:lightbulb
+switch.bathroom_heater:
+  icon: mdi:radiator
+switch.bedroom_fan:
+  icon: mdi:fan
+light.living_room_under_couch:
+  icon: mdi:led-strip
+light.bedroom_nightstand:
+  icon: mdi:lamp
+group.livingroomlightscouch:
+  icon: mdi:lamp
+device_tracker.64002d0505fa:
+  hidden: true
+device_tracker.acafb9f4eee4:
+  hidden: true
+sensor.phone_steff_uptime:
+  hidden: true
+sensor.motion_outdoors:
+  friendly_name: Sensor Motion Outdoors
+  icon: mdi:battery-70
+sensor.remote_bathroom:
+  friendly_name: Remote Bathroom Ceiling
+  icon: mdi:battery-70
+sensor.remote_kitchen:
+  friendly_name: Remote Kitchen Sink
+  icon: mdi:battery-70
+sensor.remote_nightstand:
+  friendly_name: Remote Bedroom Nightstand
+  icon: mdi:battery-70
+sensor.remote_office_1:
+  friendly_name: Remote Office Ceiling
+  icon: mdi:battery-70
+sensor.tradfri_remote_control_2:
+  friendly_name: Tradfri Remote Control 2
+  hidden: true
+  icon: mdi:battery-70
+group.allrooms:
+  order: 1
+group.climate:
+  order: 2
+camera.entrance__entrance:
+  friendly_name: Entrance
+group.all_scripts:
+  order: 3
+group.allscripts:
+  order: 3
+group.bedroom:
+  order: 100
+group.livingroom:
+  order: 105
+group.kitchen:
+  order: 110
+group.bathroom:
+  order: 115
+group.outdoor:
+  order: 120
+group.office:
+  order: 125
+group.netatmostatus:
+  order: 210
+group.hpilo:
+  order: 205
+group.synology:
+  order: 200
+group.tradfri:
+  order: 215
+group.hydrobrienzwiler:
+  order: 310
+group.darksky:
+  order: 305
+weather.openweathermap:
+  order: 300
+group.hydroringgenberg:
+  order: 315
+sensor.bathroom_dimmer:
+  hidden: true
+sensor.bedroom_dimmer_1:
+  hidden: true
+sensor.living_room_dimmer_1:
+  hidden: true
+sensor.living_room_dimmer_2:
+  hidden: true
+sensor.kitchen_sensor_motion_1:
+  friendly_name: Kitchen Motion Sensor
+sensor.kitchen_dimmer_1:
+  hidden: true
+sensor.snmp_wan_in:
+  hidden: true
+sensor.snmp_wan_out:
+  hidden: true
+input_number.internet_traffic_delta_in:
+  hidden: true
+input_number.internet_traffic_delta_out:
+  hidden: true
+light.living_room_2_2:
+  friendly_name: Living Room 2 A
+  hidden: true
+light.living_room_2: {}
+light.living_room_ceiling_lamp:
+  friendly_name: Living Room Ceiling
+  icon: mdi:ceiling-light
+binary_sensor.entrance__bathroom_tag_vibration:
+  hidden: true
+binary_sensor.entrance__bedroom_tag_vibration:
+  hidden: true
+binary_sensor.entrance__entrance_tag_vibration:
+  hidden: true
+binary_sensor.entrance__bathroom_tag_open:
+  friendly_name: Bathroom Door Sensor
+binary_sensor.entrance__bedroom_tag_open:
+  friendly_name: Bedroom Door Sensor
+binary_sensor.entrance__entrance_tag_open:
+  friendly_name: Entrance Door Sensor
+device_tracker.404e36855fdd:
+  friendly_name: Steff
+  icon: mdi:account
+device_tracker.9cb6d0ed85ff:
+  hidden: true
+device_tracker.5ccf7f5784d5:
+  hidden: true
+group.bathroom_ceiling:
+  icon: mdi:ceiling-light
+sensor.snow_height:
+  friendly_name: Snow Depth
+  icon: mdi:snowflake
+sensor.snow_status:
+  icon: mdi:snowman
+sensor.snowfall_24h:
+  icon: mdi:snowflake
+sensor.last_snowfall:
+  icon: mdi:calendar
+sensor.lifts_open:
+  icon: mdi:information
+sensor.pistes_open:
+  icon: mdi:information
+sensor.rain_today_brienz:
+  friendly_name: Rain Today
+  icon: mdi:weather-rainy
+sensor.windspeed_brienz:
+  icon: mdi:weather-windy
+sensor.wind_direction_brienz:
+  icon: mdi:compass
+device_tracker.0024e461383c:
+  hidden: true
+device_tracker.0403d604ab3d:
+  hidden: true
+device_tracker.2c3ae82eaed8:
+  hidden: true
+device_tracker.b827ebee78df:
+  hidden: true
+sensor.computer_lamp_remote:
+  icon: mdi:battery-70
+sensor.bathroom_remote:
+  icon: mdi:battery-70
+sensor.hp_ilo_cpu_fanspeed:
+  icon: mdi:fan
+sensor.bitcoin_chf:
+  icon: mdi:currency-btc
+light.computer_lamp_bulb:
+  icon: mdi:spotlight-beam
+light.office_ceiling:
+  icon: mdi:ceiling-light
+switch.xmas_lights:
+  icon: mdi:pine-tree
+device_tracker.2c3ae80abff3:
+  hidden: true
+device_tracker.5ccf7f5784d4:
+  hidden: true
+device_tracker.2c3ae80ab90a:
+  hidden: true
+sensor.bathroom_door:
+  friendly_name: Bathroom Door OLD
+  hidden: true
+  icon: mdi:door
+sensor.axalp_temperature:
+  icon: mdi:thermometer
+  unit_of_measurement: °C
+sensor.axalp_pressure:
+  icon: mdi:gauge
+  unit_of_measurement: mbar
+sensor.axalp_humidity:
+  icon: mdi:water-percent
+  unit_of_measurement: '%'
+device_tracker.68c63a841d90:
+  hidden: true
+device_tracker.68c63a88ab7c:
+  hidden: true
+device_tracker.a8a7957f52e5:
+  hidden: true
+sensor.work_humidity:
+  icon: mdi:water-percent
+cover.window_blinds_livingroom:
+  device_class: window
+device_tracker.esp_88a9c3:
+  hidden: true
+device_tracker.octopi:
+  hidden: true
+device_tracker.nintendo_3ds:
+  hidden: true
+device_tracker.powerfail:
+  hidden: true
+device_tracker.roomba3144460030928590:
+  hidden: true
+binary_sensor.bahtroom_cold:
+  friendly_name: Bathroom Cold
+binary_sensor.bathroom_cold:
+  friendly_name: Bathroom Cold
+switch.ikea_planter:
+  icon: mdi:leaf
+input_number.planter_lamp_ontime:
+  hidden: true
+sensor.planter_lamp_ontime:
+  icon: mdi:clock
+sensor.tv_light_remote:
+  icon: mdi:battery-80
+script.bathroom_heater_reset:
+  can_cancel: false
+sensor.netatmo_office_temperature:
+  friendly_name: Office Temperature
+sensor.netatmo_office_co2:
+  friendly_name: Office CO2
+sensor.netatmo_office_humidity:
+  friendly_name: Office Humidity
+binary_sensor.bathroomdoor_state:
+  device_class: door
+  friendly_name: Bathroom Door
+binary_sensor.bedroomwindow_state:
+  device_class: window
+  friendly_name: Bedroom Window
+binary_sensor.entrancedoor_state:
+  device_class: door
+  friendly_name: Entrance Door
+sensor.kitchenthermometer_humidity:
+  friendly_name: Kitchen Humidity
+binary_sensor.officewindow_state:
+  device_class: window
+  friendly_name: Office Window
+sensor.bathroomthermostat_humidity:
+  friendly_name: Bathroom Humidity
+light.livingroom_plant:
+  friendly_name: Living Room Plant
+  icon: mdi:led-strip
+light.living_room:
+  friendly_name: Living Room
+sensor.livingroom_temperature_couch:
+  friendly_name: Living Room Temperature Couch
+device_tracker.mystromswitch78d2ec:
+  hidden: true
+binary_sensor.bedroomdoor_state:
+  device_class: door
+  friendly_name: Bedroom Door
+binary_sensor.kitchenwindow_state:
+  device_class: window
+  friendly_name: Kitchen Window
+binary_sensor.livingroomdoor_state:
+  device_class: door
+  friendly_name: Livingroom Door
+binary_sensor.livingroomwindow_state:
+  device_class: window
+  friendly_name: Livingroom Window
+binary_sensor.officedoor_state:
+  device_class: door
+  friendly_name: Office Door
+binary_sensor.bedroom_humidity_trend:
+  hidden: true
+sensor.bathroom_temperature:
+  hidden: true
+binary_sensor.bathroom_humidity_high:
+  hidden: true
+binary_sensor.bathroom_humidity_trend:
+  hidden: true
+sensor.bathroom_set_temperature:
+  hidden: true
+sensor.bathroom_climate_thermostat_ha_set_temperature:
+  hidden: true
+sensor.mystrom_computer:
+  icon: mdi:flash-circle
+sensor.mystrom_server:
+  icon: mdi:flash-circle
+sensor.mystrom_tv:
+  icon: mdi:flash-circle
+device_tracker.esp_003cab:
+  hidden: true
+device_tracker.esp_842bb1:
+  hidden: true
+device_tracker.esp_easy_0:
+  hidden: true
+sensor.steff_phone_status:
+  icon: mdi:cellphone
+homematic.ccu2:
+  hidden: true
+binary_sensor.roomba_bin:
+  device_class: problem

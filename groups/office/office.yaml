@@ -1,0 +1,10 @@
+office:
+  name: Office
+  entities:
+    - light.office_ceiling
+    - sensor.mystrom_server
+    - sensor.netatmo_office_temperature
+    - sensor.netatmo_office_humidity
+    - sensor.netatmo_office_co2
+    - binary_sensor.officedoor_state
+    - binary_sensor.officewindow_state

@@ -1,0 +1,23 @@
+- alias: MQTT Switch ON
+  id: mqttswitchon
+  trigger:
+    - platform: mqtt
+      topic: MK-SmartHouse/switch/MqttSwitch01
+      payload: 'ON'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.computer_lamp_bulb
+
+- alias: MQTT Switch OFF
+  id: mqttswitchoff
+  trigger:
+    - platform: mqtt
+      topic: MK-SmartHouse/switch/MqttSwitch01
+      payload: 'OFF'
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.computer_lamp_bulb

@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/brienzfw/rain/today"
+name: Rain Today Brienz
+unit_of_measurement: mm

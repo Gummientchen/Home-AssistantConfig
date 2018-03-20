@@ -1,0 +1,5 @@
+platform: threshold
+entity_id: sensor.netatmo_bathroom_temperature
+lower: 23
+hysteresis: 0.5
+name: bathroom_cold

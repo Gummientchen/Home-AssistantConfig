@@ -1,0 +1,3 @@
+bathroom_heater:
+  name: "Bathroom Heater 30 Minutes"
+  duration: '00:30:00'

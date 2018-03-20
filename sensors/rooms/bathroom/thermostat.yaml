@@ -1,0 +1,14 @@
+platform: template
+sensors:
+  bathroom_temperature:
+    friendly_name: "Bathroom Temperature"
+    unit_of_measurement: "°C"
+    value_template: "{{ states.climate.bathroomthermostat.attributes.current_temperature | float | round(1) }}"
+  bathroom_set_temperature:
+    friendly_name: "Bathroom Set Temperature"
+    unit_of_measurement: "°C"
+    value_template: "{{ states.climate.bathroomthermostat.attributes.temperature | float | round(1) }}"
+  bathroom_climate_thermostat_ha_set_temperature:
+    friendly_name: "Bathroom HA Set Temperature"
+    unit_of_measurement: "°C"
+    value_template: "{{ states.climate.bathroom.attributes.temperature | float | round(1) }}"

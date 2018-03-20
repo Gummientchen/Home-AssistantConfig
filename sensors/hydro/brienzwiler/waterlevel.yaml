@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/brienzwiler/wasserstand/last"
+name: Aare Brienzwiler Waterlevel
+unit_of_measurement: m ü.M

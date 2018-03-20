@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/thunluft/feinstaub"
+name: "Feinstaub (PM10) Thun"
+unit_of_measurement: "µg/m³"

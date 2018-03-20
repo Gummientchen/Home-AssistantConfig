@@ -1,0 +1,59 @@
+# Entrance Door opened when not home!
+- alias: "Entrance Door opened when not home"
+  id: kitchen_entrance_door_open_when_not_home
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.entrancedoor_state
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: device_tracker.404e36855fdd
+      state: not_home
+      # optional: trigger only if state was this for last X time.
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 1
+  action:
+    # - service: media_player.volume_set
+    #   entity_id: media_player.bathroom
+    #   data:
+    #     volume_level: 1
+    # - delay: 00:00:05
+    # - service: tts.google_say
+    #   entity_id: media_player.bathroom
+    #   data:
+    #     message: 'ALARM! Eingangstür wurde geöffnet! Sie haben hier nichts verloren!'
+    #     language: 'de'
+    - service: notify.html5
+      data:
+        message: "Entrance Door was opened!"
+        title: "ALARM"
+        data:
+          tag: "alarm_entrance_door_opened"
+
+# Entrance Door closed when not home!
+- alias: "Entrance Door closed when not home"
+  id: kitchen_entrance_door_closed_when_not_home
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.entrancedoor_state
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: device_tracker.404e36855fdd
+      state: not_home
+      # optional: trigger only if state was this for last X time.
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 1
+  action:
+    - service: notify.html5
+      data:
+        message: "Entrance Door was closed again!"
+        title: "ALARM"
+        data:
+          tag: "alarm_entrance_door_closed"

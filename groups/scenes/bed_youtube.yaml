@@ -1,0 +1,14 @@
+bed_youtube_on:
+  name: Bed YouTube ON
+  entities:
+    - light.bedroom_4
+    - light.bedroom_nightstand
+
+bed_youtube_off:
+  name: Bed YouTube OFF
+  entities:
+    - group.bathroom
+    - group.kitchen
+    - group.office
+    - group.livingroom
+    - light.bedroom_2

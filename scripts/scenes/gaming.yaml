@@ -1,0 +1,7 @@
+gaming_light:
+  alias: Gaming
+  sequence:
+    - service: light.turn_off
+      entity_id: group.gaming_lights_off
+    - service: light.turn_on
+      entity_id: group.gaming_lights_on

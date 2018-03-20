@@ -1,0 +1,3 @@
+platform: mjpeg
+mjpeg_url: http://recode.ch/ha/webcam_axalp.php
+name: Webcam Axalp

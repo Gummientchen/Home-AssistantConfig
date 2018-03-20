@@ -1,0 +1,68 @@
+rooms:
+  view: yes
+  name: Rooms
+  entities:
+    - group.livingroom
+    - group.bedroom
+    - group.kitchen
+    - group.bathroom
+    - group.office
+    - group.outdoor
+    #- group.work
+
+scenes:
+  view: yes
+  name: Scenes
+  entities:
+    - group.scenes_panel
+    - group.bathroom_heater_control
+
+weather:
+  view: yes
+  name: Weather/Hydro
+  entities:
+    - group.fwbrienz_climate
+    - group.thun_air
+    - group.axalp_snow
+    - group.hydroBrienzwiler
+    - group.hydroRinggenberg
+    - weather.openweathermap
+    - group.darksky
+
+webcams:
+  view: yes
+  name: Webcams
+  entities:
+    - camera.webcam_axalp
+    - camera.webcam_axalp_2
+    - camera.webcam_brienz
+    - camera.webcam_rothorn
+    - camera.webcam_bonigen
+
+hardware:
+  view: yes
+  name: Network
+  entities:
+    - group.wan
+    - group.synology
+    - history_graph.synology_nas
+    - group.hpilo
+    - group.netatmostatus
+    - group.tradfri
+
+# entertainment:
+#   view: yes
+#   name: Entertainment
+#   entities:
+#     - media_player.bathroom
+#     - media_player.sony_bravia_tv
+#     - media_player.home
+#     - media_player.home_group
+#     - media_player.living_room_home
+
+# security:
+#   view: yes
+#   name: Security
+#   entities:
+#     - camera.entrance__entrance
+#     - group.netatmo_welcome_sensors

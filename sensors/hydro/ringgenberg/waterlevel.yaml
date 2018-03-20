@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/ringgenberg/wasserstand/last"
+name: Aare Ringgenberg Waterlevel
+unit_of_measurement: m ü.M

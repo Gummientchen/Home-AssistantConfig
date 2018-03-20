@@ -1,0 +1,10 @@
+bed_youtube: # before sleep
+  alias: Bed YouTube
+  sequence:
+    - service: light.turn_off
+      entity_id: group.bed_youtube_off
+    - service: light.turn_on
+      entity_id: group.bed_youtube_on
+      data:
+        kelvin: 1000
+        brightness_pct: 25

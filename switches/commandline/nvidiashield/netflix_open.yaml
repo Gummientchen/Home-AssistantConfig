@@ -1,0 +1,5 @@
+platform: command_line
+switches:
+  netflix_open:
+    command_on: "/usr/bin/curl -X GET http://192.168.1.81:8080/netflix/open"
+    friendly_name: Netflix Open

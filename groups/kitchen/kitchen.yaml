@@ -1,0 +1,9 @@
+kitchen:
+  name: Kitchen
+  entities:
+    - light.kitchen_2
+    - light.kitchen_1
+    - sensor.kitchen_temperature
+    - sensor.kitchenthermometer_humidity
+    - binary_sensor.entrancedoor_state
+    - binary_sensor.kitchenwindow_state

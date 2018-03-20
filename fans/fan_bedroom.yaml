@@ -1,0 +1,7 @@
+platform: mqtt
+name: Fan Bathroom
+command_topic: "recode/arduino/fan01/command"
+state_topic: "recode/arduino/fan01/state"
+speed_command_topic: "recode/arduino/fan01/fanspeed/command"
+speed_state_topic: "recode/arduino/fan01/fanspeed/state"
+retain: true

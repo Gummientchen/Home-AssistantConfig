@@ -1,0 +1,10 @@
+outdoor:
+  name: Outdoor
+  entities:
+    - light.outdoor_1
+    - switch.xmas_lights
+    - sensor.netatmo_outdoormodule_temperature
+    - sensor.windchill_temperature
+    - sensor.netatmo_outdoormodule_humidity
+    - sensor.netatmo_bedroom_pressure
+#    - sensor.netatmo_outdoormodule_battery

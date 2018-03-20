@@ -1,0 +1,56 @@
+- alias: "Weather: Warning below 4C"
+  id: weather_warning_below_4c
+  trigger:
+    - platform: time
+      at: "07:30:00"
+  condition:
+    condition: and
+    conditions:
+      - condition: time
+        weekday:
+          - mon
+          - tue
+          - wed
+          - thu
+          - fri
+      - condition: numeric_state
+        entity_id: sensor.netatmo_outdoormodule_temperature
+        below: 4
+  action:
+    - service: notify.html5
+      data:
+        message: "It's below 4°C! Temp: {{ states('sensor.netatmo_outdoormodule_temperature') }}°C"
+        title: "Weather Warning"
+        data:
+          tag: "weather_warning_cold"
+
+- alias: "Weather: Aare Brienzwiler Danger Level 2"
+  id: weather_aare_brienzwiler_danger_level_2
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.aare_brienzwiler_danger_level
+      above: 1
+  action:
+    - service: notify.html5
+      data:
+        message: "Aare Brienzwiler Danger Level at {{ states('sensor.aare_brienzwiler_danger_level') }}!"
+        title: "Weather Warning"
+        data:
+          tag: "weather_warning_aare_brienzwiler"
+
+- alias: "Weather: High Windspeeds Brienz"
+  id: weather_high_windspeed_brienz
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.windspeed_brienz
+      above: 16
+      for:
+        minutes: 15
+        seconds: 0
+  action:
+    - service: notify.html5
+      data:
+        message: "Hohe Wingeschwindigkeit! {{ states('sensor.windspeed_brienz') }} m/s / {{ (float(states('sensor.windspeed_brienz')) * 3.6) | round(0) }} km/h!"
+        title: "Weather Warning"
+        data:
+          tag: "weather_warning_wind"

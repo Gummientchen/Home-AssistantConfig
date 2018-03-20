@@ -1,0 +1,9 @@
+# platform: netatmo
+# timeout: 1
+# offset: 90
+# cameras:
+#   - Entrance
+# welcome_sensors:
+#   - Someone known
+#   - Someone unknown
+#   - Motion

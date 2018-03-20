@@ -1,0 +1,16 @@
+scenes_panel:
+  name: Scenes
+  control: hidden
+  entities:
+    - script.bathroom_heater
+    - script.tv_light
+    - script.gaming_light
+    - script.bed_youtube
+    - script.good_night
+
+bathroom_heater_control:
+  name: Bathroom Heater Control
+  control: hidden
+  entities:
+    - script.bathroom_heater_reset
+    - script.bathroom_heater_cancel

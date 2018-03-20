@@ -1,0 +1,20 @@
+####### Main timer script
+turn_off_bedroom_fan_timer:
+  alias: 'Timer to turn off bedroom fan'
+  sequence:
+    - delay: '00:{{ time | int }}:00'
+    - service: switch.turn_off
+      data:
+        entity_id: switch.bedroom_fan
+
+####### Wrapper to start turn_off_bedroom_fan_timer with logic of cancel existing timer
+turn_off_bedroom_fan_timer_wrapper:
+  alias: 'Timer to turn off bedroom fan - wrapper'
+  sequence:
+    - service: script.turn_off
+      data:
+        entity_id: script.turn_off_bedroom_fan_timer
+    - delay: '00:00:01'
+    - service: script.turn_off_bedroom_fan_timer
+      data_template:
+        time: '{{ time | int }}'

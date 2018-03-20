@@ -1,0 +1,19 @@
+platform: flux
+lights:
+  - light.bathroom_ceiling_1
+  - light.bathroom_ceiling_2
+  - light.bedroom_nightstand
+  - light.kitchen_1
+  - light.kitchen_2
+  - light.computer_lamp_bulb
+  - light.office_ceiling
+  - light.living_room_ceiling_lamp
+  - light.living_room_4
+  - light.living_room_1
+name: Fluxer
+start_colortemp: 4000
+sunset_colortemp: 3000
+stop_colortemp: 1900
+brightness: 255
+disable_brightness_adjust: True
+mode: xy

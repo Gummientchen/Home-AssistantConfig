@@ -1,0 +1,17 @@
+- alias: "Nobody at Home"
+  id: nobody_home
+  trigger:
+    platform: state
+    entity_id: device_tracker.404e36855fdd
+    from: 'home'
+    to: 'not_home'
+    for:
+      hours: 0
+      minutes: 30
+      seconds: 0
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - group.all_lights
+          - switch.bathroom_heater

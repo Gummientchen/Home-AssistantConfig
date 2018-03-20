@@ -1,0 +1,307 @@
+homeassistant:
+  # Name of the location where Home Assistant is running
+  name: !secret hass_name
+  # Location required to calculate the time the sun rises and sets
+  latitude: !secret hass_latitude
+  longitude: !secret hass_longitude
+  # Impacts weather/sunrise data (altitude above sea level in meters)
+  elevation: !secret hass_elevation
+  # metric for Metric, imperial for Imperial
+  unit_system: metric
+  # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+  time_zone: !secret hass_timezone
+  # Customization file
+  customize: !include customize.yaml
+  packages: !include_dir_named packages
+
+# Logger
+logger:
+  default: error
+
+# Enables the frontend
+frontend:
+  javascript_version: latest
+  themes:
+    darkorange:
+      primary-color: "#ff9800"
+      light-primary-color: "#ffc947"
+      dark-primary-color: "#c66900"
+      text-primary-color: "#ffffff"
+      primary-background-color: "#37464f"
+      sidebar-text_-_background: "#62717b"
+      paper-card-background-color: "#263137"
+      paper-card-header-color: "var(--text-primary-color)"
+      secondary-background-color: "var(--primary-background-color)"
+      primary-text-color: "var(--text-primary-color)"
+      secondary-text-color: "var(--primary-color)"
+      paper-listbox-background-color: "var(--sidebar-text_-_background)"
+      paper-toggle-button-checked-ink-color: "var(--dark-primary-color)"
+      paper-toggle-button-checked-button-color: "var(--dark-primary-color)"
+      paper-toggle-button-checked-bar-color: "var(--dark-primary-color)"
+      paper-slider-knob-color: "var(--primary-color)"
+      paper-slider-knob-start-color: "var(--primary-color)"
+      paper-slider-pin-color: "var(--primary-color)"
+      paper-slider-active-color: "var(--primary-color)"
+      paper-slider-secondary-color: "var(--light-primary-color)"
+      paper-slider-container-color: "var(--sidebar-text_-_background)"
+      paper-progress-secondary-color: "var(--sidebar-text_-_background)"
+      paper-item-selected_-_background-color: "var(--primary-color)"
+      paper-item-icon_-_color: "var(--text-primary-color)"
+      paper-item-icon-color: "var(--sidebar-text_-_background)"
+      paper-item-icon-active-color: "var(--primary-color)"
+      paper-grey-50: "var(--sidebar-text_-_background)"
+      paper-grey-200: "var(--primary-background-color)"
+      label-badge-background-color: "var(--sidebar-text_-_background)"
+      label-badge-text-color: "var(--text-primary-color)"
+      label-badge-red: "var(--primary-color)"
+      label-badge-blue: "var(--light-primary-color)"
+      label-badge-green: "var(--dark-primary-color)"
+      label-badge-yellow: "var(--text-primary-color)"
+      label-badge-grey: "var(--paper-grey-500)"
+      table-row-background-color: "var(--paper-card-background-color)"
+      table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+    darkred:
+    # Main colors that can be changed
+      dark-primary-color: "#c66900"
+      disabled-text-color: "#545454"
+      divider-color: "rgba(255, 255, 255, 0.12)"
+      light-primary-color: "#e06c6c"
+      paper-card-background-color: "#1d1d1d"
+      paper-grey-200: "#191919"
+      paper-item-icon-color: "#d3d3d3"
+      paper-listbox-background-color: "#202020"
+      primary-background-color: "#303030"
+      primary-color: "#d32f2f"
+      primary-text-color: "#cfcfcf"
+      secondary-background-color: "#131313"
+      sidebar-text_-_background: "#62717b"
+    # Colors based on variables, see above
+      paper-card-header-color: "var(--paper-item-icon-color)"
+      paper-item-icon-active-color: "var(--primary-color)"
+      paper-item-icon_-_color: "var(--primary-text-color)"
+      paper-listbox-color: "var(--primary-text-color)"
+      paper-grey-50: "var(--primary-text-color)"
+      paper-slider-active-color: "var(--primary-color)"
+      paper-slider-knob-color: "var(--primary-color)"
+      paper-slider-knob-start-color: "var(--primary-color)"
+      paper-slider-pin-color: "var(--primary-color)"
+      paper-slider-secondary-color: "var(--light-primary-color)"
+      paper-toggle-button-checked-ink-color: "var(--dark-primary-color)"
+      paper-toggle-button-checked-button-color: "var(--primary-color)"
+      paper-toggle-button-checked-bar-color: "var(--light-primary-color)"
+      paper-toggle-button-unchecked-bar-color: "var(--primary-text-color)"
+      secondary-text-color: "var(--primary-color)"
+      table-row-background-color: "var(--paper-card-background-color)"
+      table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+
+# Enables configuration UI
+config:
+
+http:
+  # Uncomment this to add a password (recommended!)
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  # base_url: example.duckdns.org:8123
+  ssl_certificate: !secret ssl_certificate
+  ssl_key: !secret ssl_key
+
+  base_url: !secret base_url
+
+  trusted_networks:
+    - !secret trusted_ip
+    - !secret trusted_ip_2
+
+  ip_ban_enabled: True
+  login_attempts_threshold: 10
+
+# Checks for available updates
+updater:
+
+# Discover some devices automatically
+discovery:
+
+# Enables support for tracking state changes over time
+history:
+
+# View all events in a logbook
+logbook:
+
+# InfluxDB
+influxdb:
+  host: 127.0.0.1
+  exclude:
+    domains:
+      - camera
+
+# Recorder
+recorder:
+  purge_interval: 2
+  purge_keep_days: 30
+  include:
+    domains:
+      - switch
+      - light
+      - sensor
+      - climate
+      - binary_sensor
+      - cover
+      - device_tracker
+      - fan
+      - input_number
+      - vacuum
+      - weather
+  exclude:
+    domains:
+      - automation
+      - weblink
+      - updater
+      - group
+      - media_player
+      - script
+      - zone
+    entities:
+      - camera.entrance
+      - camera.prusa_i3_mk3
+      - camera.webcam_axalp
+      - camera.webcam_axalp_2
+      - camera.webcam_bonigen
+      - camera.webcam_brienz
+      - camera.webcam_rothorn
+      - binary_sensor.octoprint_printing_error
+      - binary_sensor.octoprint_printing
+      - device_tracker.000136e0585a
+      - device_tracker.0024e461383c
+      - device_tracker.0403d604ab3d
+      - device_tracker.2c3ae80ab90a
+      - device_tracker.2c3ae80abff3
+      - device_tracker.2c3ae82eaed8
+      - device_tracker.404e36855fdd
+      - device_tracker.5ccf7f5784d4
+      - device_tracker.5ccf7f5784d5
+      - device_tracker.60f1898d5629
+      - device_tracker.64002d0505fa
+      - device_tracker.64002d0506e4
+      - device_tracker.64002d05071e
+      - device_tracker.663138306433
+      - device_tracker.68c63a841d90
+      - device_tracker.68c63a88ab7c
+      - device_tracker.70ee5021e7fd
+      - device_tracker.7cdd90a9c560
+      - device_tracker.9cb6d0ed85ff
+      - device_tracker.a8a7957f52e5
+      - device_tracker.ac37434ec688
+      - device_tracker.acafb9f4eece
+      - device_tracker.acafb9f4eee4
+      - device_tracker.b827ebee78df
+      - device_tracker.c48e8ff63ad1
+      - device_tracker.esp_88a9c3
+      - device_tracker.mystromswitch78d2ec
+      - device_tracker.nintendo_3ds
+      - device_tracker.octopi
+      - device_tracker.roomba3144460030928590
+      - sun.sun
+      - switch.fluxer
+      - timer.bathroom_heater
+
+# Track the sun
+sun:
+
+# Map
+map:
+
+# Google Home
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  client_id: !secret google_assistant_client_id
+  access_token: !secret google_assistant_access_token
+  exposed_domains:
+    - switch
+    - light
+    - group
+
+# MQTT Broker
+mqtt:
+  broker: !secret msmqtt_broker
+  client_id: !secret msmqtt_clientid
+  username: !secret msmqtt_username
+  password: !secret msmqtt_password
+  port: !secret msmqtt_port
+
+# Text to speech
+tts:
+  - platform: google
+
+# Netatmo Config
+netatmo:
+  api_key: !secret netatmo_api_key
+  secret_key: !secret netatmo_secret_key
+  username: !secret netatmo_username
+  password: !secret netatmo_password
+  discovery: False
+
+# Roomba
+vacuum:
+  - platform: roomba
+    host: !secret roomba_host
+    username: !secret roomba_username
+    password: !secret roomba_password
+
+# Homematic
+homematic:
+  interfaces:
+    ip:
+      host: !secret homematic_host
+      port: !secret homematic_port
+      username: !secret homematic_username
+      password: !secret homematic_password
+      resolvenames: json
+  hosts:
+    ccu2:
+      host: !secret homematic_host
+      username: !secret homematic_username
+      password: !secret homematic_password
+
+# IKEA Tradfri
+tradfri:
+  host: !secret tradfri_host
+
+# History Graph Test
+history_graph:
+  synology_nas:
+    name: "Synology NAS"
+    hours_to_show: 48
+    refresh: 1800
+    entities:
+      - sensor.volume_used_volume_1
+      - sensor.status_volume_1
+      - sensor.average_disk_temp_volume_1
+      - sensor.maximum_disk_temp_volume_1
+      - sensor.cpu_load_total
+      - sensor.memory_usage_real
+
+###########INCLUDES#####
+sensor: !include_dir_list sensors/
+switch: !include_dir_list switches/
+camera: !include_dir_list cameras/
+cover: !include_dir_list covers/
+fan: !include_dir_list fans/
+binary_sensor: !include_dir_list binary_sensors/
+climate: !include_dir_list climate/
+device_tracker: !include_dir_list device_tracker/
+zone: !include_dir_list zones/
+media_player: !include_dir_list media_players/
+notify: !include_dir_list notify/
+weather: !include_dir_list weather/
+
+light: !include_dir_merge_list light/
+automation: !include_dir_merge_list automation/
+
+input_number: !include_dir_merge_named input_number/
+input_boolean: !include_dir_merge_named input_boolean/
+timer: !include_dir_merge_named timers/
+group: !include_dir_merge_named groups/
+script: !include_dir_merge_named scripts/
+alert: !include_dir_merge_named alerts/
+
+panel_custom: !include panel_custom.yaml
+weblink: !include misc/weblinks.yaml
