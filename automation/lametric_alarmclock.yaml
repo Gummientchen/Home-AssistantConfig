@@ -1,0 +1,21 @@
+- alias: "Turn Lametric ON in the morning"
+  id: lametricon
+  trigger:
+    platform: time
+    at: '06:00:00'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.bedroom_alarmclock
+
+- alias: "Turn Lametric OFF at 23:59"
+  id: lametricoff
+  trigger:
+    platform: time
+    at: '00:30:00'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.bedroom_alarmclock

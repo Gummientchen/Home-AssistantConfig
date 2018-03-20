@@ -1,0 +1,27 @@
+- alias: Living Room TV Scene Toggle
+  id: living_room_tv_scene_toggle
+  trigger:
+    - platform: event
+      event_type: homematic.keypress
+      event_data:
+        name: Switch Living Room
+        channel: 1
+        param: PRESS_SHORT
+  action:
+    - service: light.toggle
+      entity_id: light.tv_lights
+
+- alias: Living Room Normal Lights
+  id: living_room_normal_lights
+  trigger:
+    - platform: event
+      event_type: homematic.keypress
+      event_data:
+        name: Switch Living Room
+        channel: 2
+        param: PRESS_SHORT
+  action:
+    - service: light.toggle
+      entity_id: light.living_room_normal_lights
+
+# group.tv_lights_on

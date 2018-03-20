@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/thunluft/stickstoff"
+name: "Stickstoffdioxid (NO₂) Thun"
+unit_of_measurement: "µg/m³"

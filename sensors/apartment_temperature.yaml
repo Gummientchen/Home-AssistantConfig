@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  apartment_temperature:
+    friendly_name: "Apartment Temperature"
+    unit_of_measurement: "°C"
+    value_template: "{{ ((((states.climate.bathroom.attributes.current_temperature * 1.5)+(states.climate.kitchenthermometer.attributes.current_temperature * 0.5)+(states.climate.thermostat.attributes.current_temperature * 2)+(states.sensor.livingroom_temperature_couch.state | float * 0.1)+(states.sensor.netatmo_office_temperature.state | float * 0.25)+(states.sensor.netatmo_bedroom_temperature.state | float * 2)) / 6.35) | float) | round(1) }}"

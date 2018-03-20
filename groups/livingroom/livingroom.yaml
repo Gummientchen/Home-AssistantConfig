@@ -1,0 +1,25 @@
+livingroom:
+  name: Living Room
+  entities:
+    - light.living_room_ceiling_lamp
+    - group.livingroomLightsCouch
+    - light.living_room_under_couch
+    - light.tv_light_bulb
+    - light.computer_lamp_bulb
+    - light.livingroom_plant
+    - switch.ikea_planter
+    - sensor.planter_lamp_ontime
+    - vacuum.roomba
+    # - media_player.kd55x8505c
+    - climate.thermostat
+    - sensor.livingroom_temperature_couch
+    - sensor.mystrom_computer
+    - sensor.mystrom_tv
+    - binary_sensor.livingroomdoor_state
+    - binary_sensor.livingroomwindow_state
+
+livingroomLightsCouch:
+  name: Living Room Couch
+  entities:
+    - light.living_room_4
+    - light.living_room_1

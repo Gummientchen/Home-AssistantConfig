@@ -1,0 +1,11 @@
+platform: trend
+sensors:
+  bedroom_humidity_trend:
+    entity_id: sensor.netatmo_bedroom_humidity
+    friendly_name: Bedroom Humidity Trend
+    min_gradient: 0.00139
+
+  bathroom_humidity_trend:
+    entity_id: sensor.netatmo_bathroom_humidity
+    friendly_name: Bathroom Humidity Trend
+    min_gradient: 0.00139

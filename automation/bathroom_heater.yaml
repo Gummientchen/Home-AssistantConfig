@@ -1,0 +1,366 @@
+- alias: Bathroom Heater set Temperature Controller
+  id: bathroom_heater_set_temperature_controller
+  trigger:
+    - platform: state
+      entity_id: sensor.bathroom_set_temperature
+  action:
+    - service: climate.set_temperature
+      entity_id: climate.bathroom
+      data_template:
+        temperature: "{{ float(states('sensor.bathroom_set_temperature')) }}"
+
+- alias: Bathroom Heater set Temperature HA
+  id: bathroom_heater_set_temperature_ha
+  trigger:
+    - platform: state
+      entity_id: sensor.bathroom_climate_thermostat_ha_set_temperature
+  action:
+    - service: climate.set_temperature
+      entity_id: climate.bathroomthermostat
+      data_template:
+        temperature: "{{ float(states('sensor.bathroom_climate_thermostat_ha_set_temperature')) }}"
+
+- alias: Bathroom Heater Reduce Temperature at Night
+  id: bathroom_heater_reduce_temperature_at_night
+  trigger:
+    - platform: time
+      at: '01:00:00'
+  action:
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.bathroom
+        away_mode: true
+
+- alias: Bathroom Heater Rise Temperature in the Morning
+  id: bathroom_heater_rise_temperature_at_morning
+  trigger:
+    - platform: time
+      at: '06:30:00'
+  condition:
+    - condition: state
+      entity_id: device_tracker.404e36855fdd
+      state: 'home'
+  action:
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.bathroom
+        away_mode: false
+
+# - alias: Bathroom Heater set Temp when not Home
+#   id: bathroom_heater_set_temp_when_not_home
+#   trigger:
+#     - platform: state
+#       entity_id: device_tracker.404e36855fdd
+#       from: 'home'
+#       to: 'not_home'
+#       for:
+#         hours: 0
+#         minutes: 30
+#         seconds: 0
+#   action:
+#     - service: input_number.set_value
+#       entity_id: input_number.bathroom_climate_original_temp_variable
+#       data_template:
+#         value: "{{ states.climate.bathroom.attributes.temperature | float }}"
+#     - delay: 0:00:01
+#     - service: climate.set_temperature
+#       entity_id: climate.bathroomthermostat
+#       data_template:
+#         temperature: "{{ 16 | float }}"
+#     - service: climate.set_temperature
+#       entity_id: climate.bathroom
+#       data_template:
+#         temperature: "{{ 16 | float }}"
+
+# - alias: Bathroom Heater set Temp when Home
+#   id: bathroom_heater_set_temp_when_home
+#   trigger:
+#     - platform: state
+#       entity_id: device_tracker.404e36855fdd
+#       from: 'not_home'
+#       to: 'home'
+#       for:
+#         hours: 0
+#         minutes: 0
+#         seconds: 5
+#   action:
+#     - service: climate.set_temperature
+#       entity_id: climate.bathroomthermostat
+#       data_template:
+#         temperature: "{{ states('input_number.bathroom_climate_original_temp_variable') | float }}"
+#     - service: climate.set_temperature
+#       entity_id: climate.bathroom
+#       data_template:
+#         temperature: "{{ states('input_number.bathroom_climate_original_temp_variable') | float }}"
+
+
+- alias: Bathroom Heater OFF door open
+  id: bathroom_heater_off_door_open
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroomdoor_state
+      from: 'off'
+      to: 'on'
+      for:
+        hours: 0
+        minutes: 5
+        seconds: 0
+  condition:
+    condition: state
+    entity_id: input_boolean.ignore_bathroom_door
+    state: 'off'
+  action:
+    - service: climate.turn_off
+      entity_id: climate.bathroom
+
+- alias: Bathroom Heater ON door closed
+  id: bathroom_heateron_door_closed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroomdoor_state
+      from: 'on'
+      to: 'off'
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 10
+  action:
+    - service: climate.turn_on
+      entity_id: climate.bathroom
+
+
+- alias: Bathroom Heater OFF when timer finished
+  id: bathroom_heater_off_timer_finished
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.bathroom_heater
+  action:
+    - service: climate.turn_off
+      entity_id: climate.bathroom
+    - service: notify.html5
+      data:
+        message: "Bathroom Heater powered off by timer"
+        title: "Bathroom"
+        data:
+          tag: 'bathroom_heater_info'
+
+- alias: Bathroom Heater add 5 Minutes
+  id: bathroom_heater_reset
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: reset_bathroom_timer
+  action:
+    - service: timer.pause
+      entity_id: timer.bathroom_heater
+    - service: group.set_visibility
+      entity_id: group.bathroom_heater_control
+      data:
+        visible: True
+    - service: notify.html5
+      data:
+        message: "Bathroom Heater powered on for another 5 minutes"
+        title: "Bathroom"
+        data:
+          tag: 'bathroom_heater_info'
+          actions:
+            - action: "reset_bathroom_timer"
+              title: "Reset Timer"
+            - action: "cancel_bathroom_timer"
+              title: "Cancel Timer"
+    - delay: 0:05:00
+    - service: timer.start
+      entity_id: timer.bathroom_heater
+      # data:
+      #   duration: '{{ as_timestamp(strptime(states.timer.bathroom_heater.attributes.duration, "%H:%M:%S")) + 2208992400 - (now() - states.timer.bathroom_heater.last_changed).seconds + (60*5)}}'
+
+- alias: Bathroom Heater Cancel
+  id: bathroom_heater_cancel
+  trigger:
+    platform: event
+    event_type: html5_notification.clicked
+    event_data:
+      action: cancel_bathroom_timer
+  action:
+    - service: climate.turn_off
+      entity_id: climate.bathroom
+    - service: timer.cancel
+      entity_id: timer.bathroom_heater
+    - service: group.set_visibility
+      entity_id: group.bathroom_heater_control
+      data:
+        visible: False
+    - service: notify.html5
+      data:
+        message: "Bathroom Heater timer cancelled"
+        title: "Bathroom"
+        data:
+          tag: 'bathroom_heater_info'
+
+
+# - alias: Bathroom Heater ON
+#   id: bathroom_heater_on
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.bathroom_verycold
+#       from: 'off'
+#       to: 'on'
+#       for:
+#         hours: 0
+#         minutes: 1
+#         seconds: 0
+#   condition:
+#       condition: state
+#       entity_id: sensor.bathroom_door
+#       state: 'CLOSED'
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.bathroom_heater
+
+
+# - alias: Bathroom Heater ON showering
+#   id: bathroom_heater_on_showering
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.bathroom_cold
+#       from: 'off'
+#       to: 'on'
+#       for:
+#         hours: 0
+#         minutes: 1
+#         seconds: 0
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: or
+#         conditions:
+#           - condition: time
+#             after: '06:30:00'
+#             before: '07:45:00'
+#           - condition: time
+#             after: '21:00:00'
+#             before: '23:30:00'
+#       - condition: state
+#         entity_id: sensor.bathroom_door
+#         state: 'CLOSED'
+#   action:
+#     - service: climate.turn_on
+#       entity_id: climate.bathroom
+
+# - alias: Bathroom Heater OFF
+#   id: bathroom_heater_off
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.bathroom_cold
+#       from: 'on'
+#       to: 'off'
+#       for:
+#         hours: 0
+#         minutes: 1
+#         seconds: 0
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.bathroom_heater
+
+# - alias: Bathroom Heater OFF Basetemp
+#   id: bathroom_heater_off_basetemp
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.bathroom_verycold
+#       from: 'on'
+#       to: 'off'
+#       for:
+#         hours: 0
+#         minutes: 1
+#         seconds: 0
+#   condition:
+#     condition: or
+#     conditions:
+#       - condition: time
+#         after: '00:00:00'
+#         before: '06:30:00'
+#       - condition: time
+#         after: '07:45:00'
+#         before: '21:00:00'
+#       - condition: time
+#         after: '23:30:00'
+#         before: '23:59:59'
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.bathroom_heater
+
+
+# - alias: Bathroom Heater ON
+#   id: batchroom_heater_on
+#   trigger:
+#     - platform: time
+#       minutes: /1
+#       seconds: 00
+#   condition:
+#     condition: and
+#     conditions:
+#       - condition: or
+#         conditions:
+#           - condition: time
+#             after: '06:30:00'
+#             before: '07:45:00'
+#           - condition: time
+#             after: '21:00:00'
+#             before: '23:30:00'
+#       - condition: state
+#         entity_id: binary_sensor.bathroom_cold
+#         state: 'on'
+#       - condition: state
+#         entity_id: sensor.bathroom_door
+#         state: 'CLOSED'
+#   action:
+#     - service: switch.turn_on
+#       entity_id: switch.bathroom_heater
+
+# - alias: Bathroom Heater OFF
+#   id: batchroom_heater_off
+#   trigger:
+#     - platform: time
+#       minutes: /1
+#       seconds: 00
+#   condition:
+#     condition: or
+#     conditions:
+#       - condition: and
+#         conditions:
+#           - condition: state
+#             entity_id: binary_sensor.bathroom_cold
+#             state: 'on'
+#           - condition: state
+#             entity_id: switch.bathroom_heater
+#             state: 'on'
+#       - condition: state
+#         entity_id: sensor.bathroom_door
+#         state: 'OPEN'
+#   action:
+#     - service: switch.turn_off
+#       entity_id: switch.bathroom_heater
+#
+# - alias: Bathroom Heater ON interval
+#   id: bathroom_heater_on_interval
+#   trigger:
+#     - platform: time
+#       minutes: /1
+#       seconds: 00
+#   condition:
+#     condition: or
+#     conditions:
+#       - condition: state
+#         entity_id: binary_sensor.bathroomdoor_state
+#         state: 'off'
+#       - condition: state
+#         entity_id: input_boolean.ignore_bathroom_door
+#         state: 'on'
+#   action:
+#     - service: climate.set_temperature
+#       entity_id: climate.bathroom
+#       data_template:
+#         temperature: "{{ float(states('input_number.bathroom_temperature')) }}"

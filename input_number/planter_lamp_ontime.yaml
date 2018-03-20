@@ -1,0 +1,7 @@
+planter_lamp_ontime:
+  name: "Planter Lamp Ontime"
+  min: 0
+  max: 24
+  step: 0.1
+  unit_of_measurement: "h"
+  mode: "box"

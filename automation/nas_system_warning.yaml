@@ -1,0 +1,10 @@
+- alias: "Synology NAS: Volume degraded"
+  id: synology_nas_volume_degraded
+  trigger:
+    - platform: template
+      value_template: "{% if not is_state('sensor.status_volume_1','normal') %}true{% else %}false{% endif %}"
+  action:
+    - service: notify.html5
+      data:
+        message: "Synology NAS Volume degraded!"
+        title: "Synology NAS"

@@ -1,0 +1,6 @@
+bathroom_climate_original_temp_variable:
+  name: "Bathroom Original Temp Variable"
+  unit_of_measurement: "°C"
+  initial: 20.0
+  min: 0
+  max: 100

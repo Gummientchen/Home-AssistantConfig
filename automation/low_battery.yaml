@@ -1,0 +1,129 @@
+# sensor.computer_lamp_remote
+- alias: "Battery Warning: Computer Lamp Remote"
+  id: battery_warning_computer_lamp_remote
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.computer_lamp_remote
+      below: 25
+  action:
+    - service: notify.html5
+      data:
+        message: "Computer Lamp Remote is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.bathroom_remote
+- alias: "Battery Warning: Bathroom Remote"
+  id: battery_warning_bathroom_remote
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.bathroom_remote
+      below: 25
+  action:
+    - service: notify.html5
+      data:
+        message: "Bathroom Remote is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.tv_light_remote
+- alias: "Battery Warning: TV Lamp Remote"
+  id: battery_warning_tv_lamp_remote
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.tv_light_remote
+      below: 25
+  action:
+    - service: notify.html5
+      data:
+        message: "TV Lamp Remote is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.remote_kitchen
+- alias: "Battery Warning: Kitchen Remote"
+  id: battery_warning_kitchen_remote
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.remote_kitchen
+      below: 25
+  action:
+    - service: notify.html5
+      data:
+        message: "Kitchen Remote is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.remote_nightstand
+- alias: "Battery Warning: Nightstand Remote"
+  id: battery_warning_nightstand_remote
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.remote_nightstand
+      below: 25
+  action:
+    - service: notify.html5
+      data:
+        message: "Nightstand Remote is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.remote_office_1
+- alias: "Battery Warning: Office Remote"
+  id: battery_warning_office_remote
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.remote_office_1
+      below: 25
+  action:
+    - service: notify.html5
+      data:
+        message: "Office Remote is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.tradfri_remote_control_2
+- alias: "Battery Warning: Computer Lamp Remote"
+  id: battery_warning_computer_lamp_remote
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.tradfri_remote_control_2
+      below: 25
+  action:
+    - service: notify.html5
+      data:
+        message: "Computer Lamp Remote is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.motion_outdoors
+- alias: "Battery Warning: Motion Sensor Outdoor"
+  id: battery_warning_motion_sensor_outdoor
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.motion_outdoors
+      below: 25
+  action:
+    - service: notify.html5
+      data:
+        message: "Motion Sensor Outdoor is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.netatmo_bathroom_battery
+- alias: "Battery Warning: Netatmo Bathroom"
+  id: battery_warning_netatmo_bathroom
+  trigger:
+    - platform: state
+      entity_id: sensor.netatmo_bathroom_battery
+      to: "Low"
+  action:
+    - service: notify.html5
+      data:
+        message: "Netatmo Bathroom is low on Battery"
+        title: "Low Battery Warning"
+
+# sensor.netatmo_outdoormodule_battery
+- alias: "Battery Warning: Netatmo Outdoor low on Battery"
+  id: battery_warning_netatmo_outdoor
+  trigger:
+    - platform: state
+      entity_id: sensor.netatmo_outdoormodule_battery
+      to: "Low"
+  action:
+    - service: notify.html5
+      data:
+        message: "Netatmo Outdoor is low on Battery"
+        title: "Low Battery Warning"

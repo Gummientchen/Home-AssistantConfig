@@ -1,0 +1,6 @@
+# bedroom_humidity_rising:
+#   name: Humidity is rising in Bedroom
+#   entity_id: binary_sensor.bedroom_humidity_trend
+#   can_acknowledge: True
+#   notifiers:
+#     - steff_phone

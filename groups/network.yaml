@@ -1,0 +1,24 @@
+synology:
+  name: Synology NAS
+  entities:
+    - sensor.volume_used_volume_1
+    - sensor.status_volume_1
+    - sensor.average_disk_temp_volume_1
+    - sensor.maximum_disk_temp_volume_1
+    - sensor.cpu_load_total
+    - sensor.memory_usage_real
+
+hpilo:
+  name: SE001
+  entities:
+    - sensor.hp_ilo_cpu_temperature
+    - sensor.hp_ilo_inlet_temperature
+    - sensor.hp_ilo_cpu_fanspeed
+
+wan:
+  name: Upload/Download
+  entities:
+    - sensor.internet_speed_in
+    - sensor.internet_speed_out
+    - sensor.wan_traffic_in_mean
+    - sensor.wan_traffic_out_mean

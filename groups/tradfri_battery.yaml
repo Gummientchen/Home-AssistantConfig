@@ -1,0 +1,11 @@
+tradfri:
+  name: Tradfri Battery
+  entities:
+    - sensor.computer_lamp_remote
+    - sensor.tv_light_remote
+    - sensor.bathroom_remote
+    - sensor.remote_kitchen
+    - sensor.remote_nightstand
+    - sensor.remote_office_1
+    - sensor.tradfri_remote_control_2
+    - sensor.motion_outdoors

@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  planter_lamp_ontime:
+    friendly_name: "Planter Lamp Ontime"
+    unit_of_measurement: "h"
+    value_template: "{{ states('input_number.planter_lamp_ontime') | float | round(1) }}"

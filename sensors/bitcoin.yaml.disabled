@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "bitcoin/chf"
+name: Bitcoin CHF
+unit_of_measurement: CHF

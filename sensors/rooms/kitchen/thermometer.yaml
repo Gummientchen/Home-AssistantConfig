@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  kitchen_temperature:
+    friendly_name: "Kitchen Temperature"
+    unit_of_measurement: "°C"
+    value_template: "{{ states.climate.kitchenthermometer.attributes.current_temperature | float | round(1) }}"

@@ -1,0 +1,21 @@
+bedroom:
+  name: Bedroom
+  entities:
+    - group.bedroomMain
+    - light.bedroom_nightstand
+    - light.bedroom_2
+    - light.bedroom_4
+    - switch.bedroom_fan
+    - switch.bedroom_alarmclock
+    - sensor.netatmo_bedroom_temperature
+    - sensor.netatmo_bedroom_humidity
+    - sensor.netatmo_bedroom_co2
+    - sensor.netatmo_bedroom_noise
+    - binary_sensor.bedroomdoor_state
+    - binary_sensor.bedroomwindow_state
+
+bedroomMain:
+  name: Bedroom Main
+  entities:
+    - light.bedroom_2
+    - light.bedroom_4

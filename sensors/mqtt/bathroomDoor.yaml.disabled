@@ -1,0 +1,4 @@
+platform: mqtt
+name: "Bathroom Door"
+state_topic: "MK-SmartHouse/sensor/BathroomDoor"
+qos: 1

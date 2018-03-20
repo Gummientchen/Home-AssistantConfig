@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "snow/axalp/status"
+name: Snow Status

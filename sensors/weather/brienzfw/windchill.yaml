@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/brienzfw/temperature/feelslike"
+name: Temperature Brienz Windchill
+unit_of_measurement: °C

@@ -1,0 +1,10 @@
+high_humidity:
+  name: Humidity is High
+  entity_id: binary_sensor.bathroom_humidity_high
+  repeat:
+    - 30
+    - 60
+    - 120
+  can_acknowledge: True
+  notifiers:
+    - steff_phone

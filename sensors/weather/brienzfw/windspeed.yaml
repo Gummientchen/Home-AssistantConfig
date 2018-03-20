@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/brienzfw/wind/speed"
+name: Windspeed Brienz
+unit_of_measurement: m/s

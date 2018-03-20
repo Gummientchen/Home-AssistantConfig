@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/brienzwiler/abfluss/last"
+name: Aare Brienzwiler Discharge
+unit_of_measurement: m3/s

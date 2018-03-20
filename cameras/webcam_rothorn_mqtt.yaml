@@ -1,0 +1,3 @@
+platform: mqtt
+topic: webcam/rothorn/last
+name: Webcam Rothorn

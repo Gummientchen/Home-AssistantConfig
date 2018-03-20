@@ -1,0 +1,5 @@
+steffPhone:
+  name: Steff Phone
+  entities:
+    - sensor.phonebattery
+    - sensor.phoneuptime

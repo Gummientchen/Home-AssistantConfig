@@ -1,0 +1,5 @@
+platform: template
+sensors:
+  bathroom_humidity_high:
+    value_template: '{%if float(states.sensor.netatmo_bathroom_humidity.state) > 65 %}True{%- else %}False{%- endif %}'
+    friendly_name: 'Bathroom Humidity High Sensor'

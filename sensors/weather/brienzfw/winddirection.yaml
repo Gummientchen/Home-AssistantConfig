@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "weather/brienzfw/wind/direction"
+name: Wind Direction Brienz

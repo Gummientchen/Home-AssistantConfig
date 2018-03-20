@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/brienzwiler/temperatur/last"
+name: Aare Brienzwiler Temperature
+unit_of_measurement: °C

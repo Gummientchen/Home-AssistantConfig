@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/ringgenberg/temperatur/last"
+name: Aare Ringgenberg Temperature
+unit_of_measurement: °C

@@ -1,0 +1,14 @@
+- platform: group
+  name: TV Lights
+  entities:
+    - light.living_room_under_couch
+    - light.tv_light
+    - light.livingroom_plant
+
+- platform: group
+  name: Living Room Normal Lights
+  entities:
+    - light.living_room_under_couch
+    - light.tv_light
+    - light.livingroom_plant
+    - light.living_room_ceiling_lamp

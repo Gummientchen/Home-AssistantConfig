@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/brienzfw/temperature/now"
+name: Temperature Brienz
+unit_of_measurement: °C

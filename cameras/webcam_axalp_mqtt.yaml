@@ -1,0 +1,3 @@
+platform: mqtt
+topic: webcam/axalp/last
+name: Webcam Axalp

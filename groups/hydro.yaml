@@ -1,0 +1,15 @@
+hydroRinggenberg:
+  name: Ringgenberg
+  entities:
+    - sensor.aare_ringgenberg_discharge
+    - sensor.aare_ringgenberg_waterlevel
+    - sensor.aare_ringgenberg_temperature
+    - sensor.aare_ringgenberg_danger_level
+
+hydroBrienzwiler:
+  name: Brienzwiler
+  entities:
+    - sensor.aare_brienzwiler_discharge
+    - sensor.aare_brienzwiler_waterlevel
+    - sensor.aare_brienzwiler_temperature
+    - sensor.aare_brienzwiler_danger_level

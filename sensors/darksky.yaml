@@ -1,0 +1,10 @@
+platform: darksky
+api_key: !secret darksky_api_key
+monitored_conditions:
+  - wind_speed
+  - wind_bearing
+  - cloud_cover
+  - visibility
+  - ozone
+  - temperature_max
+  - temperature_min

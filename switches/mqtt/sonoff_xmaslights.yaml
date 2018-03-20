@@ -1,0 +1,8 @@
+platform: mqtt
+name: "Xmas Lights"
+command_topic: "cmnd/xmaslights/power"
+state_topic: "stat/xmaslights/POWER"
+qos: 1
+payload_on: "ON"
+payload_off: "OFF"
+retain: true

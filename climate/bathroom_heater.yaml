@@ -1,0 +1,16 @@
+# platform: netatmo
+# relay: Relay
+# thermostat:
+#   - Thermostat
+
+platform: generic_thermostat
+name: Bathroom
+heater: switch.bathroom_heater
+target_sensor: sensor.bathroom_temperature
+min_temp: 10
+max_temp: 30
+min_cycle_duration:
+  seconds: 30
+cold_tolerance: 0.2
+hot_tolerance: 0
+away_temp: 18

@@ -1,0 +1,5 @@
+platform: command_line
+switches:
+  youtube_open:
+    command_on: "/usr/bin/curl -X GET http://192.168.1.81:8080/youtube/open"
+    friendly_name: YouTube Open

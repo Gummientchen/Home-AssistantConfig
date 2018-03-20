@@ -1,0 +1,8 @@
+- platform: group
+  name: Bedroom Lights
+  entities:
+    - light.bedroom
+    - light.bedroom_2
+    - light.bedroom_3
+    - light.bedroom_4
+    - light.bedroom_nightstand

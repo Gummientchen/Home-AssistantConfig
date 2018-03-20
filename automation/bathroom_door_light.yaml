@@ -1,0 +1,10 @@
+# - alias: Bathroom Lights ON when entering
+#   id: bathroom_lights_on_when_entering
+#   trigger:
+#     - platform: state
+#       entity_id: binary_sensor.bathroomdoor_state
+#       from: 'off'
+#       to: 'on'
+#   action:
+#     - service: light.turn_on
+#       entity_id: group.bathroom_ceiling

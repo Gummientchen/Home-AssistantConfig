@@ -1,0 +1,16 @@
+tv_lights_on:
+  name: TV Lights ON
+  entities:
+    - light.living_room_under_couch
+    - light.tv_light_bulb
+
+tv_lights_off:
+  name: TV Lights OFF
+  entities:
+    - group.bathroom
+    - group.bedroom
+    - group.kitchen
+    - group.office
+    - light.computer_lamp
+    - group.livingroomlightscouch
+    - light.living_room_ceiling_lamp

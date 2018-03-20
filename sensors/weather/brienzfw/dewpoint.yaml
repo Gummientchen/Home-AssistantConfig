@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/brienzfw/temperature/dewpoint"
+name: Temperature Brienz Dewpoint
+unit_of_measurement: °C

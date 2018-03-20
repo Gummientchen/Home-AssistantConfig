@@ -1,0 +1,26 @@
+- alias: "Planter Lamp ontime"
+  id: planter_lamp_ontime
+  trigger:
+    - platform: time
+      minutes: "/6"
+      seconds: 00
+  condition:
+    condition: state
+    entity_id: switch.ikea_planter
+    state: "on"
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.planter_lamp_ontime
+        value: "{{ states('input_number.planter_lamp_ontime') | float + 0.1 }}"
+
+- alias: "Planter Lamp ontime reset"
+  id: planter_lamp_ontime_reset
+  trigger:
+    - platform: time
+      at: "00:00:01"
+  action:
+    - service: input_number.set_value
+      data:
+        entity_id: input_number.planter_lamp_ontime
+        value: 0

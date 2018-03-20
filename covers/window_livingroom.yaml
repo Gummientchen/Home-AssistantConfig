@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Window Blinds Livingroom"
+set_position_topic: "dev/arduino/cover01/position"
+state_topic: "dev/arduino/cover01/state"
+command_topic: "dev/arduino/cover01/command"

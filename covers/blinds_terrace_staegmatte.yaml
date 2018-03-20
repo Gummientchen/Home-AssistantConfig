@@ -1,0 +1,6 @@
+platform: mqtt
+name: "Blinds Terrace Stägmatte"
+command_topic: "recode/arduino/blindsterrace01/command"
+payload_open: "DOWN"
+payload_close: "UP"
+payload_stop: "STOP"

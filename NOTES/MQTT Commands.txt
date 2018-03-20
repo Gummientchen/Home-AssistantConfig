@@ -1,0 +1,30 @@
+sudo nano /etc/mosquitto/conf.d/default.conf
+
+sudo certbot certonly --standalone --standalone-supported-challenges http-01 -d steff999.synology.me
+
+sudo mosquitto_passwd /etc/mosquitto/passwd homeassistant
+sudo mosquitto_passwd -c /etc/mosquitto/passwd phone
+
+mosquitto_sub -h localhost -t stat/sonoff/POWER -u "homeassistant" -P "75IcDKHqKo07oUiqPmpN"
+mosquitto_pub -h localhost -t "cmnd/sonoff/power" -m "ON" -u "homeassistant" -P "75IcDKHqKo07oUiqPmpN"
+
+
+listener 1883
+
+listener 8883
+certfile /etc/letsencrypt/live/steff999.synology.me/cert.pem
+cafile /etc/letsencrypt/live/steff999.synology.me/chain.pem
+keyfile /etc/letsencrypt/live/steff999.synology.me/privkey.pem
+listener 8083
+protocol websockets
+certfile /etc/letsencrypt/live/steff999.synology.me/cert.pem
+cafile /etc/letsencrypt/live/steff999.synology.me/chain.pem
+keyfile /etc/letsencrypt/live/steff999.synology.me/privkey.pem
+
+mosquitto_pub -h steff999.synology.me -t test -m "hello again" -p 8883 --capath /etc/ssl/certs/ -u "homeassistant" -P "75IcDKHqKo07oUiqPmpN"
+
+sudo systemctl restart mosquitto
+
+mosquitto_sub -h localhost -t owntracks/phone/phone -u "homeassistant" -P "75IcDKHqKo07oUiqPmpN"
+
+sudo openssl x509 -noout -fingerprint -sha1 -inform pem -in /etc/letsencrypt/live/steff999.synology.me/cert.pem | sed -e 's/:/ /g'

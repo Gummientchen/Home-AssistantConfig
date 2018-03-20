@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  windchill_temperature:
+    friendly_name: "Windchill"
+    unit_of_measurement: "°C"
+    value_template: "{{ (13.12 + 0.6215 * float(states.sensor.netatmo_outdoormodule_temperature.state) - 11.37 * ((float(states.sensor.windspeed_brienz.state)*3.6)**0.16) + 0.3965 * float(states.sensor.netatmo_outdoormodule_temperature.state) * ((float(states.sensor.windspeed_brienz.state)*3.6)**0.16)) | round(1) }}"

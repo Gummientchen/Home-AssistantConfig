@@ -1,0 +1,7 @@
+tv_light:
+  alias: TV
+  sequence:
+    - service: light.turn_off
+      entity_id: group.tv_lights_off
+    - service: light.turn_on
+      entity_id: group.tv_lights_on

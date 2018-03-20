@@ -1,0 +1,49 @@
+netatmostatus:
+  name: Netatmo
+  entities:
+    - sensor.netatmo_bedroom_wifi
+    - sensor.netatmo_office_battery
+    - sensor.netatmo_office_radio
+    - sensor.netatmo_outdoormodule_battery
+    - sensor.netatmo_outdoormodule_radio
+
+climate:
+  name: Climate
+  entities:
+    - climate.thermostat
+    - sensor.netatmo_bedroom_temperature
+    - climate.bathroom
+    - sensor.netatmo_office_temperature
+    - sensor.kitchen_temperature
+    - sensor.netatmo_outdoormodule_temperature
+
+fwbrienz_climate:
+  name: Brienz Weather
+  entities:
+    - sensor.temperature_brienz
+    - sensor.temperature_brienz_dewpoint
+    - sensor.temperature_brienz_windchill
+    - sensor.windspeed_brienz
+    - sensor.windspeed_brienz_guests
+    - sensor.wind_direction_brienz
+    - sensor.rain_today_brienz
+
+axalp_snow:
+  name: Axalp Weather / Snow
+  entities:
+    - sensor.axalp_temperature
+    - sensor.axalp_humidity
+    - sensor.axalp_pressure
+    - sensor.snow_height
+    - sensor.snow_status
+    - sensor.snowfall_24h
+    - sensor.last_snowfall
+    - sensor.lifts_open
+    - sensor.pistes_open
+
+thun_air:
+  name: Thun Luftqualität
+  entities:
+    - sensor.feinstaub_pm10_thun
+    - sensor.ozon_o3_thun
+    - sensor.stickstoffdioxid_no2_thun

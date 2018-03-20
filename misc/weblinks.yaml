@@ -1,0 +1,7 @@
+entities:
+  - name: Netatmo Security
+    url: https://my.netatmo.com/app/security
+  - name: Netatmo Energy
+    url: https://my.netatmo.com/app/energy
+  - name: Netatmo Weather
+    url: https://my.netatmo.com/app/weather
