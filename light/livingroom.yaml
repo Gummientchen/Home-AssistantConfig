@@ -12,3 +12,11 @@
     - light.tv_light
     - light.livingroom_plant
     - light.living_room_ceiling_lamp
+
+- platform: group
+  name: Gaming Lights
+  entities:
+    - light.living_room_under_couch
+    - light.tv_light
+    - light.livingroom_plant
+    - light.computer_lamp
