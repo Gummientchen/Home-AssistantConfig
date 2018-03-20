@@ -4,12 +4,14 @@ This is my Home Assistant configuration for a small appartment with 4 rooms.
 
 # Included systems
 - DarkSky Weather
+- Floorplan
 - Google Messasing API HTML5
 - Homematic CCU2
 - HP iLO
 - IKEA Tradfri
 - LaMetric
 - Mosquitto MQTT
+- MyStrom
 - Netatmo
 - OpenWeatherMap
 - Philips Hue
