@@ -1,0 +1,16 @@
+- alias: "Coming Home: Bedroom Fan off"
+  id: coming_home_bedroom_fan_off
+  trigger:
+    platform: state
+    entity_id: device_tracker.404e36855fdd
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.bedroom_fan

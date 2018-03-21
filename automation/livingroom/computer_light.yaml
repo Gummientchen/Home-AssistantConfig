@@ -1,0 +1,29 @@
+- alias: Computer turned ON
+  id: computer_turned_on
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.steff_pc_status
+      from: 'off'
+      to: 'on'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.computer_lamp
+
+- alias: Computer turned OFF
+  id: computer_turned_on
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.steff_pc_status
+      from: 'on'
+      to: 'off'
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 30
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - light.computer_lamp

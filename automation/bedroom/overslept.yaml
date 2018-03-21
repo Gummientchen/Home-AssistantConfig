@@ -1,0 +1,53 @@
+- alias: "Oversleeping"
+  id: bedroom_oversleeping
+  trigger:
+    - platform: time
+      at: "07:30:00"
+  condition:
+    - condition: state
+      entity_id: device_tracker.404e36855fdd
+      state: 'home'
+    - condition: state
+      entity_id: input_boolean.holidays
+      state: 'off'
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: binary_sensor.bedroomdoor_state
+      state: 'off'
+      for:
+        hours: 1
+        minutes: 0
+        seconds: 0
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.bedroom_fan
+    - service: light.turn_on
+      entity_id:
+        - light.bedroom_nightstand
+        - light.bedroom_4
+        - light.bedroom_2
+      data:
+        kelvin: 5000
+        brightness: 255
+    - service: notify.html5
+      data:
+        message: "YOU ARE OVERSLEEPING!!!"
+        title: "Alarmclock"
+        data:
+          tag: "alarmclock"
+    - delay: 0:30:00
+    - service: light.turn_on
+      entity_id:
+        - light.bedroom_nightstand
+        - light.bedroom_4
+        - light.bedroom_2
+      data:
+        kelvin: 2200

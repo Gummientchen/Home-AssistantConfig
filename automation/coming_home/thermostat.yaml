@@ -1,0 +1,20 @@
+- alias: "Coming Home: Change Thermostats"
+  id: coming_home_change_thermostats
+  trigger:
+    platform: state
+    entity_id: device_tracker.404e36855fdd
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 10
+  action:
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.thermostat
+        away_mode: false
+    - service: climate.set_away_mode
+      data:
+        entity_id: climate.bathroom
+        away_mode: false
