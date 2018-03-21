@@ -1,0 +1,20 @@
+- alias: "Coming Home: TV Lights"
+  id: coming_home_tv_lights
+  trigger:
+    platform: state
+    entity_id: device_tracker.404e36855fdd
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
+  condition:
+    - condition: sun
+      after: sunset
+      after_offset: "-0:30:00"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - group.tv_lights_on

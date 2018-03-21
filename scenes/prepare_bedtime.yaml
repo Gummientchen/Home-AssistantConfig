@@ -1,0 +1,12 @@
+- name: Prepare Bedtime
+  entities:
+    light.bedroom_nightstand:
+      state: on
+      brightness: 128
+      kelvin: 2200
+      transition: 10
+    light.bedroom_4:
+      state: on
+      brightness: 128
+      kelvin: 2200
+      transition: 10
