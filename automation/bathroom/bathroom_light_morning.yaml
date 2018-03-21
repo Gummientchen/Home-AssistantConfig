@@ -1,0 +1,50 @@
+- alias: Bathroom Lights ON in the morning Weekday
+  id: bathroom_lights_on_in_the_morning_weekday
+  trigger:
+    - platform: time
+      at: '07:15:00'
+  condition:
+    - condition: state
+      entity_id: device_tracker.404e36855fdd
+      state: 'home'
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: light.turn_on
+      entity_id: group.bathroom_ceiling
+
+- alias: Bathroom Lights OFF in the morning Weekday
+  id: bathroom_lights_off_in_the_morning_weekday
+  trigger:
+    - platform: time
+      at: '08:30:00'
+  condition:
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+    - condition: state
+      entity_id: binary_sensor.bathroomdoor_state
+      state: 'off'
+      for:
+        hours: 0
+        minutes: 30
+        seconds: 0
+    - condition: state
+      entity_id: binary_sensor.bedroomdoor_state
+      state: 'off'
+      for:
+        hours: 2
+        minutes: 0
+        seconds: 0
+  action:
+    - service: light.turn_off
+      entity_id: group.bathroom_ceiling

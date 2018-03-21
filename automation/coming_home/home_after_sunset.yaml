@@ -1,0 +1,28 @@
+- alias: "Coming Home: After Sunset"
+  id: coming_home_after_sunset
+  trigger:
+    platform: state
+    entity_id: device_tracker.404e36855fdd
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 1
+  condition:
+    - condition: sun
+      after: sunset
+      after_offset: "-0:15:00"
+  action:
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.tv_lights
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.outdoor_1
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.kitchen_2

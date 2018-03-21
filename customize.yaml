@@ -435,3 +435,5 @@ homematic.ccu2:
   hidden: true
 binary_sensor.roomba_bin:
   device_class: problem
+device_tracker.harmonyhub:
+  hidden: true
