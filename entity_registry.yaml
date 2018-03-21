@@ -1,39 +1,56 @@
 light.living_room_4:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:49:c4:d2-0b
 light.bedroom_2:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:fb:c6:e8-0b
 light.bedroom_4:
+  name:
   platform: hue
   unique_id: 00:17:88:01:01:1e:4d:2b-0b
 light.living_room_ceiling_lamp:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:44:81:ac-0b
 light.kitchen_1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:ec:a0:0b-0b
 light.livingroom_plant:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:ca:51:02-0b
 light.living_room_1:
+  name:
   platform: hue
   unique_id: 00:17:88:01:00:fb:c7:32-0b
 light.living_room_under_couch:
+  name:
   platform: hue
   unique_id: 00:17:88:01:02:16:d7:bf-0b
 media_player.shield:
+  name:
   platform: cast
   unique_id: dd13af82-290c-a8e8-07a3-a1b8fab640f3
 media_player.home_group:
+  name:
   platform: cast
   unique_id: 0c8dafcb-fc29-4392-b86a-a86c34b94e37
 media_player.bathroom:
+  name:
   platform: cast
   unique_id: 7bd4a25a-9e14-d2b6-40ed-e1f8564c5741
 media_player.home:
+  name:
   platform: cast
   unique_id: 3ec5367b-f6dc-4e4e-9590-aa3294597228
 media_player.living_room_home:
+  name:
   platform: cast
   unique_id: 2f77e4d2-9319-7ee9-9367-0e1f4307f3d5
+media_player.kd55x8505c:
+  name:
+  platform: cast
+  unique_id: 067c2016-28b0-00e7-845b-d6c8749cab26
