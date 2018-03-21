@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "dev/power/gemeinde"
+name: Power Gemeinde
+value_template: '{{ value_json.Data[0].data[0][1] }}'
+unit_of_measurement: "V"
