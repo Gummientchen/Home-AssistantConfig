@@ -1,0 +1,57 @@
+- alias: "Bedroom: Go to bed"
+  id: bedroom_go_to_bed
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroomdoor_state
+      from: 'on'
+      to: 'off'
+  condition:
+    - condition: state
+      entity_id: device_tracker.404e36855fdd
+      state: 'home'
+    - condition: time
+      after: '23:00:00'
+      before: '07:00:00'
+  action:
+    - service: light.turn_on
+      entity_id:
+        - light.living_room_under_couch
+      data:
+        brightness: 255
+    - service: light.turn_on
+      entity_id:
+        - light.bathroom
+      data:
+        brightness: 255
+    - service: scene.turn_on
+      entity_id: scene.prepare_bedtime
+
+- alias: "Bedroom: Go to Toilet"
+  id: bedroom_go_to_toilet
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroomdoor_state
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: state
+      entity_id: device_tracker.404e36855fdd
+      state: 'home'
+    - condition: time
+      after: '23:00:00'
+      before: '07:00:00'
+  action:
+    - service: switch.turn_off
+      entity_id:
+        - switch.ikea_planter
+    - service: light.turn_on
+      entity_id:
+        - light.living_room_under_couch
+      data:
+        brightness: 50
+    - delay: '00:00:02'
+    - service: light.turn_on
+      entity_id:
+        - light.bathroom
+      data:
+        brightness: 50
