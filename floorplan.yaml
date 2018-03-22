@@ -121,6 +121,16 @@
               class: 'window-open'
             - state: 'off'
               class: 'window-closed'
+
+        - name: Devices
+          entities:
+            - binary_sensor.sony_tv_status
+            - binary_sensor.steff_pc_status
+          states:
+            - state: 'on'
+              class: 'device-on'
+            - state: 'off'
+              class: 'device-off'
           # state_transitions:
           #   - name: On to off
           #     from_state: 'OPEN'
