@@ -1,3 +1,39 @@
+- name: TV Lights Day
+  entities:
+    light.living_room_under_couch:
+      state: on
+      brightness: 255
+      kelvin: 2200
+      transition: 10
+    light.tv_light_bulb:
+      state: on
+      brightness: 255
+      kelvin: 2200
+      transition: 2
+    group.bathroom: off
+    group.kitchen: off
+    light.computer_lamp: off
+    group.livingroomlightscouch: off
+    light.living_room_ceiling_lamp: off
+
+- name: TV Lights Night
+  entities:
+    light.living_room_under_couch:
+      state: on
+      brightness: 200
+      kelvin: 2200
+      transition: 10
+    light.tv_light_bulb:
+      state: on
+      brightness: 200
+      kelvin: 2200
+      transition: 2
+    group.bathroom: off
+    group.kitchen: off
+    light.computer_lamp: off
+    group.livingroomlightscouch: off
+    light.living_room_ceiling_lamp: off
+
 - name: Gaming Day
   entities:
     light.living_room_under_couch:
