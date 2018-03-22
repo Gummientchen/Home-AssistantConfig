@@ -265,6 +265,11 @@ homematic:
 tradfri:
   host: !secret tradfri_host
 
+# Philips Hue
+hue:
+  bridges:
+    - host: 192.168.1.64
+
 # History Graph Test
 history_graph:
   synology_nas:

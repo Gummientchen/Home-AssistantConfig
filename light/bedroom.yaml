@@ -6,3 +6,9 @@
     - light.bedroom_3
     - light.bedroom_4
     - light.bedroom_nightstand
+
+- platform: group
+  name: Bedroom YouTube
+  entities:
+    - light.bedroom_nightstand
+    - light.bedroom_4
