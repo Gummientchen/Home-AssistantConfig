@@ -1,0 +1,19 @@
+tv_remote_volume_up:
+  alias: Volume Up
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457724
+        command: VolumeUp
+        delay_secs: 0.25
+
+tv_remote_volume_down:
+  alias: Volume Down
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457724
+        command: VolumeDown
+        delay_secs: 0.25
