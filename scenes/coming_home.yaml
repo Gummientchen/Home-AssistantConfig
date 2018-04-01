@@ -1,4 +1,4 @@
-- name: TV Lights Day
+- name: Coming Home Day
   entities:
     light.living_room_under_couch:
       state: on
@@ -10,26 +10,28 @@
       brightness: 255
       kelvin: 2200
       transition: 2
-    group.bathroom: off
-    group.kitchen: off
-    light.computer_lamp: off
-    group.livingroomlightscouch: off
-    light.living_room_ceiling_lamp: off
+    light.living_room_ceiling_lamp:
+      state: on
+      brightness: 255
+      kelvin: 2700
+      transition: 1
+    light.kitchen_2:
+      state: on
 
-- name: TV Lights Night
+- name: Coming Home Night
   entities:
     light.living_room_under_couch:
       state: on
-      brightness: 200
+      brightness: 128
       kelvin: 2200
       transition: 10
     light.tv_light_bulb:
       state: on
-      brightness: 200
+      brightness: 255
       kelvin: 2200
       transition: 2
-    group.bathroom: off
-    group.kitchen: off
-    light.computer_lamp: off
-    group.livingroomlightscouch: off
+    light.kitchen_2:
+      state: on
+      brightness: 255
+      kelvin: 2200
     light.living_room_ceiling_lamp: off

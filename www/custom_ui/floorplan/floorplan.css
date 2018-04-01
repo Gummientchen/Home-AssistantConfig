@@ -292,3 +292,14 @@ svg, svg * {
   transition: fill 0.5s, transform 1s;
   transform-box: fill-box;
 }
+
+/* Devices */
+.device-off{
+  fill: #BB1815 !important;
+  transition: fill 0.5s;
+}
+
+.device-on{
+  fill: #04a600 !important;
+  transition: fill 0.5s;
+}

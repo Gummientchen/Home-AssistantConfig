@@ -17,3 +17,21 @@ tv_remote_volume_down:
         device: 53457724
         command: VolumeDown
         delay_secs: 0.25
+
+pause_tv:
+  alias: Pause TV
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: Pause
+
+unpause_tv:
+  alias: Unpause TV
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: Play

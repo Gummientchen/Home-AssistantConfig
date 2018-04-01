@@ -1,0 +1,79 @@
+- name: Prepare Bedtime
+  entities:
+    light.bedroom_nightstand:
+      state: on
+      brightness: 128
+      kelvin: 2200
+      transition: 2
+    light.bedroom_4:
+      state: on
+      brightness: 64
+      kelvin: 1500
+      transition: 2
+    #light.bedroom: off
+    light.bedroom_2: off
+    light.bathroom: off
+    light.kitchen_lights: off
+    light.living_room: off
+    light.living_room_ceiling_lamp: off
+    light.living_room_couch: off
+    light.living_room_normal_lights: off
+    light.living_room_under_couch: off
+    light.livingroom_plant: off
+    light.computer_lamp: off
+    light.office: off
+    light.office_ceiling: off
+    light.tv_light: off
+    light.tv_lights: off
+    switch.ikea_planter: on
+
+- name: Sleep
+  entities:
+    light.bedroom_nightstand: off
+    light.bedroom_4: off
+    light.bedroom_2: off
+    light.bathroom: off
+    light.kitchen_lights: off
+    light.living_room: off
+    light.living_room_ceiling_lamp: off
+    light.living_room_couch: off
+    light.living_room_normal_lights: off
+    light.living_room_under_couch: off
+    light.livingroom_plant: off
+    light.computer_lamp: off
+    light.office: off
+    light.office_ceiling: off
+    light.tv_light: off
+    light.tv_lights: off
+    switch.ikea_planter: on
+
+- name: Night Toilet
+  entities:
+    light.bedroom_nightstand:
+      state: on
+      brightness: 50
+      kelvin: 2200
+    light.bathroom:
+      state: on
+      brightness: 50
+      kelvin: 2200
+    light.living_room_under_couch:
+      state: on
+      brightness: 128
+      kelvin: 1500
+    light.kitchen_1:
+      state: on
+      brightness: 128
+      kelvin: 2200
+    switch.ikea_planter: off
+    light.bedroom_4: off
+    light.bedroom_2: off
+    light.living_room_ceiling_lamp: off
+    light.living_room_couch: off
+    light.living_room_normal_lights: off
+    light.livingroom_plant: off
+    light.computer_lamp: off
+    light.office: off
+    light.office_ceiling: off
+    light.tv_light: off
+    light.tv_lights: off
