@@ -1,0 +1,119 @@
+remote_volume_up:
+  alias: Volume Up
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457724
+        command: VolumeUp
+        delay_secs: 0.25
+
+remote_volume_down:
+  alias: Volume Down
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457724
+        command: VolumeDown
+        delay_secs: 0.25
+
+remote_volume_mute:
+  alias: Volume Mute
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457724
+        command: Mute
+        delay_secs: 0.25
+
+remote_pause:
+  alias: Pause
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: Pause
+
+remote_play:
+  alias: Play
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: Play
+
+remote_down:
+  alias: Down
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: DirectionDown
+
+remote_left:
+  alias: Left
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: DirectionLeft
+
+remote_right:
+  alias: Right
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: DirectionRight
+
+remote_up:
+  alias: Up
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: DirectionUp
+
+remote_back:
+  alias: Back
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: Back
+
+remote_return:
+  alias: Return
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: Return
+
+remote_home:
+  alias: Home
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: Home
+
+remote_select:
+  alias: Select
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457708
+        command: Select

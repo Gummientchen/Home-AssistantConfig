@@ -1,0 +1,5 @@
+platform: template
+friendly_name: Steff Phone Battery
+unit_of_measurement: '%'
+value_template: '{{ value_json.batt|round }}'
+icon_template: '{%if value_json.batt <= 5 %}mdi:battery-outline{%- elif value_json.batt >= 95 %}mdi:battery{% else %}mdi:battery-{{(value_json.batt|float / 10)|round*10}}{%- endif %}'

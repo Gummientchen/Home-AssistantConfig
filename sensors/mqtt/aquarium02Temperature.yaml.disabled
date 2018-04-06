@@ -1,5 +1,0 @@
-platform: mqtt
-name: "Aquarium Temperature 2"
-state_topic: "Aquarium02/Aquarium Temperature/Temperature"
-unit_of_measurement: "°C"
-qos: 1

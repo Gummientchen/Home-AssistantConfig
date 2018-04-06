@@ -1,0 +1,92 @@
+      name: TV Remote
+      image: /local/custom_ui/remote/remote.svg
+      stylesheet: /local/custom_ui/remote/remote.css
+      
+      # These options are optional
+      warnings:                  # enable warnings (to find out why things might ot be working correctly)
+      #pan_zoom:                  # enable experimental panning / zooming
+      # hide_app_toolbar:          # hide the application toolbar (when used as a custom panel)
+      date_format: DD-MM-YYYY   # Date format to use in hover-over text
+
+      groups:
+        - name: Power Button
+          entities:
+            - remote.harmony_hub
+          states:
+            - state: 'on'
+              class: 'power-on'
+          action:
+            domain: remote
+            service: toggle
+        - name: Remote Back
+          entities:
+            - script.remote_back
+          action:
+            domain: script
+            service: remote_back
+        - name: Remote Down
+          entities:
+            - script.remote_down
+          action:
+            domain: script
+            service: remote_down
+        - name: Remote Home
+          entities:
+            - script.remote_home
+          action:
+            domain: script
+            service: remote_home
+        - name: Remote Left
+          entities:
+            - script.remote_left
+          action:
+            domain: script
+            service: remote_left
+        - name: Remote Pause
+          entities:
+            - script.remote_pause
+          action:
+            domain: script
+            service: remote_pause
+        - name: Remote Play
+          entities:
+            - script.remote_play
+          action:
+            domain: script
+            service: remote_play
+        - name: Remote Right
+          entities:
+            - script.remote_right
+          action:
+            domain: script
+            service: remote_right
+        - name: Remote Select
+          entities:
+            - script.remote_select
+          action:
+            domain: script
+            service: remote_select
+        - name: Remote Up
+          entities:
+            - script.remote_up
+          action:
+            domain: script
+            service: remote_up
+        - name: Remote Volume Down
+          entities:
+            - script.remote_volume_down
+          action:
+            domain: script
+            service: remote_volume_down
+        - name: Remote Volume Up
+          entities:
+            - script.remote_volume_up
+          action:
+            domain: script
+            service: remote_volume_up
+        - name: Remote Volume Mute
+          entities:
+            - script.remote_volume_mute
+          action:
+            domain: script
+            service: remote_volume_mute

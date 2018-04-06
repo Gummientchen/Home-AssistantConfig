@@ -1,3 +1,5 @@
+extra_html_url:
+  - /local/custom_ui/state-card-remote.html
 javascript_version: latest
 themes:
   darkorange:
