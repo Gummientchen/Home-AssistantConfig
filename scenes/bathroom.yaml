@@ -1,0 +1,7 @@
+- name: Walk to Bathroom ON
+  entities:
+    script.walk_to_bathroom: on
+
+- name: Walk to Bathroom OFF
+  entities:
+    script.walk_to_bathroom_off: on

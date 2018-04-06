@@ -1,0 +1,67 @@
+purge_interval: 2
+purge_keep_days: 30
+include:
+  domains:
+    - switch
+    - light
+    - sensor
+    - climate
+    - binary_sensor
+    - cover
+    - device_tracker
+    - fan
+    - input_number
+    - vacuum
+    - weather
+exclude:
+  domains:
+    - automation
+    - weblink
+    - updater
+    - group
+    - media_player
+    - script
+    - zone
+  entities:
+    - camera.entrance
+    - camera.prusa_i3_mk3
+    - camera.webcam_axalp
+    - camera.webcam_axalp_2
+    - camera.webcam_bonigen
+    - camera.webcam_brienz
+    - camera.webcam_rothorn
+    - binary_sensor.octoprint_printing_error
+    - binary_sensor.octoprint_printing
+    - device_tracker.000136e0585a
+    - device_tracker.0024e461383c
+    - device_tracker.0403d604ab3d
+    - device_tracker.2c3ae80ab90a
+    - device_tracker.2c3ae80abff3
+    - device_tracker.2c3ae82eaed8
+    - device_tracker.404e36855fdd
+    - device_tracker.5ccf7f5784d4
+    - device_tracker.5ccf7f5784d5
+    - device_tracker.60f1898d5629
+    - device_tracker.64002d0505fa
+    - device_tracker.64002d0506e4
+    - device_tracker.64002d05071e
+    - device_tracker.663138306433
+    - device_tracker.68c63a841d90
+    - device_tracker.68c63a88ab7c
+    - device_tracker.70ee5021e7fd
+    - device_tracker.7cdd90a9c560
+    - device_tracker.9cb6d0ed85ff
+    - device_tracker.a8a7957f52e5
+    - device_tracker.ac37434ec688
+    - device_tracker.acafb9f4eece
+    - device_tracker.acafb9f4eee4
+    - device_tracker.b827ebee78df
+    - device_tracker.c48e8ff63ad1
+    - device_tracker.esp_88a9c3
+    - device_tracker.mystromswitch78d2ec
+    - device_tracker.nintendo_3ds
+    - device_tracker.octopi
+    - device_tracker.roomba3144460030928590
+    - sun.sun
+    - switch.fluxer
+    - timer.bathroom_heater

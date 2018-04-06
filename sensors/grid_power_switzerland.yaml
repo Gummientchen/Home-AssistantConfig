@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "grid/powerusage/ch"
+name: Power Usage Switzerland
+unit_of_measurement: "W"

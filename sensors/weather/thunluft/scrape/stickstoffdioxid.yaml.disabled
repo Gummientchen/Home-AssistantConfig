@@ -1,0 +1,6 @@
+platform: scrape
+resource: http://www.netzfrequenzmessung.de/frequenz9.php
+name: Release
+# name: "Stickstoffdioxid (NO₂) Thun (scrape)"
+select: 'r > f'
+unit_of_measurement: "Hz"
