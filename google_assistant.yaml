@@ -113,3 +113,9 @@ entity_config:
       - Bathroom Heater
     expose: true
     room: Bathroom
+  light.living_room_lights:
+    name: Livingroom All Lights
+    aliases:
+      - Livingroom All Lights
+    expose: true
+    room: Living Room
