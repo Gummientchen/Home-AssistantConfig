@@ -50,12 +50,6 @@ hardware:
     - group.netatmostatus
     - group.tradfri
 
-remote:
-  view: yes
-  name: Remote
-  entities:
-    - binary_sensor.remote
-
 # entertainment:
 #   view: yes
 #   name: Entertainment
