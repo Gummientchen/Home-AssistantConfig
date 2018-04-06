@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: dummy/remote/sensor
+name: Remote
