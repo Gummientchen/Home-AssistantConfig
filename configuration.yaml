@@ -19,80 +19,7 @@ logger:
   default: error
 
 # Enables the frontend
-frontend:
-  javascript_version: latest
-  themes:
-    darkorange:
-      primary-color: "#ff9800"
-      light-primary-color: "#ffc947"
-      dark-primary-color: "#c66900"
-      text-primary-color: "#ffffff"
-      primary-background-color: "#37464f"
-      sidebar-text_-_background: "#62717b"
-      paper-card-background-color: "#263137"
-      paper-card-header-color: "var(--text-primary-color)"
-      secondary-background-color: "var(--primary-background-color)"
-      primary-text-color: "var(--text-primary-color)"
-      secondary-text-color: "var(--primary-color)"
-      paper-listbox-background-color: "var(--sidebar-text_-_background)"
-      paper-toggle-button-checked-ink-color: "var(--dark-primary-color)"
-      paper-toggle-button-checked-button-color: "var(--dark-primary-color)"
-      paper-toggle-button-checked-bar-color: "var(--dark-primary-color)"
-      paper-slider-knob-color: "var(--primary-color)"
-      paper-slider-knob-start-color: "var(--primary-color)"
-      paper-slider-pin-color: "var(--primary-color)"
-      paper-slider-active-color: "var(--primary-color)"
-      paper-slider-secondary-color: "var(--light-primary-color)"
-      paper-slider-container-color: "var(--sidebar-text_-_background)"
-      paper-progress-secondary-color: "var(--sidebar-text_-_background)"
-      paper-item-selected_-_background-color: "var(--primary-color)"
-      paper-item-icon_-_color: "var(--text-primary-color)"
-      paper-item-icon-color: "var(--sidebar-text_-_background)"
-      paper-item-icon-active-color: "var(--primary-color)"
-      paper-grey-50: "var(--sidebar-text_-_background)"
-      paper-grey-200: "var(--primary-background-color)"
-      label-badge-background-color: "var(--sidebar-text_-_background)"
-      label-badge-text-color: "var(--text-primary-color)"
-      label-badge-red: "var(--primary-color)"
-      label-badge-blue: "var(--light-primary-color)"
-      label-badge-green: "var(--dark-primary-color)"
-      label-badge-yellow: "var(--text-primary-color)"
-      label-badge-grey: "var(--paper-grey-500)"
-      table-row-background-color: "var(--paper-card-background-color)"
-      table-row-alternative-background-color: "var(--sidebar-text_-_background)"
-    darkred:
-    # Main colors that can be changed
-      dark-primary-color: "#c66900"
-      disabled-text-color: "#545454"
-      divider-color: "rgba(255, 255, 255, 0.12)"
-      light-primary-color: "#e06c6c"
-      paper-card-background-color: "#1d1d1d"
-      paper-grey-200: "#191919"
-      paper-item-icon-color: "#d3d3d3"
-      paper-listbox-background-color: "#202020"
-      primary-background-color: "#303030"
-      primary-color: "#d32f2f"
-      primary-text-color: "#cfcfcf"
-      secondary-background-color: "#131313"
-      sidebar-text_-_background: "#62717b"
-    # Colors based on variables, see above
-      paper-card-header-color: "var(--paper-item-icon-color)"
-      paper-item-icon-active-color: "var(--primary-color)"
-      paper-item-icon_-_color: "var(--primary-text-color)"
-      paper-listbox-color: "var(--primary-text-color)"
-      paper-grey-50: "var(--primary-text-color)"
-      paper-slider-active-color: "var(--primary-color)"
-      paper-slider-knob-color: "var(--primary-color)"
-      paper-slider-knob-start-color: "var(--primary-color)"
-      paper-slider-pin-color: "var(--primary-color)"
-      paper-slider-secondary-color: "var(--light-primary-color)"
-      paper-toggle-button-checked-ink-color: "var(--dark-primary-color)"
-      paper-toggle-button-checked-button-color: "var(--primary-color)"
-      paper-toggle-button-checked-bar-color: "var(--light-primary-color)"
-      paper-toggle-button-unchecked-bar-color: "var(--primary-text-color)"
-      secondary-text-color: "var(--primary-color)"
-      table-row-background-color: "var(--paper-card-background-color)"
-      table-row-alternative-background-color: "var(--sidebar-text_-_background)"
+frontend: !include frontend.yaml
 
 # Enables configuration UI
 config:
@@ -134,74 +61,7 @@ influxdb:
       - camera
 
 # Recorder
-recorder:
-  purge_interval: 2
-  purge_keep_days: 30
-  include:
-    domains:
-      - switch
-      - light
-      - sensor
-      - climate
-      - binary_sensor
-      - cover
-      - device_tracker
-      - fan
-      - input_number
-      - vacuum
-      - weather
-  exclude:
-    domains:
-      - automation
-      - weblink
-      - updater
-      - group
-      - media_player
-      - script
-      - zone
-    entities:
-      - camera.entrance
-      - camera.prusa_i3_mk3
-      - camera.webcam_axalp
-      - camera.webcam_axalp_2
-      - camera.webcam_bonigen
-      - camera.webcam_brienz
-      - camera.webcam_rothorn
-      - binary_sensor.octoprint_printing_error
-      - binary_sensor.octoprint_printing
-      - device_tracker.000136e0585a
-      - device_tracker.0024e461383c
-      - device_tracker.0403d604ab3d
-      - device_tracker.2c3ae80ab90a
-      - device_tracker.2c3ae80abff3
-      - device_tracker.2c3ae82eaed8
-      - device_tracker.404e36855fdd
-      - device_tracker.5ccf7f5784d4
-      - device_tracker.5ccf7f5784d5
-      - device_tracker.60f1898d5629
-      - device_tracker.64002d0505fa
-      - device_tracker.64002d0506e4
-      - device_tracker.64002d05071e
-      - device_tracker.663138306433
-      - device_tracker.68c63a841d90
-      - device_tracker.68c63a88ab7c
-      - device_tracker.70ee5021e7fd
-      - device_tracker.7cdd90a9c560
-      - device_tracker.9cb6d0ed85ff
-      - device_tracker.a8a7957f52e5
-      - device_tracker.ac37434ec688
-      - device_tracker.acafb9f4eece
-      - device_tracker.acafb9f4eee4
-      - device_tracker.b827ebee78df
-      - device_tracker.c48e8ff63ad1
-      - device_tracker.esp_88a9c3
-      - device_tracker.mystromswitch78d2ec
-      - device_tracker.nintendo_3ds
-      - device_tracker.octopi
-      - device_tracker.roomba3144460030928590
-      - sun.sun
-      - switch.fluxer
-      - timer.bathroom_heater
+recorder: !include recorder.yaml
 
 # Track the sun
 sun:
@@ -210,14 +70,7 @@ sun:
 map:
 
 # Google Home
-google_assistant:
-  project_id: !secret google_assistant_project_id
-  client_id: !secret google_assistant_client_id
-  access_token: !secret google_assistant_access_token
-  exposed_domains:
-    - switch
-    - light
-    - group
+google_assistant: !include google_assistant.yaml
 
 # MQTT Broker
 mqtt:

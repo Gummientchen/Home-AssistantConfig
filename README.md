@@ -10,6 +10,7 @@ This is my Home Assistant configuration for a small appartment with 4 rooms.
 - HP iLO
 - IKEA Tradfri
 - LaMetric
+- Logitech Harmony Hub
 - Mosquitto MQTT
 - MyStrom
 - Netatmo

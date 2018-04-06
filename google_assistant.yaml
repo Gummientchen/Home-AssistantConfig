@@ -1,0 +1,115 @@
+project_id: !secret google_assistant_project_id
+client_id: !secret google_assistant_client_id
+access_token: !secret google_assistant_access_token
+# exposed_domains:
+#   - switch
+#   - light
+#   - group
+expose_by_default: false
+entity_config:
+  light.bathroom:
+    name: Bathroom
+    aliases:
+      - Bathroom
+      - Toilet
+      - WC
+    expose: true
+    room: Bathroom
+  light.kitchen_lights:
+    name: Kitchen
+    aliases:
+      - Kitchen
+      - Kitchen Lights
+      - Entrance
+      - Dining Room
+    expose: true
+    room: Kitchen
+  light.gaming_lights:
+    name: Gaming Lights
+    aliases:
+      - Gaming Lights
+      - Gaming
+    expose: true
+    room: Living Room
+  light.computer_lamp:
+    name: Computer Lamp
+    aliases:
+      - Computer Lamp
+      - Computer Light
+      - Computer
+    expose: true
+    room: Living Room
+  light.tv_lights:
+    name: TV Lights
+    expose: true
+    room: Living Room
+  light.bedroom_nightstand:
+    name: Bedroom Nightstand
+    aliases:
+      - Bedroom Nightstand
+      - Bedroom Bed
+    expose: true
+    room: Bedroom
+  light.bedroom_youtube:
+    name: YouTube Lights
+    aliases:
+      - YouTube Lights
+      - Bedroom YouTube
+      - Bedroom YouTube Lights
+    expose: true
+    room: Bedroom
+  scene.prepare_bedtime:
+    name: Prepare Bedtime
+    aliases:
+      - Prepare Bedtime
+      - Bedtime Prepare
+      - Going to Bed
+    expose: true
+    room: Bedroom
+  script.good_night:
+    name: Goodnight
+    aliases:
+      - Goodnight
+      - Sleep Well
+    expose: true
+    room: Bedroom
+  switch.bedroom_fan:
+    name: Bedroom Fan
+    aliases:
+      - Bedroom Fan
+      - Fan
+      - Bedroom Ventilator
+    expose: true
+    room: Bedroom
+  switch.bedroom_alarmclock:
+    name: Bedroom Alarmclock
+    aliases:
+      - Bedroom Alarmclock
+      - Alarmclock
+    expose: true
+    room: Bedroom
+  scene.walk_to_bathroom_on:
+    name: Walk to Bathroom Lights
+    aliases:
+      - Walk to Bathroom Lights
+      - Walk to the Bathroom Lights
+      - Walk to Bathroom
+      - Walk to the Bathroom
+    expose: true
+    room: Bedroom
+  scene.walk_to_bathroom_off:
+    name: Walk to Bathroom Lights OFF
+    aliases:
+      - Going back to bed
+      - I'm going back to bed
+      - I am going back to bed
+      - Back from toilet
+    expose: true
+    room: Bedroom
+  climate.bathroom:
+    name: Bathroom Thermostat
+    aliases:
+      - Bathroom Thermostat
+      - Bathroom Heater
+    expose: true
+    room: Bathroom
