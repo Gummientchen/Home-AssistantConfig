@@ -20,3 +20,13 @@
     - light.tv_light
     - light.livingroom_plant
     - light.computer_lamp
+
+- platform: group
+  name: Living Room Lights
+  entities:
+    - light.living_room_under_couch
+    - light.tv_light
+    - light.livingroom_plant
+    - light.living_room_ceiling_lamp
+    - light.computer_lamp
+    - light.living_room_couch
