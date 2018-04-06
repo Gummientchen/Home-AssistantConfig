@@ -1,5 +1,0 @@
-platform: mqtt
-state_topic: "dev/power/gemeinde"
-name: Freq Gemeinde
-value_template: '{{ value_json.Data[3].data[0][1] }}'
-unit_of_measurement: "Hz"

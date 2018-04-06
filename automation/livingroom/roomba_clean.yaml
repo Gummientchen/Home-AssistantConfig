@@ -26,7 +26,6 @@
       data:
         entity_id:
           - group.bedroommain
-          - light.kitchen_2 # Kitchen Sink
     - service: notify.html5
       data:
         message: "Roomba started cleaning cycle"
@@ -53,7 +52,6 @@
       data:
         entity_id:
           - group.bedroommain
-          - light.kitchen_2 # Kitchen Sink
     - service: notify.html5
       data:
         message: "Roomba cleaning was cancelled by user"
@@ -87,7 +85,6 @@
       data:
         entity_id:
           - group.bedroommain
-          - light.kitchen_2 # Kitchen Sink
     - service: notify.html5
       data:
         message: "Roomba finished cleaning cycle"
@@ -121,7 +118,6 @@
       data:
         entity_id:
           - group.bedroommain
-          - light.kitchen_2 # Kitchen Sink
 
 # Roomba Wastebin is FULL Message
 - alias: "Roomba Bin is Full Message"

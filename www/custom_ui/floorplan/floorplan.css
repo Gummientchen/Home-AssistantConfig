@@ -127,8 +127,6 @@ svg, svg * {
 .heater.switch-off {
   fill: #C3B7F4 !important;
   transition: fill 0.5s;
-  transform:rotateY(0deg);
-  transform-origin: 50% 50%;
   stroke-width: 0;
   transform-box: fill-box;
 }
@@ -136,10 +134,18 @@ svg, svg * {
 .heater.switch-on {
   fill: #04a600 !important;
   transition: fill 0.5s;
-  transform:rotateY(180deg);
-  transform-origin: 50% 50%;
   stroke-width: 0;
   transform-box: fill-box;
+  animation: heateranimation 1s steps(2) infinite alternate;
+}
+
+@keyframes heateranimation {
+    0% {
+        transform:scaleX(1);
+    }
+    100% {
+        transform:scaleX(-3);
+    }
 }
 
 .fan.switch-off {
@@ -158,6 +164,29 @@ svg, svg * {
   transform-origin: 50% 50%;
   stroke-width: 0;
   transform-box: fill-box;
+  animation-name: fanspin;
+  animation-duration: 10000ms;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+
+.fan.switch-on:after {
+  content:'';
+  position: absolute;
+  top:-10px;
+  bottom:-10px;
+  left:-10px;
+  right:-10px;
+  border-radius:50%;
+}
+
+@keyframes fanspin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
 }
 
 /* Temperature sensor */

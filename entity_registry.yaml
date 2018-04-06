@@ -54,3 +54,7 @@ media_player.kd55x8505c:
   name:
   platform: cast
   unique_id: 067c2016-28b0-00e7-845b-d6c8749cab26
+media_player.bedroom_speaker:
+  name:
+  platform: cast
+  unique_id: e8caf93d-f8b4-d47f-7707-0dc12b87a133
