@@ -22,3 +22,23 @@ wan:
     - sensor.internet_speed_out
     - sensor.wan_traffic_in_mean
     - sensor.wan_traffic_out_mean
+
+power_grid:
+  name: Power Status
+  entities:
+    - sensor.grid_frequency
+    - sensor.power_usage_switzerland
+
+power_status_devices:
+  name: Devices Power Status
+  entities:
+    - binary_sensor.3d_printer_power_status
+    - binary_sensor.computer_power_status
+    - binary_sensor.server_power_status
+    - binary_sensor.tv_power_status
+
+network_status_devices:
+  name: Network Power Status
+  entities:
+    - binary_sensor.sony_tv_status
+    - binary_sensor.steff_pc_status
