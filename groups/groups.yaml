@@ -3,8 +3,8 @@
 #   entities:
 #     - sensor.bitcoin_chf
 
-people:
-  name: People
-  entities:
-    - device_tracker.404e36855fdd
-    - device_tracker.phone_phone
+# people:
+#   name: People
+#   entities:
+#     - device_tracker.404e36855fdd
+#     - device_tracker.phone_phone

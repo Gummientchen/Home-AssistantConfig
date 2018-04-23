@@ -6,7 +6,7 @@
       seconds: 00
   condition:
     - condition: state
-      entity_id: device_tracker.404e36855fdd
+      entity_id: group.presence
       state: 'not_home'
       for:
         hours: 0

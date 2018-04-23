@@ -5,7 +5,7 @@
       at: '22:30:00'
   condition:
     - condition: state
-      entity_id: device_tracker.404e36855fdd
+      entity_id: group.presence
       state: 'home'
     - condition: state
       entity_id: binary_sensor.bedroomdoor_state
@@ -28,7 +28,7 @@
       at: '23:30:00'
   condition:
     - condition: state
-      entity_id: device_tracker.404e36855fdd
+      entity_id: group.presence
       state: 'home'
     - condition: state
       entity_id: binary_sensor.bedroomdoor_state

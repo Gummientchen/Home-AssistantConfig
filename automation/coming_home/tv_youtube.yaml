@@ -2,13 +2,17 @@
   id: coming_home_watch_youtube
   trigger:
     platform: state
-    entity_id: device_tracker.404e36855fdd
+    entity_id: group.presence
     from: 'not_home'
     to: 'home'
     for:
       hours: 0
       minutes: 0
       seconds: 15
+  condition:
+    - condition: state
+      entity_id: remote.harmony_hub
+      state: 'off'
   action:
     - service: remote.turn_on
       data:

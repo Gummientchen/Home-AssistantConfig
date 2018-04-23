@@ -1,0 +1,7 @@
+# This groups are for presence detection. There should be never used a
+# device directly. Instead create a new group.
+
+presence:
+  name: Present
+  entities:
+    - device_tracker.steff_phone_pixel

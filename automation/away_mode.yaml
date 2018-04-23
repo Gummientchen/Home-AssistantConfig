@@ -2,7 +2,7 @@
   id: away_mode
   trigger:
     - platform: state
-      entity_id: device_tracker.404e36855fdd
+      entity_id: group.presence
       from: 'home'
       to: 'not_home'
       for:

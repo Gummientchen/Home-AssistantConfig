@@ -2,10 +2,10 @@
   id: bedroom_oversleeping
   trigger:
     - platform: time
-      at: "07:30:00"
+      at: "07:45:00"
   condition:
     - condition: state
-      entity_id: device_tracker.404e36855fdd
+      entity_id: group.presence
       state: 'home'
     - condition: state
       entity_id: input_boolean.holidays
@@ -25,10 +25,6 @@
         minutes: 0
         seconds: 0
   action:
-    - service: switch.turn_on
-      data:
-        entity_id:
-          - switch.bedroom_fan
     - service: light.turn_on
       entity_id:
         - light.bedroom_nightstand
@@ -43,7 +39,36 @@
         title: "Alarmclock"
         data:
           tag: "alarmclock"
-    - delay: 0:30:00
+    - service: tts.google_say
+      entity_id: media_player.bedroom_speaker
+      data:
+        message: 'You are oversleeping! It is 07:45 am!'
+    - delay: 0:05:00
+    - service: tts.google_say
+      entity_id: media_player.bedroom_speaker
+      data:
+        message: 'You are oversleeping! It is 07:50 am!'
+    - delay: 0:05:00
+    - service: tts.google_say
+      entity_id: media_player.bedroom_speaker
+      data:
+        message: 'You are oversleeping! It is 07:55 am!'
+    - delay: 0:05:00
+    - service: tts.google_say
+      entity_id: media_player.bedroom_speaker
+      data:
+        message: 'You are oversleeping! It is 08:00 am!'
+    - delay: 0:05:00
+    - service: tts.google_say
+      entity_id: media_player.bedroom_speaker
+      data:
+        message: 'You are oversleeping! It is 08:05 am!'
+    - delay: 0:05:00
+    - service: tts.google_say
+      entity_id: media_player.bedroom_speaker
+      data:
+        message: 'You are oversleeping! It is 08:10 am!'
+    - delay: 0:05:00
     - service: light.turn_on
       entity_id:
         - light.bedroom_nightstand
