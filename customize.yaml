@@ -1,50 +1,93 @@
 binary_sensor.tv_remote:
   custom_ui_state_card: state-card-remote
-  config: !include remote.yaml
-# binary_sensor.floorplan:
-#   custom_ui_state_card: floorplan
-#   config:
-#     name: Demo Floorplan
-#     image: /local/custom_ui/floorplan/floorplan.svg
-#     stylesheet: /local/custom_ui/floorplan/floorplan.css
-#     warnings:
-#     date_format: DD-MM-YYYY
-#     last_motion_entity: sensor.template_last_motion
-#     last_motion_class: last-motion
-#     groups:
-#     - name: Sensors
-#       entities:
-#       - sensor.netatmo_bathroom_temperature
-#       - sensor.netatmo_bedroom_temperature
-#       - sensor.netatmo_outdoormodule_temperature
-#       text_template: '${entity.state ? ""+Math.round(entity.state*100)/100+"° C" :
-#         "undefined"}'
-#       class_template: ' var temp = parseFloat(entity.state.replace("°", "")); if (temp
-#         < 10) return "temp-low"; else if (temp < 30) return "temp-medium"; else return
-#         "temp-high"; '
-#     - name: Lights
-#       entities:
-#       - light.kitchen_1
-#       - light.kitchen_2
-#       - light.living_room_1
-#       - light.bedroom_2
-#       states:
-#       - state: 'on'
-#         class: light-on
-#       - state: 'off'
-#         class: light-off
-#       action:
-#         domain: homeassistant
-#         service: toggle
-#     - name: Switches
-#       entities:
-#       - switch.bathroom_heater
-#       - switch.bedroom_fan
-#       states:
-#       - state: 'on'
-#         class: doorbell-on
-#       - state: 'off'
-#         class: doorbell-off
+  config:
+    name: TV Remote
+    image: /local/custom_ui/remote/remote.svg
+    stylesheet: /local/custom_ui/remote/remote.css
+    warnings:
+    date_format: DD-MM-YYYY
+    groups:
+    - name: Power Button
+      entities:
+      - remote.harmony_hub
+      states:
+      - state: 'on'
+        class: power-on
+      action:
+        domain: remote
+        service: toggle
+    - name: Remote Back
+      entities:
+      - script.remote_back
+      action:
+        domain: script
+        service: remote_back
+    - name: Remote Down
+      entities:
+      - script.remote_down
+      action:
+        domain: script
+        service: remote_down
+    - name: Remote Home
+      entities:
+      - script.remote_home
+      action:
+        domain: script
+        service: remote_home
+    - name: Remote Left
+      entities:
+      - script.remote_left
+      action:
+        domain: script
+        service: remote_left
+    - name: Remote Pause
+      entities:
+      - script.remote_pause
+      action:
+        domain: script
+        service: remote_pause
+    - name: Remote Play
+      entities:
+      - script.remote_play
+      action:
+        domain: script
+        service: remote_play
+    - name: Remote Right
+      entities:
+      - script.remote_right
+      action:
+        domain: script
+        service: remote_right
+    - name: Remote Select
+      entities:
+      - script.remote_select
+      action:
+        domain: script
+        service: remote_select
+    - name: Remote Up
+      entities:
+      - script.remote_up
+      action:
+        domain: script
+        service: remote_up
+    - name: Remote Volume Down
+      entities:
+      - script.remote_volume_down
+      action:
+        domain: script
+        service: remote_volume_down
+    - name: Remote Volume Up
+      entities:
+      - script.remote_volume_up
+      action:
+        domain: script
+        service: remote_volume_up
+    - name: Remote Volume Mute
+      entities:
+      - script.remote_volume_mute
+      action:
+        domain: script
+        service: remote_volume_mute
 light.bedroom_2:
   friendly_name: Bedroom Ceiling
   icon: mdi:ceiling-light
@@ -143,6 +186,7 @@ device_tracker.70ee5021e7fd:
   hidden: true
 device_tracker.phone_phone:
   friendly_name: Steff GPS
+  hidden: true
 group.bedroommain:
   hidden: true
   icon: mdi:lightbulb
@@ -433,10 +477,20 @@ device_tracker.esp_842bb1:
 device_tracker.esp_easy_0:
   hidden: true
 sensor.steff_phone_status:
+  hidden: true
   icon: mdi:cellphone
 homematic.ccu2:
   hidden: true
 binary_sensor.roomba_bin:
   device_class: problem
 device_tracker.harmonyhub:
+  hidden: true
+sensor.netatmo_thermostat_temperature:
+  hidden: true
+device_tracker.googlehomemini:
+  hidden: true
+device_tracker.dc68ebba7393:
+  friendly_name: Nintendo Switch
+  hidden: true
+binary_sensor.remote:
   hidden: true

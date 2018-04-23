@@ -7,6 +7,12 @@ access_token: !secret google_assistant_access_token
 #   - group
 expose_by_default: false
 entity_config:
+  group.all_lights:
+    name: all Lights
+    aliases:
+      - all Lights
+    expose: true
+    room: Apartment
   light.bathroom:
     name: Bathroom
     aliases:
