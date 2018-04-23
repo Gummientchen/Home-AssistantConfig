@@ -39,7 +39,7 @@ webcams:
     - camera.webcam_rothorn
     - camera.webcam_bonigen
 
-hardware:
+network:
   view: yes
   name: Network
   entities:
@@ -49,6 +49,9 @@ hardware:
     - group.hpilo
     - group.netatmostatus
     - group.tradfri
+    - group.power_grid
+    - group.power_status_devices
+    - group.network_status_devices
 
 # entertainment:
 #   view: yes
