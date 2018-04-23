@@ -1,0 +1,7 @@
+platform: template
+sensors:
+  colder_outside:
+    friendly_name: "Colder Outside"
+    device_class: cold
+    value_template: >-
+      {{ ((states('sensor.netatmo_outdoormodule_temperature')|float - 1) < states('sensor.apartment_temperature')|float) and (now().hour >= 8 and now().hour <= 23) and states('sensor.dark_sky_daily_high_temperature')|float >= 20 and is_state('group.presence', 'home') }}

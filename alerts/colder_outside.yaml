@@ -1,0 +1,9 @@
+colder_outside:
+  name: Colder Outside
+  entity_id: binary_sensor.colder_outside
+  repeat:
+    - 15
+    - 60
+  can_acknowledge: true
+  notifiers:
+    - colder_outside

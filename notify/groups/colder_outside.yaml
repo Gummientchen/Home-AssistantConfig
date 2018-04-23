@@ -1,0 +1,9 @@
+name: colder_outside
+platform: group
+services:
+  - service: html5
+    data:
+      message: "It's colder outside!"
+      title: "Climate"
+      data:
+        tag: "climate"
