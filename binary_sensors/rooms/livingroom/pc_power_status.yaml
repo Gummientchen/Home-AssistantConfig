@@ -1,0 +1,8 @@
+platform: template
+sensors:
+  computer_power_status:
+    friendly_name: "Computer Power"
+    device_class: power
+    icon_template: mdi:power
+    value_template: >-
+      {{ states('sensor.mystrom_computer')|float > 50 }}

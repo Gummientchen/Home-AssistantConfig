@@ -1,0 +1,12 @@
+platform: template
+sensors:
+  3d_printer_power_status:
+    friendly_name: "3D Printer Power"
+    device_class: power
+    icon_template: mdi:power
+    value_template: >-
+      {{ states('sensor.mystrom_server')|float > 200 }}
+    delay_on:
+      minutes: 1
+    delay_off:
+      minutes: 1

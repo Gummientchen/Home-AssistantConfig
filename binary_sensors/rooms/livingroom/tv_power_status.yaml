@@ -1,0 +1,8 @@
+platform: template
+sensors:
+  tv_power_status:
+    friendly_name: "Sony TV Power"
+    device_class: power
+    icon_template: mdi:power
+    value_template: >-
+      {{ states('sensor.mystrom_tv')|float > 80 }}

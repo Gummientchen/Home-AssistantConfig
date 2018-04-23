@@ -1,0 +1,8 @@
+platform: template
+sensors:
+  server_power_status:
+    friendly_name: "Server Power"
+    device_class: power
+    icon_template: mdi:power
+    value_template: >-
+      {{ states('sensor.mystrom_server')|float > 150 }}
