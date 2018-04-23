@@ -38,7 +38,7 @@ http:
     - !secret trusted_ip
     - !secret trusted_ip_2
 
-  ip_ban_enabled: True
+  ip_ban_enabled: true
   login_attempts_threshold: 10
 
 # Checks for available updates
@@ -90,7 +90,7 @@ netatmo:
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
-  discovery: False
+  discovery: false
 
 # Roomba
 vacuum:
@@ -137,7 +137,7 @@ history_graph:
       - sensor.cpu_load_total
       - sensor.memory_usage_real
 
-###########INCLUDES#####
+########### INCLUDES #####
 sensor: !include_dir_list sensors/
 switch: !include_dir_list switches/
 camera: !include_dir_list cameras/

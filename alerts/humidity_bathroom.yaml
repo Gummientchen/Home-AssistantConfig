@@ -5,6 +5,6 @@ high_humidity:
     - 30
     - 60
     - 120
-  can_acknowledge: True
+  can_acknowledge: true
   notifiers:
     - steff_phone

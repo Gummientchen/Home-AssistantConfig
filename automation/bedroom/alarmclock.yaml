@@ -6,11 +6,11 @@
   condition:
     - condition: time
       weekday:
-      - mon
-      - tue
-      - wed
-      - thu
-      - fri
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
   action:
     - service: light.turn_on
       data:

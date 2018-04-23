@@ -1,13 +1,13 @@
       name: Demo Floorplan
       image: /local/custom_ui/floorplan/floorplan.svg
       stylesheet: /local/custom_ui/floorplan/floorplan.css
-      
+
       # These options are optional
       warnings:                  # enable warnings (to find out why things might ot be working correctly)
-      #pan_zoom:                  # enable experimental panning / zooming
+      # pan_zoom:                  # enable experimental panning / zooming
       # hide_app_toolbar:          # hide the application toolbar (when used as a custom panel)
       date_format: DD-MM-YYYY   # Date format to use in hover-over text
-      
+
       last_motion_entity: sensor.template_last_motion
       last_motion_class: last-motion
 
@@ -15,11 +15,11 @@
 
         - name: Thermostat
           entities:
-             -  climate.thermostat
-             -  climate.bathroom
-          #text_template: '${entity.state ? entity.state : "unknown"}'
+             - climate.thermostat
+             - climate.bathroom
+          # text_template: '${entity.state ? entity.state : "unknown"}'
           # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
-          text_template: '${entity.state ? ""+Math.round(entity.attributes.current_temperature*100)/100+"° C" : "undefined"}'  
+          text_template: '${entity.state ? ""+Math.round(entity.attributes.current_temperature*100)/100+"° C" : "undefined"}'
 
         - name: Sensors
           entities:
@@ -28,9 +28,9 @@
             - sensor.netatmo_outdoormodule_temperature
             - sensor.livingroom_temperature_couch
             - sensor.kitchen_temperature
-          #text_template: '${entity.state ? entity.state : "unknown"}'
+          # text_template: '${entity.state ? entity.state : "unknown"}'
           # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
-          text_template: '${entity.state ? ""+Math.round(entity.state*100)/100+"° C" : "undefined"}'  
+          text_template: '${entity.state ? ""+Math.round(entity.state*100)/100+"° C" : "undefined"}'
           # class_template: '
           #   var temp = parseFloat(entity.state.replace("°", ""));
           #   if (temp < 10)
@@ -147,8 +147,6 @@
         #     service: good_night
 
 
-        
-
         # - name: Cameras
         #   entities:
         #     - camera.hallway
@@ -158,7 +156,7 @@
         #   states:
         #     - state: 'idle'
         #       class: 'camera-idle'
-              
+
 #        - name: thermostat_temp
 #          entities:
 #            - climate.downstairs
