@@ -46,6 +46,8 @@ updater:
 
 # Discover some devices automatically
 discovery:
+  ignore:
+    - songpal
 
 # Enables support for tracking state changes over time
 history:
