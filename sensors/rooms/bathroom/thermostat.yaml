@@ -3,12 +3,27 @@ sensors:
   bathroom_temperature:
     friendly_name: "Bathroom Temperature"
     unit_of_measurement: "°C"
-    value_template: "{{ states.climate.bathroomthermostat.attributes.current_temperature | float | round(1) }}"
+    value_template: >-
+      {% if states.climate.bathroomthermostat %}
+        {{ states.climate.bathroomthermostat.attributes.current_temperature | float | round(1) }}
+      {% else %}
+        false
+      {% endif %}
   bathroom_set_temperature:
     friendly_name: "Bathroom Set Temperature"
     unit_of_measurement: "°C"
-    value_template: "{{ states.climate.bathroomthermostat.attributes.temperature | float | round(1) }}"
+    value_template: >-
+      {% if states.climate.bathroomthermostat %}
+        {{ states.climate.bathroomthermostat.attributes.temperature | float | round(1) }}
+      {% else %}
+        false
+      {% endif %}
   bathroom_climate_thermostat_ha_set_temperature:
     friendly_name: "Bathroom HA Set Temperature"
     unit_of_measurement: "°C"
-    value_template: "{{ states.climate.bathroom.attributes.temperature | float | round(1) }}"
+    value_template: >-
+      {% if states.climate.bathroom %}
+        {{ states.climate.bathroom.attributes.temperature | float | round(1) }}
+      {% else %}
+        false
+      {% endif %}

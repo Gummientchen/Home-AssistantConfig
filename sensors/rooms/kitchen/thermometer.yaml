@@ -3,4 +3,9 @@ sensors:
   kitchen_temperature:
     friendly_name: "Kitchen Temperature"
     unit_of_measurement: "°C"
-    value_template: "{{ states.climate.kitchenthermometer.attributes.current_temperature | float | round(1) }}"
+    value_template: >-
+      {% if states.climate.kitchenthermometer %}
+        {{ states.climate.kitchenthermometer.attributes.current_temperature | float | round(1) }}
+      {% else %}
+        false
+      {% endif %}
