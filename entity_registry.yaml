@@ -58,3 +58,63 @@ media_player.bedroom_speaker:
   name:
   platform: cast
   unique_id: e8caf93d-f8b4-d47f-7707-0dc12b87a133
+light.bedroom_nightstand:
+  name:
+  platform: tradfri
+  unique_id: light-7e1731520440003e-65542
+light.tv_light_bulb:
+  name:
+  platform: tradfri
+  unique_id: light-7e1731520440003e-65551
+light.outdoor_1:
+  name:
+  platform: tradfri
+  unique_id: light-7e1731520440003e-65539
+light.computer_lamp_bulb:
+  name:
+  platform: tradfri
+  unique_id: light-7e1731520440003e-65549
+light.bathroom_ceiling_1:
+  name:
+  platform: tradfri
+  unique_id: light-7e1731520440003e-65546
+light.kitchen_2:
+  name:
+  platform: tradfri
+  unique_id: light-7e1731520440003e-65537
+light.bathroom_ceiling_2:
+  name:
+  platform: tradfri
+  unique_id: light-7e1731520440003e-65547
+light.office_ceiling:
+  name:
+  platform: tradfri
+  unique_id: light-7e1731520440003e-65544
+light.kitchen_3:
+  name:
+  platform: tradfri
+  unique_id: group-7e1731520440003e-145030
+light.bathroom:
+  name:
+  platform: tradfri
+  unique_id: group-7e1731520440003e-138121
+light.office:
+  name:
+  platform: tradfri
+  unique_id: group-7e1731520440003e-144300
+light.bedroom_3:
+  name:
+  platform: tradfri
+  unique_id: group-7e1731520440003e-136781
+light.outdoors2:
+  name:
+  platform: tradfri
+  unique_id: group-7e1731520440003e-176941
+light.computer_lamp:
+  name:
+  platform: tradfri
+  unique_id: group-7e1731520440003e-176942
+light.tv_light:
+  name:
+  platform: tradfri
+  unique_id: group-7e1731520440003e-176943
