@@ -479,8 +479,6 @@ device_tracker.esp_easy_0:
 sensor.steff_phone_status:
   hidden: true
   icon: mdi:cellphone
-homematic.ccu2:
-  hidden: true
 binary_sensor.roomba_bin:
   device_class: problem
 device_tracker.harmonyhub:
