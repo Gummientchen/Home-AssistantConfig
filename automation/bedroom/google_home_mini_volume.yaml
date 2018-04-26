@@ -1,0 +1,21 @@
+- alias: "Bedroom: Google Home Volume 09:00:00"
+  id: bedroom_google_home_volume_090000
+  trigger:
+    - platform: time
+      at: "09:00:00"
+  action:
+    - service: media_player.volume_set
+      entity_id: media_player.bedroom_speaker
+      data:
+        volume_level: 0.5
+
+- alias: "Bedroom: Google Home Volume 23:00:00"
+  id: bedroom_google_home_volume_230000
+  trigger:
+    - platform: time
+      at: "23:00:00"
+  action:
+    - service: media_player.volume_set
+      entity_id: media_player.bedroom_speaker
+      data:
+        volume_level: 0.25
