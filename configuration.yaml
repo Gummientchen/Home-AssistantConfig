@@ -71,8 +71,14 @@ sun:
 # Map
 map:
 
+# Wake on LAN
+wake_on_lan:
+
+# Cloud
+cloud: !include cloud.yaml
+
 # Google Home
-google_assistant: !include google_assistant.yaml
+#google_assistant: !include google_assistant.yaml
 
 # MQTT Broker
 mqtt:

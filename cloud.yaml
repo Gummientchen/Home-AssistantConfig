@@ -1,0 +1,116 @@
+google_actions:
+  filter:
+    include_entities:
+      - script.wol_pc
+      - group.all_lights
+      - light.bathroom
+      - light.kitchen_lights
+      - light.gaming_lights
+      - light.computer_lamp
+      - light.tv_lights
+      - light.bedroom_nightstand
+      - light.bedroom_youtube
+      - scene.prepare_bedtime
+      - script.good_night
+      - switch.bedroom_fan
+      - switch.bedroom_alarmclock
+      - scene.walk_to_bathroom_on
+      - scene.walk_to_bathroom_off
+      - climate.bathroom
+      - light.living_room_lights
+  entity_config:
+    script.wol_pc:
+      name: WOL PC
+      aliases:
+        - pc
+        - computer
+        - battle station
+        - pc masterrace
+        - pc steff
+        - steff pc
+    group.all_lights:
+      name: all Lights
+      aliases:
+        - all Lights
+    light.bathroom:
+      name: Bathroom
+      aliases:
+        - Bathroom
+        - Toilet
+        - WC
+    light.kitchen_lights:
+      name: Kitchen
+      aliases:
+        - Kitchen
+        - Kitchen Lights
+        - Entrance
+        - Dining Room
+    light.gaming_lights:
+      name: Gaming Lights
+      aliases:
+        - Gaming Lights
+        - Gaming
+    light.computer_lamp:
+      name: Computer Lamp
+      aliases:
+        - Computer Lamp
+        - Computer Light
+        - Computer
+    light.tv_lights:
+      name: TV Lights
+    light.bedroom_nightstand:
+      name: Bedroom Nightstand
+      aliases:
+        - Bedroom Nightstand
+        - Bedroom Bed
+    light.bedroom_youtube:
+      name: YouTube Lights
+      aliases:
+        - YouTube Lights
+        - Bedroom YouTube
+        - Bedroom YouTube Lights
+    scene.prepare_bedtime:
+      name: Prepare Bedtime
+      aliases:
+        - Prepare Bedtime
+        - Bedtime Prepare
+        - Going to Bed
+    script.good_night:
+      name: Goodnight
+      aliases:
+        - Goodnight
+        - Sleep Well
+    switch.bedroom_fan:
+      name: Bedroom Fan
+      aliases:
+        - Bedroom Fan
+        - Fan
+        - Bedroom Ventilator
+    switch.bedroom_alarmclock:
+      name: Bedroom Alarmclock
+      aliases:
+        - Bedroom Alarmclock
+        - Alarmclock
+    scene.walk_to_bathroom_on:
+      name: Walk to Bathroom Lights
+      aliases:
+        - Walk to Bathroom Lights
+        - Walk to the Bathroom Lights
+        - Walk to Bathroom
+        - Walk to the Bathroom
+    scene.walk_to_bathroom_off:
+      name: Walk to Bathroom Lights OFF
+      aliases:
+        - Going back to bed
+        - I'm going back to bed
+        - I am going back to bed
+        - Back from toilet
+    climate.bathroom:
+      name: Bathroom Thermostat
+      aliases:
+        - Bathroom Thermostat
+        - Bathroom Heater
+    light.living_room_lights:
+      name: Livingroom All Lights
+      aliases:
+        - Livingroom All Lights
