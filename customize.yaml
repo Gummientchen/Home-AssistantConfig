@@ -492,3 +492,11 @@ device_tracker.dc68ebba7393:
   hidden: true
 binary_sensor.remote:
   hidden: true
+device_tracker.espeasy0_3:
+  hidden: true
+device_tracker.espeasy0:
+  hidden: true
+device_tracker.espeasy0_4:
+  hidden: true
+device_tracker.espeasy0_2:
+  hidden: true
