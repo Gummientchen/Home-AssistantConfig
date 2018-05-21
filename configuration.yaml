@@ -46,6 +46,8 @@ updater:
 
 # Discover some devices automatically
 discovery:
+  ignore:
+    - songpal
 
 # Enables support for tracking state changes over time
 history:
@@ -69,8 +71,14 @@ sun:
 # Map
 map:
 
+# Wake on LAN
+wake_on_lan:
+
+# Cloud
+cloud: !include cloud.yaml
+
 # Google Home
-google_assistant: !include google_assistant.yaml
+#google_assistant: !include google_assistant.yaml
 
 # MQTT Broker
 mqtt:
@@ -157,6 +165,7 @@ scene: !include_dir_merge_list scenes/
 
 input_number: !include_dir_merge_named input_number/
 input_boolean: !include_dir_merge_named input_boolean/
+input_select: !include_dir_merge_named input_select/
 timer: !include_dir_merge_named timers/
 group: !include_dir_merge_named groups/
 script: !include_dir_merge_named scripts/

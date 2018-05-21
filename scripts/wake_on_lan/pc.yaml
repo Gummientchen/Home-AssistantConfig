@@ -1,0 +1,5 @@
+wol_pc:
+  sequence:
+    - service: wake_on_lan.send_magic_packet
+      data:
+        mac: 6045CB5E6CA0

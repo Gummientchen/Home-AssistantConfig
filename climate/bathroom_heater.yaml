@@ -14,3 +14,4 @@ min_cycle_duration:
 cold_tolerance: 0.2
 hot_tolerance: 0
 away_temp: 18
+keep_alive: 30

@@ -1,0 +1,43 @@
+- alias: "Bedroom: Google Home Volume 06:00:00"
+  id: bedroom_google_home_volume_060000
+  trigger:
+    - platform: time
+      at: "06:00:00"
+  action:
+    - service: media_player.volume_set
+      entity_id: media_player.bedroom_speaker
+      data:
+        volume_level: 0.8
+
+- alias: "Bedroom: Google Home Volume 08:00:00"
+  id: bedroom_google_home_volume_080000
+  trigger:
+    - platform: time
+      at: "08:00:00"
+  action:
+    - service: media_player.volume_set
+      entity_id: media_player.bedroom_speaker
+      data:
+        volume_level: 0.5
+
+- alias: "Bedroom: Google Home Volume 22:00:00"
+  id: bedroom_google_home_volume_220000
+  trigger:
+    - platform: time
+      at: "22:00:00"
+  action:
+    - service: media_player.volume_set
+      entity_id: media_player.bedroom_speaker
+      data:
+        volume_level: 0.25
+
+- alias: "Bedroom: Google Home Volume 23:30:00"
+  id: bedroom_google_home_volume_233000
+  trigger:
+    - platform: time
+      at: "23:30:00"
+  action:
+    - service: media_player.volume_set
+      entity_id: media_player.bedroom_speaker
+      data:
+        volume_level: 0.1

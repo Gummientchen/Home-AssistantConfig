@@ -2,9 +2,13 @@
   id: computer_turned_on
   trigger:
     - platform: state
-      entity_id: binary_sensor.steff_pc_status
+      entity_id: binary_sensor.computer_power_status
       from: 'off'
       to: 'on'
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 5
   action:
     - service: light.turn_on
       data:
@@ -15,7 +19,7 @@
   id: computer_turned_on
   trigger:
     - platform: state
-      entity_id: binary_sensor.steff_pc_status
+      entity_id: binary_sensor.computer_power_status
       from: 'on'
       to: 'off'
       for:

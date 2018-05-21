@@ -1,0 +1,35 @@
+- alias: "Coming Home: Fan Livingroom"
+  id: coming_home_fan_livingroom
+  trigger:
+    platform: state
+    entity_id: group.presence
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
+  condition:
+    - condition: numeric_state
+      entity_id: sensor.netatmo_thermostat_temperature
+      above: 20
+  action:
+    - service: fan.turn_on
+      data:
+        entity_id: fan.livingroom_fan
+
+- alias: "Leaving Home: Fan Livingroom"
+  id: leaving_home_fan_livingroom
+  trigger:
+    platform: state
+    entity_id: group.presence
+    from: 'home'
+    to: 'not_home'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  action:
+    - service: fan.turn_off
+      data:
+        entity_id: fan.livingroom_fan

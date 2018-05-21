@@ -1,0 +1,36 @@
+livingroom_fan_on:
+  alias: Living Room On
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 54781398
+        command: "FanLow"
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.livingroom_fan
+
+livingroom_fan_off:
+  alias: Living Room Off
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 54781398
+        command: "0"
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.livingroom_fan
+
+livingroom_fan_speed:
+  alias: Living Room Speed
+  sequence:
+    - service: remote.send_command
+      data_template:
+        entity_id: remote.harmony_hub
+        device: 54781398
+        command: "{{ speed }}"
+    - service: input_select.select_option
+      data_template:
+        entity_id: input_select.livingroom_fan
+        option: "{{ speed }}"

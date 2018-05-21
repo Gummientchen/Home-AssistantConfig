@@ -1,0 +1,12 @@
+platform: template
+sensors:
+  is_sleeping:
+    friendly_name: "is sleeping"
+    value_template: >-
+      {{
+        is_state('binary_sensor.bedroomdoor_state', 'off')
+          and is_state('light.bedroom_lights', 'off')
+            and is_state('light.living_room_lights', 'off')
+              and is_state('group.presence', 'home')
+                and (now().hour >= 23 or now().hour <= 12)
+      }}
