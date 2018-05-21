@@ -1,0 +1,58 @@
+- alias: "Living room Fan on at high Temp"
+  id: livingroom_fan_on_high_temp
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_thermostat_temperature
+    above: 20
+  condition:
+    - condition: state
+      entity_id: binary_sensor.is_sleeping
+      state: "off"
+    - condition: state
+      entity_id: group.presence
+      state: "on"
+  action:
+    - service: fan.turn_on
+      data:
+        entity_id: fan.livingroom_fan
+
+- alias: "Living room Fan off at low Temp"
+  id: livingroom_fan_off_low_temp
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.netatmo_thermostat_temperature
+    below: 19.5
+  action:
+    - service: fan.turn_off
+      data:
+        entity_id: fan.livingroom_fan
+
+- alias: "Living room Fan on when awake"
+  id: livingroom_fan_on_awake
+  trigger:
+    platform: state
+    entity_id: binary_sensor.is_sleeping
+    from: "on"
+    to: "off"
+  condition:
+    - condition: state
+      entity_id: group.presence
+      state: "on"
+    - condition: numeric_state
+      entity_id: sensor.netatmo_thermostat_temperature
+      above: 20
+  action:
+    - service: fan.turn_on
+      data:
+        entity_id: fan.livingroom_fan
+
+- alias: "Living room Fan off when sleeping"
+  id: livingroom_fan_off_sleeping
+  trigger:
+    platform: state
+    entity_id: binary_sensor.is_sleeping
+    to: "on"
+  action:
+    - service: fan.turn_off
+      data:
+        entity_id: fan.livingroom_fan

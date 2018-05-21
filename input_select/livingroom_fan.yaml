@@ -1,0 +1,7 @@
+livingroom_fan:
+  name: "Living Room Fan"
+  icon: mdi:speedometer
+  options:
+    - "FanLow"
+    - "FanMed"
+    - "FanHigh"

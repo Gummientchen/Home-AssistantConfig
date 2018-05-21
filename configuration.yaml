@@ -165,6 +165,7 @@ scene: !include_dir_merge_list scenes/
 
 input_number: !include_dir_merge_named input_number/
 input_boolean: !include_dir_merge_named input_boolean/
+input_select: !include_dir_merge_named input_select/
 timer: !include_dir_merge_named timers/
 group: !include_dir_merge_named groups/
 script: !include_dir_merge_named scripts/

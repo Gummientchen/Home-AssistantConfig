@@ -9,6 +9,7 @@ livingroom:
     - light.livingroom_plant
     - switch.ikea_planter
     - sensor.planter_lamp_ontime
+    - fan.livingroom_fan
     - vacuum.roomba
     # - media_player.kd55x8505c
     - climate.thermostat
