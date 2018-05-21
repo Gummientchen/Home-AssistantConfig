@@ -7,7 +7,7 @@
     - service: media_player.volume_set
       entity_id: media_player.living_room_home
       data:
-        volume_level: 0.7
+        volume_level: 0.5
 
 - alias: "Livingroom: Google Home Volume 22:00:00"
   id: livingroom_google_home_volume_220000
@@ -18,4 +18,4 @@
     - service: media_player.volume_set
       entity_id: media_player.living_room_home
       data:
-        volume_level: 0.4
+        volume_level: 0.3
