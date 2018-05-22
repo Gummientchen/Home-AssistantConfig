@@ -1,0 +1,38 @@
+- alias: "Alert if Window/Door opened"
+  id: alert_window_door_opened
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bedroomwindow_state
+      from: "off"
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.kitchenwindow_state
+      from: "off"
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.livingroomwindow_state
+      from: "off"
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.officewindow_state
+      from: "off"
+      to: "on"
+    - platform: state
+      entity_id: binary_sensor.entrancedoor_state
+      from: "off"
+      to: "on"
+  condition:
+    - condition: state
+      entity_id: group.presence
+      state: "off"
+      for:
+        hours: 0
+        minutes: 0
+        seconds: 1
+  action:
+    - service: notify.html5
+      data:
+        message: "Window/Door was opened!"
+        title: "Intruder Alert!"
+        data:
+          tag: "intruder_alert"
