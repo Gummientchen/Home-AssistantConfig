@@ -125,8 +125,9 @@
 
         - name: Devices
           entities:
-            - binary_sensor.sony_tv_status
-            - binary_sensor.steff_pc_status
+            - binary_sensor.tv_power_status
+            - binary_sensor.computer_power_status
+            - binary_sensor.3d_printer_power_status
           states:
             - state: 'on'
               class: 'device-on'
