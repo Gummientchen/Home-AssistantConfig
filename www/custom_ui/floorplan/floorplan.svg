@@ -28,11 +28,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="2"
-     inkscape:cx="498.79936"
-     inkscape:cy="531.333"
+     inkscape:zoom="2.8284271"
+     inkscape:cx="432.73579"
+     inkscape:cy="412.54645"
      inkscape:document-units="mm"
-     inkscape:current-layer="layer9"
+     inkscape:current-layer="layer7"
      showgrid="false"
      fit-margin-top="0"
      fit-margin-left="0"
@@ -1048,6 +1048,13 @@
        inkscape:connector-curvature="0"
        style="fill:#ffffff;fill-opacity:1;stroke:#818181;stroke-width:0.5;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        inkscape:label="#path4723" />
+    <path
+       id="fan.livingroom_fan"
+       class="fan"
+       d="m 137.9629,3.7957466 a 0.99850297,0.99850297 0 0 0 -0.99847,0.99849 0.99850297,0.99850297 0 0 0 0.99847,0.99849 0.99850297,0.99850297 0 0 0 0.99849,-0.99849 0.99850297,0.99850297 0 0 0 -0.99849,-0.99849 m 0.49926,-8.98653 c 4.49328,0 4.60309,3.56465 2.24665,4.74288997 -0.98853,0.48924 -1.42787,1.53770003 -1.6176,2.46630003 0.47929,0.19963 0.89868,0.50924 1.21817,0.90863 3.69448,-1.99702 7.66851,-1.2082 7.66851,2.36644 0,4.4932902 -3.56464,4.5931002 -4.74289,2.22666 -0.49924,-0.98853 -1.55767,-1.42784 -2.48626,-1.61756 -0.19963,0.47929 -0.50925,0.88868 -0.90863,1.22814 1.98702,3.6845004 1.1982,7.6485404 -2.37644,7.6485404 -4.49328,0 -4.58315,-3.57465 -2.22667,-4.75285 0.97853,-0.4892902 1.41789,-1.5277404 1.61756,-2.4463404 -0.48925,-0.19964 -0.91859,-0.51925 -1.23813,-0.91863 -3.68446,1.97705 -7.63854,1.1982 -7.63854,-2.36645 0,-4.49328003 3.55465,-4.60310003 4.73289,-2.23666 0.49925,0.98853 1.5477,1.41788 2.47629,1.6076 0.18983,-0.47928 0.50926,-0.89864 0.91864,-1.21817 -1.98701,-3.68447 -1.1982,-7.63854 2.35645,-7.63854 z"
+       inkscape:connector-curvature="0"
+       style="display:inline;fill:#ffffff;fill-opacity:1;stroke:#818181;stroke-width:0.5;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       inkscape:label="#path5975" />
   </g>
   <g
      inkscape:groupmode="layer"

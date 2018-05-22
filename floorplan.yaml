@@ -70,6 +70,7 @@
             - switch.bathroom_heater
             - switch.bedroom_fan
             - switch.ikea_planter
+            - fan.livingroom_fan
           states:
             - state: 'on'
               class: 'switch-on'
