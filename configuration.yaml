@@ -48,6 +48,7 @@ updater:
 discovery:
   ignore:
     - songpal
+    - philips_hue
 
 # Enables support for tracking state changes over time
 history:
