@@ -15,8 +15,8 @@
 
         - name: Thermostat
           entities:
-             - climate.thermostat
-             - climate.bathroom
+            - climate.thermostat
+            - climate.bathroom
           # text_template: '${entity.state ? entity.state : "unknown"}'
           # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
           text_template: '${entity.state ? ""+Math.round(entity.attributes.current_temperature*100)/100+"° C" : "undefined"}'
@@ -26,7 +26,7 @@
             - sensor.netatmo_office_temperature
             - sensor.netatmo_bedroom_temperature
             - sensor.netatmo_outdoormodule_temperature
-            - sensor.livingroom_temperature_couch
+            # - sensor.livingroom_temperature_couch
             - sensor.kitchen_temperature
           # text_template: '${entity.state ? entity.state : "unknown"}'
           # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
@@ -47,12 +47,10 @@
             - light.kitchen_2
             - light.living_room_ceiling_lamp
             - light.bedroom_2
-            - light.bedroom_4
             - light.outdoor_1
             - light.bedroom_nightstand
             - group.bathroom_ceiling
             - light.office_ceiling
-            - light.living_room_under_couch
             - light.computer_lamp_bulb
             - light.tv_light_bulb
             - group.livingroomlightscouch
@@ -61,6 +59,19 @@
               class: 'light-on'
             - state: 'off'
               class: 'light-off'
+          action:
+            domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
+            service: toggle
+
+        - name: FurnitureLights
+          entities:
+            - light.bedroom_4
+            - light.living_room_under_couch
+          states:
+            - state: 'on'
+              class: 'furniture-light-on'
+            - state: 'off'
+              class: 'furniture-light-off'
           action:
             domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
             service: toggle
@@ -76,6 +87,22 @@
               class: 'switch-on'
             - state: 'off'
               class: 'switch-off'
+          action:
+            domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
+            service: toggle
+
+        - name: Buttons
+          entities:
+            - input_boolean.holidays
+            - input_boolean.start_leave_home_script
+          states:
+            - state: 'on'
+              class: 'button-on'
+            - state: 'off'
+              class: 'button-off'
+          action:
+            domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
+            service: toggle
 
         # - name: NVR
         #   entities:

@@ -31,3 +31,18 @@
       data:
         entity_id: climate.bathroom
         away_mode: true
+
+- alias: Leave Home Button Floorplan
+  id: leave_home_button_floorplan
+  trigger:
+    - platform: state
+      entity_id: input_boolean.start_leave_home_script
+      from: 'off'
+      to: 'on'
+  action:
+    - service: script.turn_on
+      data:
+        entity_id: script.leaving_home
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.start_leave_home_script

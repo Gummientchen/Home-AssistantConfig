@@ -5,12 +5,31 @@ svg, svg * {
   pointer-events: all !important;
 }
 
+/*svg{
+  perspective: 100px;
+  perspective-origin: center;
+  transform-origin: center center;
+  transform: rotateX(50deg) rotateY(1deg) rotateZ(50deg);
+
+  transform-box: fill-box;
+}
+
+svg .ha-entity{
+  perspective: 100px;
+  perspective-origin: center;
+  transform-origin: center center;
+  transform: rotateX(-25deg) rotateY(-15deg) rotateZ(-53deg);
+
+  transform-box: fill-box;
+}*/
+
 /* Hover over */
 
 .ha-entity:hover {
-  stroke: #03A9F4 !important;
-  stroke-width: 1px !important;
-  stroke-opacity: 1 !important;
+/*  stroke: #03A9F4 !important;
+  stroke-width: 0mm !important;
+  stroke-opacity: 0 !important;*/
+  filter: url("#filter6085");
 }
 
 /* Bootstrap succsss */
@@ -94,13 +113,27 @@ svg, svg * {
 
 .light-off {
   fill: #C3B7F4 !important;
-  transition: fill 0.5s;
+  transition: fill 0.25s;
   stroke-width: 0;
 }
 
 .light-on {
   fill: #ffd40b !important;
-  transition: fill 0.5s;
+  transition: fill 0.25s;
+  stroke-width: 0;
+}
+
+/* Furniture Light */
+
+.furniture-light-off {
+  fill: #dfdfdf !important;
+  transition: fill 0.25s;
+  stroke-width: 0;
+}
+
+.furniture-light-on {
+  fill: #ffd40b !important;
+  transition: fill 0.25s;
   stroke-width: 0;
 }
 
@@ -108,7 +141,7 @@ svg, svg * {
 
 .switch-off {
   fill: #C3B7F4 !important;
-  transition: fill 0.5s, transform 0.5s;
+  transition: fill 0.25s, transform 0.25s;
   transform:rotateY(0deg);
   transform-origin: 50% 50%;
   stroke-width: 0;
@@ -117,7 +150,7 @@ svg, svg * {
 
 .switch-on {
   fill: #04a600 !important;
-  transition: fill 0.5s, transform 0.5s;
+  transition: fill 0.25s, transform 0.25s;
   transform:rotateY(180deg);
   transform-origin: 50% 50%;
   stroke-width: 0;
@@ -126,14 +159,14 @@ svg, svg * {
 
 .heater.switch-off {
   fill: #C3B7F4 !important;
-  transition: fill 0.5s;
+  transition: fill 0.25s;
   stroke-width: 0;
   transform-box: fill-box;
 }
 
 .heater.switch-on {
   fill: #04a600 !important;
-  transition: fill 0.5s;
+  transition: fill 0.25s;
   stroke-width: 0;
   transform-box: fill-box;
   animation: heateranimation 1s steps(2) infinite alternate;
@@ -150,7 +183,7 @@ svg, svg * {
 
 .fan.switch-off {
   fill: #C3B7F4 !important;
-  transition: fill 0.5s, transform 1s;
+  transition: fill 0.25s;
   transform:rotateZ(0deg);
   transform-origin: 50% 50%;
   stroke-width: 0;
@@ -159,25 +192,15 @@ svg, svg * {
 
 .fan.switch-on {
   fill: #04a600 !important;
-  transition: fill 0.5s, transform 1s;
+  transition: fill 0.25s;
   transform:rotateZ(405deg);
   transform-origin: 50% 50%;
   stroke-width: 0;
   transform-box: fill-box;
   animation-name: fanspin;
-  animation-duration: 10000ms;
+  animation-duration: 20000ms;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
-}
-
-.fan.switch-on:after {
-  content:'';
-  position: absolute;
-  top:-10px;
-  bottom:-10px;
-  left:-10px;
-  right:-10px;
-  border-radius:50%;
 }
 
 @keyframes fanspin {
@@ -187,6 +210,18 @@ svg, svg * {
     to {
         transform:rotate(360deg);
     }
+}
+
+/* Buttons */
+
+.button-off {
+  fill: #dfdfdf !important;
+  transition: fill 0.25s;
+}
+
+.button-on {
+  fill: #04a600 !important;
+  transition: fill 0.25s;
 }
 
 /* Temperature sensor */
