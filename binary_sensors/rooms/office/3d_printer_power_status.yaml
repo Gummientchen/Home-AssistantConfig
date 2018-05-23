@@ -7,6 +7,6 @@ sensors:
     value_template: >-
       {{ states('sensor.mystrom_server')|float > 200 }}
     delay_on:
-      minutes: 1
+      seconds: 10
     delay_off:
       minutes: 1

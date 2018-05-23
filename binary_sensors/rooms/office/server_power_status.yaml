@@ -5,4 +5,6 @@ sensors:
     device_class: power
     icon_template: mdi:power
     value_template: >-
-      {{ states('sensor.mystrom_server')|float > 130 }}
+      {{ states('sensor.mystrom_server')|float > 120 }}
+    delay_off:
+      seconds: 10
