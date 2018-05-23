@@ -17,6 +17,13 @@ scenes:
     - group.scenes_panel
     - group.bathroom_heater_control
 
+3dPrinter:
+  view: yes
+  name: "3D-Printer"
+  entities:
+    - binary_sensor.3d_printer_power_status
+    - camera.prusa_i3_mk3
+
 weather:
   view: yes
   name: Weather/Hydro
