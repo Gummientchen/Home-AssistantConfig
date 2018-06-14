@@ -46,6 +46,13 @@ webcams:
     - camera.webcam_rothorn
     - camera.webcam_bonigen
 
+phone:
+  view: yes
+  name: "Phone - Pixel 2"
+  entities:
+    - group.pixel2battery
+    - group.pixel2enviroment
+
 network:
   view: yes
   name: Network

@@ -3,3 +3,14 @@ steffPhone:
   entities:
     - sensor.phonebattery
     - sensor.phoneuptime
+
+pixel2battery:
+  name: "Pixel 2 - Battery"
+  entities:
+    - sensor.pixel_battery2
+    - binary_sensor.pixel_battery_charging
+
+pixel2enviroment:
+  name: "Pixel 2 - Eviroment"
+  entities:
+    - sensor.pixel_pressure
