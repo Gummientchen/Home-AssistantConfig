@@ -118,3 +118,31 @@ light.tv_light:
   name:
   platform: tradfri
   unique_id: group-7e1731520440003e-176943
+media_player.kitchen_speaker:
+  name:
+  platform: cast
+  unique_id: 865fe55a-16ba-13a2-e94d-f8ae136e07c5
+media_player.living_room__kitchen:
+  name:
+  platform: cast
+  unique_id: 0b3e50c4-5c75-47fc-929c-19ae6979bc93
+media_player.living_bedroom_kitchen:
+  name:
+  platform: cast
+  unique_id: 6ebf95c3-2da7-4ca7-940a-8d9267c7f48d
+media_player.bathroom_speaker:
+  name:
+  platform: cast
+  unique_id: 5bb4e9aa-7ef8-587f-437d-7b1b459131fd
+media_player.livingroom:
+  name:
+  platform: cast
+  unique_id: 0dcecc94-3ebd-af65-1c32-2e8fc13728d6
+media_player.kitchen:
+  name:
+  platform: cast
+  unique_id: fc1fa8bc-9483-484f-b40a-5a86560d590a
+media_player.bathroom_2:
+  name:
+  platform: cast
+  unique_id: a63a4bc0-8003-4c04-a751-c53c669b9b4b
