@@ -1,0 +1,24 @@
+platform: bayesian
+name: "is sleeping bayesian"
+prior: 0.25
+probability_threshold: 0.95
+observations:
+  - entity_id: 'binary_sensor.bedroomdoor_state'
+    prob_given_true: 0.5
+    prob_given_false: 0.8
+    platform: 'state'
+    to_state: 'off'
+  - entity_id: 'binary_sensor.tv_power_status'
+    prob_given_true: 0.5
+    prob_given_false: 0.9
+    platform: 'state'
+    to_state: 'off'
+  - entity_id: 'light.bedroom_lights'
+    prob_given_true: 0.5
+    prob_given_false: 1
+    platform: 'state'
+    to_state: 'off'
+  - entity_id: 'sun.sun'
+    prob_given_true: 0.7
+    platform: 'state'
+    to_state: 'below_horizon'
