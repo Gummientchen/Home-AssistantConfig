@@ -7,17 +7,13 @@ access_token: !secret google_assistant_access_token
 #   - group
 expose_by_default: false
 entity_config:
-  script.wol_pc:
-    name: WOL PC
+  fan.livingroom_fan:
+    name: Ceiling fan
     aliases:
-      - pc
-      - computer
-      - battle station
-      - pc masterrace
-      - pc steff
-      - steff pc
+      - Ceiling fan
+      - Ceiling fan Livingroom
     expose: true
-    room: Living Room
+    room: Livingroom
   group.all_lights:
     name: all Lights
     aliases:
