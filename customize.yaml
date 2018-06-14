@@ -500,3 +500,15 @@ device_tracker.espeasy0_4:
   hidden: true
 device_tracker.espeasy0_2:
   hidden: true
+device_tracker.bedroom:
+  hidden: true
+device_tracker.kitchen:
+  hidden: true
+device_tracker.happybubblesble:
+  hidden: true
+device_tracker.chromecastaudio:
+  hidden: true
+device_tracker.googlehome:
+  hidden: true
+device_tracker.googlehome_2:
+  hidden: true
