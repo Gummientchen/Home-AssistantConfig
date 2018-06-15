@@ -4,26 +4,22 @@ prior: 0.25
 probability_threshold: 0.95
 observations:
   - entity_id: 'binary_sensor.bedroomdoor_state'
-    prob_given_true: 0.5
-    prob_given_false: 0.8
+    prob_given_true: 0.7
     platform: 'state'
     to_state: 'off'
   - entity_id: 'binary_sensor.tv_power_status'
-    prob_given_true: 0.5
-    prob_given_false: 0.9
+    prob_given_true: 0.8
     platform: 'state'
     to_state: 'off'
   - entity_id: 'light.bedroom_lights'
-    prob_given_true: 0.5
-    prob_given_false: 1
+    prob_given_true: 0.8
     platform: 'state'
     to_state: 'off'
   - entity_id: 'binary_sensor.pixel_battery_charging'
-    prob_given_true: 0.5
-    prob_given_false: 0.8
+    prob_given_true: 0.6
     platform: 'state'
-    to_state: 'on'
+    to_state: 'On'
   - entity_id: 'sun.sun'
-    prob_given_true: 0.7
+    prob_given_true: 0.8
     platform: 'state'
     to_state: 'below_horizon'
