@@ -11,6 +11,7 @@ livingroom:
     - sensor.planter_lamp_ontime
     - fan.livingroom_fan
     - vacuum.roomba
+    - binary_sensor.roomba_bin
     # - media_player.kd55x8505c
     - climate.thermostat
     - sensor.livingroom_temperature_couch
