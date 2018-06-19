@@ -1,0 +1,42 @@
+- alias: "Coming Home: Prepare Bedtime Weekday"
+  id: coming_home_prepare_bedtime_weekday
+  trigger:
+    - platform: time
+      at: '22:30:00'
+  condition:
+    - condition: state
+      entity_id: group.presence
+      state: 'home'
+    - condition: state
+      entity_id: binary_sensor.bedroomdoor_state
+      state: 'on'
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+  action:
+    - service: scene.turn_on
+      entity_id: scene.prepare_bedtime
+
+- alias: "Coming Home: Prepare Bedtime Weekend"
+  id: coming_home_prepare_bedtime_weekend
+  trigger:
+    - platform: time
+      at: '23:30:00'
+  condition:
+    - condition: state
+      entity_id: group.presence
+      state: 'home'
+    - condition: state
+      entity_id: binary_sensor.bedroomdoor_state
+      state: 'on'
+    - condition: time
+      weekday:
+        - sat
+        - sun
+  action:
+    - service: scene.turn_on
+      entity_id: scene.prepare_bedtime

@@ -1,0 +1,79 @@
+- alias: "IKEA Planter ON when not home"
+  id: ikea_planter_on_not_home
+  trigger:
+    platform: state
+    entity_id: device_tracker.404e36855fdd
+    from: 'home'
+    to: 'not_home'
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.ikea_planter
+
+- alias: "IKEA Planter OFF when coming home"
+  id: ikea_planter_off_when_coming_home
+  trigger:
+    platform: state
+    entity_id: device_tracker.404e36855fdd
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 15
+  condition:
+    condition: time
+    before: '23:00:00'
+    after: '08:00:00'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.ikea_planter
+
+- alias: "IKEA Planter ON after Sunset"
+  id: ikea_planter_on_after_sunset
+  trigger:
+    platform: sun
+    event: sunset
+    offset: '-00:45:00'
+  condition:
+    condition: state
+    entity_id: device_tracker.404e36855fdd
+    state: 'not_home'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.ikea_planter
+
+- alias: "IKEA Planter ON after Midnight"
+  id: ikea_planter_on_after_midnight
+  trigger:
+    platform: time
+    at: '23:00:00'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.ikea_planter
+
+- alias: "IKEA Planter ON bad Weather"
+  id: ikea_planter_on_bad_weather
+  trigger:
+    - platform: state
+      entity_id: weather.openweathermap
+      to: 'snowy'
+    - platform: state
+      entity_id: weather.openweathermap
+      to: 'rain'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.ikea_planter
