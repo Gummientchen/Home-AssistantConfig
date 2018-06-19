@@ -2,3 +2,5 @@ platform: mqtt_room
 name: "Backpack"
 device_id: 50765cb7d9ea4e2199a4fa879613a492_c51f_29b1
 state_topic: "happy-bubbles/presence/ha"
+timeout: 5
+away_timeout: 60
