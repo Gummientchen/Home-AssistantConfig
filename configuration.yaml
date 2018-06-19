@@ -91,7 +91,8 @@ mqtt:
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: microsoft
+    api_key: !secret microsoft_bing_speech_api_key
 
 # Netatmo Config
 netatmo:
