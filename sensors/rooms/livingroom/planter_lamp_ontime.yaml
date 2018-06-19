@@ -1,6 +1,7 @@
-platform: template
-sensors:
-  planter_lamp_ontime:
-    friendly_name: "Planter Lamp Ontime"
-    unit_of_measurement: "h"
-    value_template: "{{ states('input_number.planter_lamp_ontime') | float | round(1) }}"
+platform: history_stats
+name: "Planter Lamp Ontime"
+entity_id: switch.ikea_planter
+state: 'on'
+type: time
+start: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
+end: '{{ now() }}'
