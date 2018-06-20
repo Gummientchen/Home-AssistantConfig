@@ -1,8 +1,0 @@
-platform: history_stats
-name: "Steff at Home last 30 Days"
-entity_id: device_tracker.steff_phone_pixel
-state: 'home'
-type: time
-end: '{{ now().replace(hour=0).replace(minute=0).replace(second=0) }}'
-duration:
-  days: 30
