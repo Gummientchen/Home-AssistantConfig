@@ -1,148 +1,190 @@
 light.living_room_4:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:02:49:c4:d2-0b
 light.bedroom_2:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:00:fb:c6:e8-0b
 light.bedroom_4:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:01:1e:4d:2b-0b
 light.living_room_ceiling_lamp:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:02:44:81:ac-0b
 light.kitchen_1:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:00:ec:a0:0b-0b
 light.livingroom_plant:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:00:ca:51:02-0b
 light.living_room_1:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:00:fb:c7:32-0b
 light.living_room_under_couch:
+  config_entry_id:
   name:
   platform: hue
   unique_id: 00:17:88:01:02:16:d7:bf-0b
 media_player.shield:
+  config_entry_id:
   name:
   platform: cast
   unique_id: dd13af82-290c-a8e8-07a3-a1b8fab640f3
 media_player.home_group:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 0c8dafcb-fc29-4392-b86a-a86c34b94e37
 media_player.bathroom:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 7bd4a25a-9e14-d2b6-40ed-e1f8564c5741
 media_player.home:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 3ec5367b-f6dc-4e4e-9590-aa3294597228
 media_player.living_room_home:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 2f77e4d2-9319-7ee9-9367-0e1f4307f3d5
 media_player.kd55x8505c:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 067c2016-28b0-00e7-845b-d6c8749cab26
 media_player.bedroom_speaker:
+  config_entry_id:
   name:
   platform: cast
   unique_id: e8caf93d-f8b4-d47f-7707-0dc12b87a133
 light.bedroom_nightstand:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e1731520440003e-65542
 light.tv_light_bulb:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e1731520440003e-65551
 light.outdoor_1:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e1731520440003e-65539
 light.computer_lamp_bulb:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e1731520440003e-65549
 light.bathroom_ceiling_1:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e1731520440003e-65546
 light.kitchen_2:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e1731520440003e-65537
 light.bathroom_ceiling_2:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e1731520440003e-65547
 light.office_ceiling:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: light-7e1731520440003e-65544
 light.kitchen_3:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e1731520440003e-145030
 light.bathroom:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e1731520440003e-138121
 light.office:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e1731520440003e-144300
 light.bedroom_3:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e1731520440003e-136781
 light.outdoors2:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e1731520440003e-176941
 light.computer_lamp:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e1731520440003e-176942
 light.tv_light:
+  config_entry_id:
   name:
   platform: tradfri
   unique_id: group-7e1731520440003e-176943
 media_player.kitchen_speaker:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 865fe55a-16ba-13a2-e94d-f8ae136e07c5
 media_player.living_room__kitchen:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 0b3e50c4-5c75-47fc-929c-19ae6979bc93
 media_player.living_bedroom_kitchen:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 6ebf95c3-2da7-4ca7-940a-8d9267c7f48d
 media_player.bathroom_speaker:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 5bb4e9aa-7ef8-587f-437d-7b1b459131fd
 media_player.livingroom:
+  config_entry_id:
   name:
   platform: cast
   unique_id: 0dcecc94-3ebd-af65-1c32-2e8fc13728d6
 media_player.kitchen:
+  config_entry_id:
   name:
   platform: cast
   unique_id: fc1fa8bc-9483-484f-b40a-5a86560d590a
 media_player.bathroom_2:
+  config_entry_id:
   name:
   platform: cast
   unique_id: a63a4bc0-8003-4c04-a751-c53c669b9b4b
+media_player.kd65af8:
+  config_entry_id: af279eb74c4d4ef3aa4e9840fea79c40
+  name:
+  platform: cast
+  unique_id: 1986b623-6e53-85bf-93ab-54e883e5ab4d

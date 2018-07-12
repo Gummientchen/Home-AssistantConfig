@@ -12,3 +12,9 @@
   entities:
     - light.bedroom_nightstand
     - light.bedroom_4
+
+- platform: group
+  name: Bedroom Main
+  entities:
+    - light.bedroom_2
+    - light.bedroom_4

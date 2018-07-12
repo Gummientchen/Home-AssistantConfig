@@ -1,0 +1,13 @@
+platform: yweather
+woeid: 12891892
+name: Weather Oberried
+monitored_conditions:
+  - weather
+  - weather_current
+  - temp_min
+  - temp_max
+  - wind_speed
+  - pressure
+  - visibility
+  - humidity
+  - temperature

@@ -1,0 +1,146 @@
+resources:
+  - url: /local/custom_ui/weather-card.js
+    type: js
+
+title: Home
+views:
+    # The name of a view will be used as tab title.
+    # Might be used for other things in the future.
+  - title: Rooms
+    # Each view can have a different theme applied. Theme should be defined in the frontend.
+    # The cards to show on this view.
+    cards:
+      - type: entities
+        title: Livingroom
+        entities:
+          - light.living_room_ceiling_lamp
+          - light.living_room_couch
+          - light.living_room_under_couch
+          - light.tv_light_bulb
+          - light.computer_lamp_bulb
+          - light.livingroom_plant
+          - switch.ikea_planter
+          - sensor.planter_lamp_ontime
+          - fan.livingroom_fan
+          - vacuum.roomba
+          - binary_sensor.roomba_bin
+          # - media_player.kd55x8505c
+          - climate.thermostat
+          - sensor.livingroom_temperature_couch
+          - sensor.mystrom_computer
+          - sensor.mystrom_tv
+          - binary_sensor.livingroomdoor_state
+          - binary_sensor.livingroomwindow_state
+      - type: entities
+        title: Bedroom
+        entities:
+          - light.bedroom_main
+          - light.bedroom_nightstand
+          - light.bedroom_2
+          - light.bedroom_4
+          - switch.bedroom_fan
+          - switch.bedroom_alarmclock
+          - sensor.netatmo_bedroom_temperature
+          - sensor.netatmo_bedroom_humidity
+          - sensor.netatmo_bedroom_co2
+          - sensor.netatmo_bedroom_noise
+          - binary_sensor.bedroomdoor_state
+          - binary_sensor.bedroomwindow_state
+      - type: entities
+        title: Kitchen
+        entities:
+          - light.kitchen_2
+          - light.kitchen_1
+          - sensor.kitchen_temperature
+          - sensor.kitchenthermometer_humidity
+          - binary_sensor.entrancedoor_state
+          - binary_sensor.kitchenwindow_state
+      - type: entities
+        title: Office
+        entities:
+          - light.office_ceiling
+          - sensor.mystrom_server
+          - sensor.netatmo_office_temperature
+          - sensor.netatmo_office_humidity
+          - sensor.netatmo_office_co2
+          - binary_sensor.officedoor_state
+          - binary_sensor.officewindow_state
+      - type: entities
+        title: Bathroom
+        entities:
+          - group.bathroom_ceiling
+          - switch.bathroom_heater
+          - climate.bathroom
+          - timer.bathroom_heater
+          - sensor.bathroomthermostat_humidity
+          - input_boolean.ignore_bathroom_door
+          - binary_sensor.bathroomdoor_state
+      - type: entities
+        title: Outdoor
+        entities:
+          - light.outdoor_1
+          - switch.xmas_lights
+          - sensor.netatmo_outdoormodule_temperature
+          - sensor.windchill_temperature
+          - sensor.netatmo_outdoormodule_humidity
+          - sensor.netatmo_bedroom_pressure
+  - title: Apartment
+    cards:
+      - type: vertical-stack
+        cards:
+          - type: entities
+            title: Climate
+            entities:
+              - climate.thermostat
+              - sensor.netatmo_bedroom_temperature
+              - climate.bathroom
+              - sensor.netatmo_office_temperature
+              - sensor.kitchen_temperature
+              - sensor.netatmo_outdoormodule_temperature
+          - type: entities
+            title: Presence Detection
+            entities:
+              - device_tracker.steff_phone_pixel
+  - title: "3D Printer"
+    cards:
+      - type: picture-glance
+        title: Prusa MK3
+        entities:
+          - binary_sensor.3d_printer_power_status
+        camera_image: camera.prusa_i3_mk3
+  - title: Weather
+    cards:
+      - type: "custom:weather-card"
+        entity_weather: weather.weather_oberried
+        entity_sun: sun.sun
+  - title: Webcams
+    cards:
+      - type: picture-entity
+        title: Axalp 1900m
+        entity: camera.webcam_axalp
+        camera_image: camera.webcam_axalp
+        show_info: false
+      - type: horizontal-stack
+        cards:
+          - type: picture-entity
+            title: Axalp 1500m
+            entity: camera.webcam_axalp_2
+            camera_image: camera.webcam_axalp_2
+            show_info: false
+          - type: picture-entity
+            title: Brienz
+            entity: camera.webcam_brienz
+            camera_image: camera.webcam_brienz
+            show_info: false
+      - type: vertical-stack
+        cards:
+          - type: picture-entity
+            title: Rothorn
+            entity: camera.webcam_rothorn
+            camera_image: camera.webcam_rothorn
+            show_info: false
+          - type: picture-entity
+            title: Bönigen
+            entity: camera.webcam_bonigen
+            camera_image: camera.webcam_bonigen
+            show_info: false
