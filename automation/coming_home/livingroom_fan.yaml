@@ -8,7 +8,7 @@
     for:
       hours: 0
       minutes: 0
-      seconds: 15
+      seconds: 5
   condition:
     - condition: numeric_state
       entity_id: sensor.netatmo_thermostat_temperature

@@ -8,7 +8,7 @@
     for:
       hours: 0
       minutes: 0
-      seconds: 15
+      seconds: 5
   condition:
     - condition: state
       entity_id: remote.harmony_hub
@@ -17,4 +17,4 @@
     - service: remote.turn_on
       data:
         entity_id: remote.harmony_hub
-        activity: "Watch YouTube"
+        activity: "Watch TV"

@@ -1,5 +1,5 @@
 platform: mqtt
-name: Fan Bathroom
+name: Fan Office
 command_topic: "recode/arduino/fan01/command"
 state_topic: "recode/arduino/fan01/state"
 speed_command_topic: "recode/arduino/fan01/fanspeed/command"
