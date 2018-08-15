@@ -31,6 +31,9 @@ http:
   # base_url: example.duckdns.org:8123
   ssl_certificate: !secret ssl_certificate
   ssl_key: !secret ssl_key
+  use_x_forwarded_for: true
+  trusted_proxies:
+    - !secret proxy_ip
 
   base_url: !secret base_url
 
