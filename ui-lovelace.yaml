@@ -94,6 +94,8 @@ views:
             name: Sink Lamp
           - entity: light.kitchen_1
             name: Table Lamp
+          - entity: switch.ikea_planter
+            name: IKEA Planter
           - entity: sensor.kitchen_temperature
             name: Temperature
           - entity: sensor.kitchenthermometer_humidity

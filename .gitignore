@@ -41,3 +41,4 @@ html5_push_registrations.conf
 packages.disabled
 
 www/people
+*.mp3
