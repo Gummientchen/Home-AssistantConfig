@@ -32,6 +32,9 @@
         title: "ALARM"
         data:
           tag: "alarm_entrance_door_opened"
+    - service: notify.hangouts
+      data:
+        message: "Entrance Door was opened!"
 
 # Entrance Door closed when not home!
 - alias: "Entrance Door closed when not home"
@@ -57,3 +60,6 @@
         title: "ALARM"
         data:
           tag: "alarm_entrance_door_closed"
+    - service: notify.hangouts
+      data:
+        message: "Entrance Door was closed again!"

@@ -7,7 +7,6 @@ livingroom:
     - light.tv_light_bulb
     - light.computer_lamp_bulb
     - light.livingroom_plant
-    - switch.ikea_planter
     - sensor.planter_lamp_ontime
     - fan.livingroom_fan
     - vacuum.roomba

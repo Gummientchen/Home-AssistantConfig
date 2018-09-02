@@ -25,7 +25,6 @@
     light.office_ceiling: off
     light.tv_light: off
     light.tv_lights: off
-    switch.ikea_planter: on
 
 - name: Sleep
   entities:
@@ -45,7 +44,6 @@
     light.office_ceiling: off
     light.tv_light: off
     light.tv_lights: off
-    switch.ikea_planter: on
 
 - name: Night Toilet
   entities:
@@ -65,7 +63,6 @@
       state: on
       brightness: 128
       kelvin: 2200
-    switch.ikea_planter: off
     light.bedroom_4: off
     light.bedroom_2: off
     light.living_room_ceiling_lamp: off

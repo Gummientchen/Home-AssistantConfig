@@ -36,3 +36,6 @@
         title: "Intruder Alert!"
         data:
           tag: "intruder_alert"
+    - service: notify.hangouts
+      data:
+        message: "Window/Door was opened!"

@@ -1,0 +1,21 @@
+platform: bayesian
+name: "is watching tv bayesian"
+prior: 0.6
+probability_threshold: 0.95
+observations:
+  - entity_id: 'device_tracker.steff_phone_pixel'
+    prob_given_true: 0.6
+    platform: 'state'
+    to_state: 'home'
+  - entity_id: 'binary_sensor.tv_power_status'
+    prob_given_true: 0.94
+    platform: 'state'
+    to_state: 'on'
+  - entity_id: 'light.tv_light_bulb'
+    prob_given_true: 0.8
+    platform: 'state'
+    to_state: 'on'
+  - entity_id: 'sensor.netatmo_bedroom_noise'
+    prob_given_true: 0.7
+    platform: 'numeric_state'
+    above: 40

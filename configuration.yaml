@@ -14,6 +14,12 @@ homeassistant:
   customize: !include customize.yaml
   packages: !include_dir_named packages
 
+  # auth_providers:
+  #   - type: homeassistant
+  #   - type: legacy_api_password
+
+auth:
+
 # Logger
 logger:
   default: error
@@ -24,13 +30,15 @@ frontend: !include frontend.yaml
 # Enables configuration UI
 config:
 
+cast:
+
 http:
   # Uncomment this to add a password (recommended!)
   api_password: !secret http_password
   # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
   # base_url: example.duckdns.org:8123
-  ssl_certificate: !secret ssl_certificate
-  ssl_key: !secret ssl_key
+  # ssl_certificate: !secret ssl_certificate
+  # ssl_key: !secret ssl_key
   use_x_forwarded_for: true
   trusted_proxies:
     - !secret proxy_ip
@@ -94,8 +102,8 @@ mqtt:
 
 # Text to speech
 tts:
-  - platform: microsoft
-    api_key: !secret microsoft_bing_speech_api_key
+  - platform: google
+#    api_key: !secret microsoft_bing_speech_api_key
 
 # Netatmo Config
 netatmo:

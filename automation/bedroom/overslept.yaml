@@ -5,7 +5,7 @@
       at: "07:45:00"
   condition:
     - condition: state
-      entity_id: binary_sensor.is_sleeping
+      entity_id: binary_sensor.is_sleeping_bayesian
       state: 'on'
     - condition: state
       entity_id: input_boolean.holidays
@@ -32,15 +32,21 @@
         title: "Alarmclock"
         data:
           tag: "alarmclock"
+    - service: notify.hangouts
+      data:
+        message: "YOU ARE OVERSLEEPING!!!"
     - service: media_player.volume_set
       entity_id: media_player.bedroom_speaker
       data:
         volume_level: 1
     - delay: 0:00:15
-    - service: tts.google_say
-      entity_id: media_player.bedroom_speaker
+    - service: media_player.play_media
       data:
-        message: 'You are oversleeping! It is 07:45 am!'
+        entity_id: media_player.bedroom_speaker
+        media_content_type: audio/mp3
+      data_template:
+        media_content_id: >
+          {{ ["https://steff999.duckdns.org/local/audio/alarmclock/annoying_sounds_9min.mp3", "https://steff999.duckdns.org/local/audio/alarmclock/rooster_crowing_30min.mp3"] | random}}
     - delay: 0:30:00
     - service: light.turn_on
       entity_id:

@@ -1,0 +1,70 @@
+bathroom_heater:
+  alias: "Bathroom Heater 30 Minutes"
+  sequence:
+    - service: climate.turn_on
+      entity_id: climate.bathroom
+    - service: climate.set_temperature
+      entity_id: climate.bathroom
+      data_template:
+        temperature: "{{ float(states('input_number.bathroom_temperature')) }}"
+    - service: timer.start
+      entity_id: timer.bathroom_heater
+      data:
+        duration: 1800
+    - service: group.set_visibility
+      entity_id: group.bathroom_heater_control
+      data:
+        visible: True
+    - service: notify.html5
+      data:
+        message: "Bathroom Heater powered on for 30 minutes"
+        title: "Bathroom"
+        data:
+          tag: 'bathroom_heater_info'
+          actions:
+            - action: "reset_bathroom_timer"
+              title: "Reset Timer"
+            - action: "cancel_bathroom_timer"
+              title: "Cancel Timer"
+
+bathroom_heater_reset:
+  alias: "Bathroom Heater add 5 Minutes"
+  sequence:
+    - service: timer.pause
+      entity_id: timer.bathroom_heater
+    - service: group.set_visibility
+      entity_id: group.bathroom_heater_control
+      data:
+        visible: True
+    - service: notify.html5
+      data:
+        message: "Bathroom Heater powered on for another 5 minutes"
+        title: "Bathroom"
+        data:
+          tag: 'bathroom_heater_info'
+          actions:
+            - action: "reset_bathroom_timer"
+              title: "Reset Timer"
+            - action: "cancel_bathroom_timer"
+              title: "Cancel Timer"
+    - delay: 0:05:00
+    - service: timer.start
+      entity_id: timer.bathroom_heater
+
+bathroom_heater_cancel:
+  alias: "Bathroom Heater Cancel"
+  sequence:
+    - service: climate.turn_off
+      entity_id: climate.bathroom
+    - service: timer.cancel
+      entity_id: timer.bathroom_heater
+    - service: group.set_visibility
+      entity_id: group.bathroom_heater_control
+      data:
+        visible: False
+    - service: notify.html5
+      data:
+        message: "Bathroom Heater timer cancelled"
+        title: "Bathroom"
+        data:
+          tag: 'bathroom_heater_info'

@@ -1,0 +1,9 @@
+platform: bayesian
+name: "is gaming bayesian"
+prior: 0.2
+probability_threshold: 0.9
+observations:
+  - entity_id: 'sensor.mystrom_computer'
+    prob_given_true: 0.95
+    platform: 'numeric_state'
+    above: 250

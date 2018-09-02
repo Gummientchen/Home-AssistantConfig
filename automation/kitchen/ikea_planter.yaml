@@ -1,0 +1,21 @@
+- alias: "IKEA Planter: ON"
+  id: ikea_planter_on
+  trigger:
+    - platform: time
+      at: '05:30:00'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.ikea_planter
+
+- alias: "IKEA Planter: OFF"
+  id: ikea_planter_off
+  trigger:
+    - platform: time
+      at: '22:30:00'
+  action:
+    - service: switch.turn_off
+      data:
+        entity_id:
+          - switch.ikea_planter

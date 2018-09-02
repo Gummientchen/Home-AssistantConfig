@@ -1,0 +1,4 @@
+name: hangouts
+platform: hangouts
+default_conversations:
+  - id: !secret hangouts_conversationid_1
