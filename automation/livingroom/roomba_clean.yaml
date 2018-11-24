@@ -8,7 +8,7 @@
     condition: and
     conditions:
       - condition: state
-        entity_id: device_tracker.404e36855fdd
+        entity_id: group.presence
         state: not_home
         # optional: trigger only if state was this for last X time.
         for:
@@ -16,7 +16,7 @@
           minutes: 30
           seconds: 0
       - condition: template
-        value_template: '{{ float(states.vacuum.roomba.attributes.battery_level) > 99 }}'
+        value_template: '{{ float(states.vacuum.roomba.attributes.battery_level) > 90 }}'
   action:
     - service: vacuum.turn_on
       data:
@@ -33,8 +33,8 @@
         data:
           tag: "roomba_info"
           actions:
-          - action: stopRoomba
-            title: Stop
+            - action: stopRoomba
+              title: Stop
 
 # Notification STOP roomba clicked
 - alias: "Roomba HTML5 Stop button clicked"
@@ -73,7 +73,7 @@
       seconds: 0
   condition:
     - condition: state
-      entity_id: device_tracker.404e36855fdd
+      entity_id: group.presence
       state: not_home
       # optional: trigger only if state was this for last X time.
       for:
@@ -98,7 +98,7 @@
   id: ruumba_stop_cleaning_schedule
   trigger:
     platform: state
-    entity_id: device_tracker.404e36855fdd
+    entity_id: group.presence
     from: 'not_home'
     to: 'home'
     for:
@@ -124,7 +124,7 @@
   id: ruumba_bin_full_message
   trigger:
     - platform: state
-      entity_id: device_tracker.404e36855fdd
+      entity_id: group.presence
       from: 'off'
       to: 'on'
       for:

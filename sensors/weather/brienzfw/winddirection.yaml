@@ -1,3 +1,5 @@
 platform: mqtt
 state_topic: "weather/brienzfw/wind/direction"
 name: Wind Direction Brienz
+unit_of_measurement: "°"
+value_template: "{{ value|float }}"

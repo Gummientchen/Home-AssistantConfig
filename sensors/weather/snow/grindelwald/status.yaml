@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "snow/grindelwald/status"
+name: Snow Status Grindelwald

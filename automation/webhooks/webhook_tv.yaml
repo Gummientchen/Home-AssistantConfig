@@ -1,0 +1,7 @@
+- alias: Webhook TV
+  id: webhook_tv
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_tv
+  action:
+    - service: script.tv_light

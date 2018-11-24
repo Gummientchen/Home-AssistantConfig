@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  steff_phone_pressure:
+    friendly_name: Steff Phone Pressure
+    unit_of_measurement: 'kPa'
+    value_template: '{{ states("input_number.phone_status_pressure")|round }}'

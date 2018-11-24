@@ -1,0 +1,193 @@
+# - alias: Sunset Bathroom Lamp ON
+#   id: sunset_bathroom_lamp_on
+#   trigger:
+#     - platform: sun
+#       event: sunset
+#   condition:
+#     condition: state
+#     entity_id: light.bathroom_ceiling
+#     state: 'off'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bathroom_ceiling
+#         brightness: 0
+#         kelvin: 2200
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.bathroom_ceiling
+#         brightness: 255
+#         kelvin: 2200
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_2
+#         brightness: 0
+#         kelvin: 2200
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.bedroom_2
+#         brightness: 255
+#         kelvin: 2200
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_4
+#         brightness: 0
+#         kelvin: 2200
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.bedroom_4
+#         brightness: 255
+#         kelvin: 2200
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_nightstand
+#         brightness: 0
+#         kelvin: 2200
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.bedroom_nightstand
+#         brightness: 255
+#         kelvin: 2200
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.kitchen_2
+#         brightness: 0
+#         kelvin: 2200
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.kitchen_2
+#         brightness: 255
+#         kelvin: 2200
+
+# - alias: Sunset Bathroom Lamp OFF
+#   id: sunset_bathroom_lamp_off
+#   trigger:
+#     - platform: sun
+#       event: sunset
+#   condition:
+#     condition: state
+#     entity_id: light.bathroom_ceiling
+#     state: 'on'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bathroom_ceiling
+#         kelvin: 2200
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_2
+#         kelvin: 2200
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_4
+#         kelvin: 2200
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_nightstand
+#         kelvin: 2200
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.kitchen_2
+#         kelvin: 2200
+
+# - alias: Sunrise Bathroom Lamp ON
+#   id: sunrise_bathroom_lamp_on
+#   trigger:
+#     - platform: sun
+#       event: sunrise
+#   condition:
+#     condition: state
+#     entity_id: light.bathroom_ceiling
+#     state: 'off'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bathroom_ceiling
+#         brightness: 0
+#         kelvin: 2700
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.bathroom_ceiling
+#         brightness: 255
+#         kelvin: 2700
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_2
+#         brightness: 0
+#         kelvin: 2700
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.bedroom_2
+#         brightness: 255
+#         kelvin: 2700
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_4
+#         brightness: 0
+#         kelvin: 2700
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.bedroom_4
+#         brightness: 255
+#         kelvin: 2700
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_nightstand
+#         brightness: 0
+#         kelvin: 2700
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.bedroom_nightstand
+#         brightness: 255
+#         kelvin: 2700
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.kitchen_2
+#         brightness: 0
+#         kelvin: 2700
+#     - delay: 00:00:10
+#     - service: light.turn_off
+#       data:
+#         entity_id: light.kitchen_2
+#         brightness: 255
+#         kelvin: 2700
+
+# - alias: Sunrise Bathroom Lamp OFF
+#   id: sunrise_bathroom_lamp_off
+#   trigger:
+#     - platform: sun
+#       event: sunrise
+#   condition:
+#     condition: state
+#     entity_id: light.bathroom_ceiling
+#     state: 'on'
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bathroom_ceiling
+#         kelvin: 2700
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_2
+#         kelvin: 2700
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_4
+#         kelvin: 2700
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.bedroom_nightstand
+#         kelvin: 2700
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.kitchen_2
+#         kelvin: 2700

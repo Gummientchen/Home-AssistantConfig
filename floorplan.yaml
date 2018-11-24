@@ -40,6 +40,12 @@
           #   else
           #     return "temp-high";
           #   '
+        - name: Lightsensor
+          entities:
+            - sensor.tsl2561_ambient_light
+          # text_template: '${entity.state ? entity.state : "unknown"}'
+          # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
+          text_template: '${entity.state ? ""+Math.round(entity.state*10)/10+" lx" : "undefined"}'
 
         - name: Lights
           entities:
@@ -53,7 +59,9 @@
             - light.office_ceiling
             - light.computer_lamp_bulb
             - light.tv_light_bulb
-            - group.livingroomlightscouch
+            - light.bedroom_corner_right
+            - light.bedroom_corner_left
+            - light.living_room_corner_lamp
           states:
             - state: 'on'
               class: 'light-on'
@@ -67,6 +75,7 @@
           entities:
             - light.bedroom_4
             - light.living_room_under_couch
+            - light.livingroom_plant
           states:
             - state: 'on'
               class: 'furniture-light-on'
@@ -75,6 +84,15 @@
           action:
             domain: homeassistant   # This optional parameter allows you to use other services such as homeassistant.toggle like here.
             service: toggle
+
+        - name: Locks
+          entities:
+            - lock.home
+          states:
+            - state: 'locked'
+              class: 'lock-locked'
+            - state: 'unlocked'
+              class: 'lock-unlocked'
 
         - name: Switches
           entities:
@@ -154,7 +172,6 @@
           entities:
             - binary_sensor.tv_power_status
             - binary_sensor.computer_power_status
-            - binary_sensor.3d_printer_power_status
           states:
             - state: 'on'
               class: 'device-on'

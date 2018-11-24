@@ -1,0 +1,4 @@
+platform: netatmo
+home: Entrance
+cameras:
+  - Entrance

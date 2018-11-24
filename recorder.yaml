@@ -1,5 +1,6 @@
-purge_interval: 2
-purge_keep_days: 7
+purge_interval: 1
+purge_keep_days: 10
+db_url: !secret recorder_db_url
 include:
   domains:
     - switch
@@ -11,17 +12,17 @@ include:
     - device_tracker
     - fan
     - input_number
+    - input_boolean
     - vacuum
     - weather
+    - lock
 exclude:
   domains:
     - automation
     - weblink
     - updater
-    - group
     - media_player
     - script
-    - zone
   entities:
     - camera.entrance
     - camera.prusa_i3_mk3

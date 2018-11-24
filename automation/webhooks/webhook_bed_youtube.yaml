@@ -1,0 +1,7 @@
+- alias: Webhook Bed Youtube
+  id: webhook_bed_youtube
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_bed_youtube
+  action:
+    - service: script.bed_youtube

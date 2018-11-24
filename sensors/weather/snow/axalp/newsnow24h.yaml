@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "snow/axalp/newsnow24h"
+name: Snowfall 24h Axalp
+unit_of_measurement: cm

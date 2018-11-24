@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "snow/grindelwald/pistes"
+name: Pistes open Grindelwald
+unit_of_measurement: km

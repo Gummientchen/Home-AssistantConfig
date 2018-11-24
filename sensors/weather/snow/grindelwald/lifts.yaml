@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "snow/grindelwald/lifts"
+name: Lifts open Grindelwald

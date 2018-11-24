@@ -1,0 +1,7 @@
+- alias: Webhook Gaming
+  id: webhook_gaming
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_gaming
+  action:
+    - service: script.gaming_light

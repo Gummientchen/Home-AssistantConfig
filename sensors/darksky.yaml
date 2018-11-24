@@ -7,8 +7,8 @@ monitored_conditions:
   - cloud_cover
   - visibility
   - ozone
-  - temperature_max
-  - temperature_min
+  - temperature_high
+  - temperature_low
   - precip_type
   - precip_intensity
   - precip_probability
@@ -21,7 +21,8 @@ monitored_conditions:
   - minutely_summary
   - hourly_summary
   - daily_summary
-  - apparent_temperature_max
-  - apparent_temperature_min
+  - apparent_temperature_high
+  - apparent_temperature_low
   - precip_intensity_max
   - uv_index
+  - moon_phase

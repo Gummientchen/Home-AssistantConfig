@@ -1,0 +1,7 @@
+- alias: Webhook Sleep
+  id: webhook_sleep
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_sleep
+  action:
+    - service: script.good_night

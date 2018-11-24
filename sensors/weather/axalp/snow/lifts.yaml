@@ -1,3 +1,0 @@
-platform: mqtt
-state_topic: "snow/axalp/lifts"
-name: Lifts open

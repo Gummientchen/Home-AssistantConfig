@@ -1,0 +1,3 @@
+platform: mqtt
+topic: webcam/brienz2/last
+name: Webcam Brienz 2

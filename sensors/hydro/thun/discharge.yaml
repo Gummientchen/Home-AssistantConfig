@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/thun/abfluss/last"
+name: Aare Thun Discharge
+unit_of_measurement: m3/s

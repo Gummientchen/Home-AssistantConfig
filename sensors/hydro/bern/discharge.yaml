@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/bern/abfluss/last"
+name: Aare Bern Discharge
+unit_of_measurement: m3/s

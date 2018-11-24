@@ -35,19 +35,19 @@
     - service: notify.hangouts
       data:
         message: "YOU ARE OVERSLEEPING!!!"
-    - service: media_player.volume_set
-      entity_id: media_player.bedroom_speaker
-      data:
-        volume_level: 1
-    - delay: 0:00:15
-    - service: media_player.play_media
-      data:
-        entity_id: media_player.bedroom_speaker
-        media_content_type: audio/mp3
-      data_template:
-        media_content_id: >
-          {{ ["https://steff999.duckdns.org/local/audio/alarmclock/annoying_sounds_9min.mp3", "https://steff999.duckdns.org/local/audio/alarmclock/rooster_crowing_30min.mp3"] | random}}
-    - delay: 0:30:00
+    # - service: media_player.volume_set
+    #   entity_id: media_player.bedroom_speaker
+    #   data:
+    #     volume_level: 1
+    # - delay: 0:00:15
+    # - service: media_player.play_media
+    #   data:
+    #     entity_id: media_player.bedroom_speaker
+    #     media_content_type: audio/mp3
+    #   data_template:
+    #     media_content_id: >
+    #       {{ ["https://steff999.duckdns.org/local/audio/alarmclock/annoying_sounds_9min.mp3", "https://steff999.duckdns.org/local/audio/alarmclock/rooster_crowing_30min.mp3"] | random}}
+    # - delay: 0:30:00
     - service: light.turn_on
       entity_id:
         - light.bedroom_nightstand
@@ -55,7 +55,7 @@
         - light.bedroom_2
       data:
         kelvin: 2200
-    - service: media_player.volume_set
-      entity_id: media_player.bedroom_speaker
-      data:
-        volume_level: 0.4
+    # - service: media_player.volume_set
+    #   entity_id: media_player.bedroom_speaker
+    #   data:
+    #     volume_level: 0.4

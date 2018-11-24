@@ -1,6 +1,22 @@
 good_night:
   alias: Sleep
   sequence:
+    # turn off all lights
     - service: light.turn_off
       data:
         entity_id: group.all_lights
+
+    # turn off all fans
+    - service: fan.turn_off
+      data:
+        entity_id: group.all_fans
+
+    # turn off TV
+    - service: remote.turn_off
+      data:
+        entity_id: remote.harmony_hub
+
+    # lock front door
+    - service: lock.lock
+      data:
+        entity_id: lock.home

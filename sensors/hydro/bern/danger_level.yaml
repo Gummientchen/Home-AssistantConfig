@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "hydro/bern/danger/level"
+name: Aare Bern Danger level

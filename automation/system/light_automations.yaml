@@ -1,0 +1,69 @@
+- alias: Sunset Entrance Lamp ON
+  id: sunset_entrance_lamp_on
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.tsl2561_ambient_light
+      below: 50
+      for:
+        hours: 0
+        minutes: 10
+        seconds: 0
+  condition:
+    condition: state
+    entity_id: group.presence
+    state: 'not_home'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.outdoor_1
+
+- alias: Left Home Entrance Lamp ON
+  id: left_home_entrance_lamp_on
+  trigger:
+    - platform: state
+      entity_id: group.presence
+      from: 'home'
+      to: 'not_home'
+      for:
+        hours: 0
+        minutes: 30
+        seconds: 0
+  condition:
+    condition: numeric_state
+    entity_id: group.presence
+    below: 50
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.outdoor_1
+
+- alias: Sunrise Entrance Lamp OFF
+  id: sunset_entrance_lamp_off
+  trigger:
+    - platform: numeric_state
+      entity_id: sensor.tsl2561_ambient_light
+      above: 100
+      for:
+        hours: 0
+        minutes: 10
+        seconds: 0
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.outdoor_1
+
+- alias: Got Home Entrance Lamp OFF
+  id: got_home_entrance_lamp_off
+  trigger:
+    - platform: state
+      entity_id: group.presence
+      from: 'not_home'
+      to: 'home'
+      for:
+        hours: 0
+        minutes: 10
+        seconds: 0
+  action:
+    - service: light.turn_off
+      data:
+        entity_id: light.outdoor_1

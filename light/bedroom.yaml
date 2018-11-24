@@ -18,3 +18,9 @@
   entities:
     - light.bedroom_2
     - light.bedroom_4
+
+- platform: group
+  name: Bedroom Corners
+  entities:
+    - light.bedroom_corner_right
+    - light.bedroom_corner_left

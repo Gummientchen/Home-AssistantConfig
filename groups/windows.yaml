@@ -1,0 +1,7 @@
+windows:
+  name: Windows
+  entities:
+    - binary_sensor.bedroomwindow_state
+    - binary_sensor.kitchenwindow_state
+    - binary_sensor.livingroomwindow_state
+    - binary_sensor.officewindow_state

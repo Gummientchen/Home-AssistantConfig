@@ -1,0 +1,34 @@
+- alias: "Go to bed"
+  id: go_to_bed
+  trigger:
+    - platform: time
+      at: '22:00:00'
+  condition:
+    - condition: state
+      entity_id: input_boolean.holidays
+      state: 'off'
+    - condition: state
+      entity_id: device_tracker.steff_phone_pixel
+      state: 'home'
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - sun
+  action:
+    - service: light.turn_off
+      data:
+        entity_id:
+          - group.all_lights
+    - service: remote.turn_off
+      data:
+        entity_id:
+          - remote.harmony_hub
+    - delay: 0:05
+    - service: light.turn_on
+      data:
+        entity_id:
+          - light.bedroom_nightstand
+          - light.bedroom_4

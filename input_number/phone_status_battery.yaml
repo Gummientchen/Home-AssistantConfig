@@ -1,0 +1,12 @@
+phone_status_battery:
+  name: "Phone Battery"
+  min: 0
+  max: 100
+  unit_of_measurement: '%'
+  icon: mdi:battery-70
+
+phone_status_pressure:
+  name: "Phone Pressure"
+  min: 750
+  max: 1250
+  icon: mdi:gauge

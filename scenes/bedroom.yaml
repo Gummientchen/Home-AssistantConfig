@@ -20,11 +20,13 @@
     light.living_room_normal_lights: off
     light.living_room_under_couch: off
     light.livingroom_plant: off
-    light.computer_lamp: off
+    light.computer_lamp_bulb: off
     light.office: off
     light.office_ceiling: off
     light.tv_light: off
     light.tv_lights: off
+    lock.home:
+      state: locked
 
 - name: Sleep
   entities:
@@ -44,6 +46,8 @@
     light.office_ceiling: off
     light.tv_light: off
     light.tv_lights: off
+    lock.home:
+      state: locked
 
 - name: Night Toilet
   entities:

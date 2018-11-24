@@ -2,31 +2,7 @@
   id: climate_reduce_temperature_window_open
   trigger:
     - platform: state
-      entity_id: binary_sensor.bedroomwindow_state
-      from: "off"
-      to: "on"
-      for:
-        seconds: 15
-        minutes: 0
-        hours: 0
-    - platform: state
-      entity_id: binary_sensor.kitchenwindow_state
-      from: "off"
-      to: "on"
-      for:
-        seconds: 15
-        minutes: 0
-        hours: 0
-    - platform: state
-      entity_id: binary_sensor.livingroomwindow_state
-      from: "off"
-      to: "on"
-      for:
-        seconds: 15
-        minutes: 0
-        hours: 0
-    - platform: state
-      entity_id: binary_sensor.officewindow_state
+      entity_id: group.windows
       from: "off"
       to: "on"
       for:
@@ -43,31 +19,7 @@
   id: climate_increase_temperature_window_closed
   trigger:
     - platform: state
-      entity_id: binary_sensor.bedroomwindow_state
-      from: "on"
-      to: "off"
-      for:
-        seconds: 15
-        minutes: 0
-        hours: 0
-    - platform: state
-      entity_id: binary_sensor.kitchenwindow_state
-      from: "on"
-      to: "off"
-      for:
-        seconds: 15
-        minutes: 0
-        hours: 0
-    - platform: state
-      entity_id: binary_sensor.livingroomwindow_state
-      from: "on"
-      to: "off"
-      for:
-        seconds: 15
-        minutes: 0
-        hours: 0
-    - platform: state
-      entity_id: binary_sensor.officewindow_state
+      entity_id: group.windows
       from: "on"
       to: "off"
       for:

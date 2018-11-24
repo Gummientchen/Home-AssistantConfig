@@ -1,0 +1,19 @@
+- alias: Webhook Lock Unlock
+  id: webhook_lock_unlock
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_lock_unlock
+  action:
+    - service: lock.unlock
+      data:
+        entity_id: lock.home
+
+- alias: Webhook Lock Lock
+  id: webhook_lock_lock
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_lock_lock
+  action:
+    - service: lock.lock
+      data:
+        entity_id: lock.home

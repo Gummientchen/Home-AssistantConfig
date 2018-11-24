@@ -1,0 +1,50 @@
+- alias: "Dyson Night Mode ON"
+  id: livingroom_dyson_night_mode_on
+  trigger:
+    platform: time
+    at: '22:00:00'
+  action:
+    - service: fan.dyson_set_night_mode
+      data:
+        entity_id: fan.living_room
+        night_mode: true
+
+- alias: "Dyson Night Mode OFF"
+  id: livingroom_dyson_night_mode_off
+  trigger:
+    platform: time
+    at: '07:00:00'
+  action:
+    - service: fan.dyson_set_night_mode
+      data:
+        entity_id: fan.living_room
+        night_mode: false
+
+- alias: "Dyson Filter Warning 200h"
+  id: livingroom_dyson_filter_warning_200h
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.living_room_filter_life
+    below: 200
+    above: 101
+  action:
+    - service: notify.html5
+      data:
+        message: "Dyson Filter Life below 200h"
+        title: "Dyson"
+        data:
+          tag: "dyson_filter"
+
+- alias: "Dyson Filter Warning 100h"
+  id: livingroom_dyson_filter_warning_100h
+  trigger:
+    platform: numeric_state
+    entity_id: sensor.living_room_filter_life
+    below: 100
+  action:
+    - service: notify.html5
+      data:
+        message: "Dyson Filter Life below 100h"
+        title: "Dyson"
+        data:
+          tag: "dyson_filter"

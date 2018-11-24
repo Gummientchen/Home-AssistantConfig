@@ -1,93 +1,3 @@
-binary_sensor.tv_remote:
-  custom_ui_state_card: state-card-remote
-  config:
-    name: TV Remote
-    image: /local/custom_ui/remote/remote.svg
-    stylesheet: /local/custom_ui/remote/remote.css
-    warnings:
-    date_format: DD-MM-YYYY
-    groups:
-    - name: Power Button
-      entities:
-      - remote.harmony_hub
-      states:
-      - state: 'on'
-        class: power-on
-      action:
-        domain: remote
-        service: toggle
-    - name: Remote Back
-      entities:
-      - script.remote_back
-      action:
-        domain: script
-        service: remote_back
-    - name: Remote Down
-      entities:
-      - script.remote_down
-      action:
-        domain: script
-        service: remote_down
-    - name: Remote Home
-      entities:
-      - script.remote_home
-      action:
-        domain: script
-        service: remote_home
-    - name: Remote Left
-      entities:
-      - script.remote_left
-      action:
-        domain: script
-        service: remote_left
-    - name: Remote Pause
-      entities:
-      - script.remote_pause
-      action:
-        domain: script
-        service: remote_pause
-    - name: Remote Play
-      entities:
-      - script.remote_play
-      action:
-        domain: script
-        service: remote_play
-    - name: Remote Right
-      entities:
-      - script.remote_right
-      action:
-        domain: script
-        service: remote_right
-    - name: Remote Select
-      entities:
-      - script.remote_select
-      action:
-        domain: script
-        service: remote_select
-    - name: Remote Up
-      entities:
-      - script.remote_up
-      action:
-        domain: script
-        service: remote_up
-    - name: Remote Volume Down
-      entities:
-      - script.remote_volume_down
-      action:
-        domain: script
-        service: remote_volume_down
-    - name: Remote Volume Up
-      entities:
-      - script.remote_volume_up
-      action:
-        domain: script
-        service: remote_volume_up
-    - name: Remote Volume Mute
-      entities:
-      - script.remote_volume_mute
-      action:
-        domain: script
-        service: remote_volume_mute
 light.bedroom_2:
   friendly_name: Bedroom Ceiling
   icon: mdi:ceiling-light
@@ -512,3 +422,25 @@ device_tracker.googlehome:
   hidden: true
 device_tracker.googlehome_2:
   hidden: true
+sensor.aare_thun_danger_level:
+  icon: mdi:alert-circle
+sensor.aare_bern_danger_level:
+  icon: mdi:alert-circle
+sensor.aare_bern_discharge:
+  icon: mdi:water-pump
+sensor.aare_thun_discharge:
+  icon: mdi:water-pump
+sensor.aare_bern_waterlevel:
+  icon: mdi:chart-line
+sensor.aare_thun_waterlevel:
+  icon: mdi:chart-line
+device_tracker.fa79v1a07669:
+  entity_picture: '"/local/people/steff.jpg"'
+  friendly_name: GpsLogger
+  icon: mdi:cellphone
+device_tracker.b02a43fcbe53:
+  entity_picture: '"/local/people/steff.jpg"'
+  friendly_name: Steff Pixel 3
+device_tracker.88px01wkd:
+  entity_picture: '"/local/people/steff.jpg"'
+  friendly_name: Steff GPS Pixel 3

@@ -3,5 +3,4 @@ sensors:
   steff_phone_battery:
     friendly_name: Steff Phone Battery
     unit_of_measurement: '%'
-    value_template: '{{ states.device_tracker.phone_phone.attributes.battery|round }}'
-    icon_template: '{%- if is_state("device_tracker.phone_phone", "unknown") %}mdi:battery-unknown{%- elif  states.device_tracker.phone_phone.attributes.battery|float <= 5 %}mdi:battery-outline{%- elif states.device_tracker.phone_phone.attributes.battery|float >= 95 %}mdi:battery{% else %}mdi:battery-{{(states.device_tracker.phone_phone.attributes.battery|float / 10)|round*10}}{%- endif %}'
+    value_template: '{{ states("input_number.phone_status_battery")|round }}'

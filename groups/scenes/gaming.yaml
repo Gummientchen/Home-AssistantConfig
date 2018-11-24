@@ -3,7 +3,7 @@ gaming_lights_on:
   entities:
     - light.living_room_under_couch
     - light.tv_light_bulb
-    - light.computer_lamp
+    - light.computer_lamp_bulb
 
 gaming_lights_off:
   name: Gaming Lights OFF

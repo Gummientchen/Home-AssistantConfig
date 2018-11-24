@@ -1,5 +1,0 @@
-platform: mqtt
-state_topic: "snow/axalp/amount"
-name: Snow Height
-unit_of_measurement: cm
-icon: mdi:snowflake

@@ -1,0 +1,7 @@
+- alias: Webhook Leaving Home
+  id: webhook_leaving_home
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_leaving_home
+  action:
+    - service: script.leaving_home

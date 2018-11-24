@@ -137,6 +137,20 @@ svg .ha-entity{
   stroke-width: 0;
 }
 
+/* Locks */
+
+.lock-locked {
+  fill: #04a600 !important;
+  transition: fill 0.1s;
+  stroke-width: 0;
+}
+
+.lock-unlocked {
+  fill: #BB1815 !important;
+  transition: fill 0.1s;
+  stroke-width: 0;
+}
+
 /* Doorbell */
 
 .switch-off {

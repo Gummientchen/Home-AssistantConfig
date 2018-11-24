@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/bern/temperatur/last"
+name: Aare Bern Temperature
+unit_of_measurement: °C

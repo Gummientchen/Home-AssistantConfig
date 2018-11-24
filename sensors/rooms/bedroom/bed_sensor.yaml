@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  bed_sensor_kg:
+    friendly_name: "Bed Weight"
+    unit_of_measurement: "kg"
+    value_template: "{{ float(states('sensor.hx711_bed_sensor'))-25161788 }}"

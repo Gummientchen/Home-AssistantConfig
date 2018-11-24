@@ -88,6 +88,7 @@ wake_on_lan:
 
 # Cloud
 cloud: !include cloud.yaml
+# cloud:
 
 # Google Home
 #google_assistant: !include google_assistant.yaml
@@ -99,6 +100,7 @@ mqtt:
   username: !secret msmqtt_username
   password: !secret msmqtt_password
   port: !secret msmqtt_port
+  discovery: true
 
 # Text to speech
 tts:
@@ -112,6 +114,21 @@ netatmo:
   username: !secret netatmo_username
   password: !secret netatmo_password
   discovery: false
+
+# Nuki Smart Lock
+lock:
+  - platform: nuki
+    host: !secret nuki_host
+    token: !secret nuki_token
+
+# Dyson
+dyson:
+  username: !secret dyson_username
+  password: !secret dyson_password
+  language: GB
+  devices:
+    - device_id: !secret dyson_pure_serial
+      device_ip: !secret dyson_pure_ip
 
 # Roomba
 vacuum:

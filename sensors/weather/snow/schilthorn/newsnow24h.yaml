@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "snow/schilthorn/newsnow24h"
+name: Snowfall 24h Schilthorn
+unit_of_measurement: cm

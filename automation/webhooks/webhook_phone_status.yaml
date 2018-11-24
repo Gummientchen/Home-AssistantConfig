@@ -1,0 +1,14 @@
+- alias: Webhook Phone Status
+  id: webhook_phone_status
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_phone_status
+  action:
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.phone_status_battery
+        value: "{{ trigger.json.battery|float }}"
+    - service: input_number.set_value
+      data_template:
+        entity_id: input_number.phone_status_pressure
+        value: "{{ trigger.json.pressure|float }}"

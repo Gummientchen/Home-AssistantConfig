@@ -2,16 +2,17 @@
   name: TV Lights
   entities:
     - light.living_room_under_couch
-    - light.tv_light
+    - light.tv_light_bulb
     - light.livingroom_plant
 
 - platform: group
   name: Living Room Normal Lights
   entities:
     - light.living_room_under_couch
-    - light.tv_light
+    - light.tv_light_bulb
     - light.livingroom_plant
     - light.living_room_ceiling_lamp
+    - light.living_room_corner_lamp
 
 - platform: group
   name: Gaming Lights
@@ -24,9 +25,9 @@
 - platform: group
   name: Living Room Lights
   entities:
-    - light.living_room_under_couch
-    - light.tv_light
-    - light.livingroom_plant
-    - light.living_room_ceiling_lamp
+    - light.tv_light_bulb
     - light.computer_lamp
-    - light.living_room_couch
+    - light.livingroom_plant
+    - light.living_room_under_couch
+    - light.living_room_ceiling_lamp
+    - light.living_room_corner_lamp

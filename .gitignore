@@ -42,3 +42,4 @@ packages.disabled
 
 www/people
 *.mp3
+automation/bedroom/overslept.yaml

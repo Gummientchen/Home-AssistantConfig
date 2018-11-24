@@ -17,4 +17,4 @@
     - service: light.turn_on
       data:
         entity_id:
-          - group.tv_lights_on
+          - light.living_room_normal_lights

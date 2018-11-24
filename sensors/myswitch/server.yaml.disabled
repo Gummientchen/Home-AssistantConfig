@@ -1,0 +1,5 @@
+platform: rest
+resource: http://192.168.1.75/report
+name: myStrom Server
+value_template: '{{ value_json.power|float|round(2) }}'
+unit_of_measurement: "W"

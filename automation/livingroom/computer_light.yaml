@@ -9,11 +9,20 @@
         hours: 0
         minutes: 0
         seconds: 5
+  condition:
+    - condition: and
+      conditions:
+        - condition: state
+          entity_id: group.presence
+          state: 'home'
+        - condition: state
+          entity_id: binary_sensor.is_sleeping_bayesian
+          state: 'off'
   action:
     - service: light.turn_on
       data:
         entity_id:
-          - light.computer_lamp
+          - light.computer_lamp_bulb
 
 - alias: Computer turned OFF
   id: computer_turned_on
@@ -30,4 +39,4 @@
     - service: light.turn_off
       data:
         entity_id:
-          - light.computer_lamp
+          - light.computer_lamp_bulb

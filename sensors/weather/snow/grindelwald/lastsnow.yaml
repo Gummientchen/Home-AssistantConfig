@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "snow/grindelwald/lastsnow"
+name: Last Snowfall Grindelwald
