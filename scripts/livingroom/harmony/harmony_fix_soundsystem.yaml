@@ -1,0 +1,17 @@
+harmony_fix_soundsystem_power:
+  alias: Soundsystem Power
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457724
+        command: "PowerToggle"
+
+harmony_fix_soundsystem_input:
+  alias: Soundsystem Input
+  sequence:
+    - service: remote.send_command
+      data:
+        entity_id: remote.harmony_hub
+        device: 53457724
+        command: "Source"

@@ -1,0 +1,10 @@
+platform: template
+sensors:
+  dyson_livingroom_aqi:
+    friendly_name: "Living Room AQI"
+    value_template: "{{ states('sensor.living_room_aqi')|float|round(1) }}"
+    icon_template: "mdi:fan"
+  dyson_livingroom_dust:
+    friendly_name: "Living Room Dust"
+    value_template: "{{ states('sensor.living_room_dust')|float|round(1) }}"
+    icon_template: "mdi:cloud"
