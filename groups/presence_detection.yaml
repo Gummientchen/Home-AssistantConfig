@@ -5,5 +5,6 @@ presence:
   name: Present
   entities:
     - device_tracker.b02a43fcbe53
-    - device_tracker.88px01wkd
+    #- device_tracker.88px01wkd
     # - device_tracker.fa79v1a07669
+    - device_tracker.steff_pixel_3

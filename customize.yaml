@@ -444,3 +444,5 @@ device_tracker.b02a43fcbe53:
 device_tracker.88px01wkd:
   entity_picture: '"/local/people/steff.jpg"'
   friendly_name: Steff GPS Pixel 3
+device_tracker.steff_pixel_3:
+  friendly_name: Steff Pixel 3 Traccar GPS

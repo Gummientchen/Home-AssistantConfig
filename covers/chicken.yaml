@@ -1,0 +1,17 @@
+platform: template
+covers:
+  chicken_door:
+    friendly_name: "Chicken Door"
+    position_template: "{{ states('sensor.huhner_tur_status_') }}"
+    open_cover:
+      service: cover.open_cover
+      data:
+        entity_id: cover.huhner_tur
+    close_cover:
+      service: cover.close_cover
+      data:
+        entity_id: cover.huhner_tur
+    stop_cover:
+      service: cover.stop_cover
+      data:
+        entity_id: cover.huhner_tur

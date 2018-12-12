@@ -381,3 +381,13 @@ svg .ha-entity{
   fill: #04a600 !important;
   transition: fill 0.5s;
 }
+
+.car-home{
+  visibility: visible;
+  opacity: 1;
+}
+
+.car-away{
+  visibility: hidden;
+  opacity: 0;
+}

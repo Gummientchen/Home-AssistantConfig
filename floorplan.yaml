@@ -94,6 +94,16 @@
             - state: 'unlocked'
               class: 'lock-unlocked'
 
+        # Cars
+        - name: Cars
+          entities:
+            - device_tracker.mazda_6
+          states:
+            - state: 'home'
+              class: 'car-home'
+            - state: 'away'
+              class: 'car-away'
+
         - name: Switches
           entities:
             - switch.bathroom_heater

@@ -185,8 +185,9 @@ views:
             entities:
               # - device_tracker.steff_phone_pixel
               # - device_tracker.fa79v1a07669
-              - device_tracker.b02a43fcbe53
-              - device_tracker.88px01wkd
+              - device_tracker.b02a43fcbe53  # Steff Pixel 3
+              #- device_tracker.88px01wkd  # Steff GPS Pixel 3
+              - device_tracker.steff_pixel_3  # Traccar steff pixel 3
       - type: horizontal-stack
         cards:
           - type: custom:thermostat-card
@@ -210,6 +211,11 @@ views:
           - binary_sensor.officewindow_state
         state_filter:
           - "on"
+      - type: picture-entity
+        entity: device_tracker.mazda_6
+        state_image:
+          "home": /local/image_status/mazda/mazda_HOME.jpg
+          "away": /local/image_status/mazda/mazda_AWAY.jpg
       - type: picture-entity
         entity: vacuum.roomba
         state_image:
@@ -411,6 +417,11 @@ views:
   - title: TESTING
     icon: mdi:test-tube
     cards:
+      - type: entities
+        title: Hühnerstall
+        entities:
+          - sensor.huhner_tur_status_
+          - cover.chicken_door
       - type: sensor
         name: Lux
         entity: sensor.tsl2561_ambient_light
