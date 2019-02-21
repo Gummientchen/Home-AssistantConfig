@@ -161,6 +161,10 @@ hue:
   bridges:
     - host: 192.168.1.64
 
+geo_location:
+  - platform: usgs_earthquakes_feed
+    feed_type: 'past_hour_m25_earthquakes'
+
 # History Graph Test
 history_graph:
   synology_nas:
@@ -174,6 +178,18 @@ history_graph:
       - sensor.maximum_disk_temp_volume_1
       - sensor.cpu_load_total
       - sensor.memory_usage_real
+
+# System health
+system_health:
+
+# Persons
+person:
+  - name: Steff
+    id: !secret steff_id
+    user_id: !secret steff_user_id
+    device_trackers:
+      - device_tracker.steff_pixel_3
+      - device_tracker.steff_phone_pixel
 
 ########### INCLUDES #####
 sensor: !include_dir_list sensors/

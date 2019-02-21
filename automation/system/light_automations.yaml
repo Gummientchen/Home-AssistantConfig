@@ -3,7 +3,7 @@
   trigger:
     - platform: numeric_state
       entity_id: sensor.tsl2561_ambient_light
-      below: 50
+      below: 75
       for:
         hours: 0
         minutes: 10
@@ -31,7 +31,7 @@
   condition:
     condition: numeric_state
     entity_id: group.presence
-    below: 50
+    below: 75
   action:
     - service: light.turn_on
       data:

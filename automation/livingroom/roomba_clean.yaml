@@ -22,10 +22,10 @@
       data:
         entity_id:
           - vacuum.roomba
-    - service: light.turn_on
-      data:
-        entity_id:
-          - group.bedroommain
+    # - service: light.turn_on
+    #   data:
+    #     entity_id:
+    #       - group.bedroommain
     - service: notify.html5
       data:
         message: "Roomba started cleaning cycle"
@@ -48,10 +48,10 @@
       data:
         entity_id:
           - vacuum.roomba
-    - service: light.turn_off
-      data:
-        entity_id:
-          - group.bedroommain
+    # - service: light.turn_off
+    #   data:
+    #     entity_id:
+    #       - group.bedroommain
     - service: notify.html5
       data:
         message: "Roomba cleaning was cancelled by user"
@@ -81,10 +81,10 @@
         minutes: 30
         seconds: 0
   action:
-    - service: light.turn_off
-      data:
-        entity_id:
-          - group.bedroommain
+    # - service: light.turn_off
+    #   data:
+    #     entity_id:
+    #       - group.bedroommain
     - service: notify.html5
       data:
         message: "Roomba finished cleaning cycle"
@@ -114,10 +114,10 @@
       data:
         entity_id:
           - vacuum.roomba
-    - service: light.turn_off
-      data:
-        entity_id:
-          - group.bedroommain
+    # - service: light.turn_off
+    #   data:
+    #     entity_id:
+    #       - group.bedroommain
 
 # Roomba Wastebin is FULL Message
 - alias: "Roomba Bin is Full Message"

@@ -334,7 +334,7 @@
 # - alias: Bathroom Heater ON
 #   id: batchroom_heater_on
 #   trigger:
-#     - platform: time
+#     - platform: time_pattern
 #       minutes: /1
 #       seconds: 00
 #   condition:
@@ -361,7 +361,7 @@
 # - alias: Bathroom Heater OFF
 #   id: batchroom_heater_off
 #   trigger:
-#     - platform: time
+#     - platform: time_pattern
 #       minutes: /1
 #       seconds: 00
 #   condition:
@@ -385,7 +385,7 @@
 # - alias: Bathroom Heater ON interval
 #   id: bathroom_heater_on_interval
 #   trigger:
-#     - platform: time
+#     - platform: time_pattern
 #       minutes: /1
 #       seconds: 00
 #   condition:

@@ -1,0 +1,23 @@
+platform: mold_indicator
+name: Kitchen Mold Sensor
+indoor_temp_sensor: sensor.kitchen_temperature
+indoor_humidity_sensor: sensor.kitchenthermometer_humidity
+outdoor_temp_sensor: sensor.netatmo_outdoormodule_temperature
+calibration_factor: 1.5
+
+# calibration_factor = (temp_indoor - temp_outdoor) / (temp_criticalpoint - temp_outdoor)
+
+# sensor.kitchen_temperature
+# sensor.kitchenthermometer_humidity
+
+# sensor.living_room_humidity
+# sensor.living_room_temperature
+# sensor.netatmo_thermostat_temperature
+
+# sensor.netatmo_bedroom_humidity
+# sensor.netatmo_bedroom_temperature
+
+# sensor.bathroomthermostat_humidity
+# sensor.bathroom_temperature
+
+# sensor.netatmo_outdoormodule_temperature

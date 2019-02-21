@@ -24,7 +24,6 @@ exclude:
     - media_player
     - script
   entities:
-    - camera.entrance
     - camera.prusa_i3_mk3
     - camera.webcam_axalp
     - camera.webcam_axalp_2

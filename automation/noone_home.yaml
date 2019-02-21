@@ -1,9 +1,8 @@
 - alias: "Nobody at Home"
   id: nobody_home
   trigger:
-    - platform: time
+    - platform: time_pattern
       minutes: '\5'
-      seconds: 00
   condition:
     - condition: state
       entity_id: group.presence
