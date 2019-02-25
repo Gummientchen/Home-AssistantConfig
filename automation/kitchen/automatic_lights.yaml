@@ -1,0 +1,52 @@
+# Philips Hue Motion Sensor Light on, turn on IKEA light too
+- alias: "Kitchen Motion Sensor Lights ON"
+  id: kitchen_motion_sensor_lights_on
+  trigger:
+    - platform: state
+      entity_id: light.kitchen_1
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      before: '23:30:00'
+      after: '07:00:00'
+    - condition: state
+      entity_id: light.kitchen_2
+      state: 'off'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.kitchen_2
+        brightness: 255
+    - service: input_boolean.turn_on
+      data:
+        entity_id: input_boolean.kitchen_automatic_lights
+    - wait_template: "{{ is_state('light.kitchen_1', 'off') }}"
+      timeout: '00:30:00'
+      continue_on_timeout: 'true'
+    - service: light.turn_off
+      data:
+        entity_id: light.kitchen_2
+    - service: input_boolean.turn_off
+      data:
+        entity_id: input_boolean.kitchen_automatic_lights
+
+# Philips Hue Motion Sensor Light off, turn off IKEA light too
+# - alias: "Kitchen Motion Sensor Lights ON"
+  # id: kitchen_motion_sensor_lights_on
+  # trigger:
+  #   - platform: state
+  #     entity_id: light.kitchen_1
+  #     from: 'on'
+  #     to: 'off'
+  # condition:
+  #   - condition: state
+  #     entity_id: input_boolean.kitchen_automatic_lights
+  #     state: 'on'
+  # action:
+  #   - service: light.turn_off
+  #     data:
+  #       entity_id: light.kitchen_2
+  #   - service: input_boolean.turn_off
+  #     data:
+  #       entity_id: input_boolean.kitchen_automatic_lights
