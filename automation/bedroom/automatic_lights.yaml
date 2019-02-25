@@ -9,28 +9,7 @@
   action:
     - service: light.turn_off
       data:
-        entity_id: light.bedroom
-    - service: light.turn_off
-      data:
-        entity_id: light.bedroom_2
-    - service: light.turn_off
-      data:
-        entity_id: light.bedroom_4
-    - service: light.turn_off
-      data:
-        entity_id: light.bedroom_corner_left
-    - service: light.turn_off
-      data:
-        entity_id: light.bedroom_corner_right
-    - service: light.turn_off
-      data:
-        entity_id: light.bedroom_corners
-    - service: light.turn_off
-      data:
         entity_id: light.bedroom_lights
-    - service: light.turn_off
-      data:
-        entity_id: light.bedroom_main
 
 
 # Philips Hue Motion Sensor Light off, turn off IKEA light too
