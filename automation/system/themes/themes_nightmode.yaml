@@ -6,7 +6,7 @@
   action:
     - service: frontend.set_theme
       data:
-        name: dark
+        name: darkorange
 - alias: 'Set day theme for the day'
   initial_state: True
   trigger:
@@ -15,4 +15,4 @@
   action:
     - service: frontend.set_theme
       data:
-        name: dark
+        name: darkorange
