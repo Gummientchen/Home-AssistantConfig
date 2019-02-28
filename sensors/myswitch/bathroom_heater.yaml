@@ -1,0 +1,5 @@
+platform: rest
+resource: http://192.168.1.65/report
+name: myStrom Bathroom Heater
+value_template: '{{ value_json.power|float / 1000|round(3) }}'
+unit_of_measurement: "kW"

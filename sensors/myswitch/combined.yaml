@@ -1,0 +1,12 @@
+platform: template
+sensors:
+  mystrom_combined:
+    friendly_name: "myStrom combined"
+    value_template: "
+        {{
+          states('sensor.mystrom_bathroom_heater')|float|round(3) +
+          states('sensor.mystrom_computer')|float/1000|round(3) +
+          states('sensor.mystrom_tv')|float/1000|round(3)
+        }}
+      "
+    unit_of_measurement: "kW"

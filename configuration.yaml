@@ -90,6 +90,16 @@ wake_on_lan:
 cloud: !include cloud.yaml
 # cloud:
 
+# Google Assistant
+googlehome:
+  devices:
+    - host: 192.168.1.59 # Google Home Living Room
+      track_alarms: true
+    - host: 192.168.1.89 # Mini Bedroom
+      track_alarms: true
+    - host: 192.168.1.94 # Mini Kitchen
+    - host: 192.168.1.95 # Mini Bathroom
+
 # Google Home
 #google_assistant: !include google_assistant.yaml
 
@@ -219,3 +229,31 @@ alert: !include_dir_merge_named alerts/
 
 panel_custom: !include panel_custom.yaml
 weblink: !include misc/weblinks.yaml
+
+
+# Utility Meters TESTING
+utility_meter:
+  bathroom_heater_daily:
+    source: sensor.mystrom_bathroom_heater
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  bathroom_heater_monthly:
+    source: sensor.mystrom_bathroom_heater
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  mystrom_daily:
+    source: sensor.mystrom_combined
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
+  mystrom_monthly:
+    source: sensor.mystrom_combined
+    cycle: monthly
+    tariffs:
+      - peak
+      - offpeak
