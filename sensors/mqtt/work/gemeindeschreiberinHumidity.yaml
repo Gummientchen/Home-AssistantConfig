@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Gemeindeschreiberin Humidity"
+state_topic: "gemeindeschreiberin/sensor/multisensor_humidity/state"
+qos: 1
+unit_of_measurement: "%"

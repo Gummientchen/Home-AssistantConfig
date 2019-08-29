@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Finanzverwalter Humidity"
+state_topic: "finanzverwalter/sensor/multisensor_humidity/state"
+qos: 1
+unit_of_measurement: "%"

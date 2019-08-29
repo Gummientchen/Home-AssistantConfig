@@ -1,9 +1,7 @@
 - platform: group
   name: Bedroom Lights
   entities:
-    - light.bedroom
-    - light.bedroom_2
-    - light.bedroom_3
+    - light.celing_panel_bedroom
     - light.bedroom_4
     - light.bedroom_nightstand
     - light.bedroom_corner_right
@@ -18,7 +16,7 @@
 - platform: group
   name: Bedroom Main
   entities:
-    - light.bedroom_2
+    - light.celing_panel_bedroom
     - light.bedroom_4
 
 - platform: group

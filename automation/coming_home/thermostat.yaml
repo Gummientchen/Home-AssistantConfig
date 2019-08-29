@@ -12,7 +12,7 @@
   action:
     - service: climate.set_away_mode
       data:
-        entity_id: climate.thermostat
+        entity_id: climate.netatmo_living_room
         away_mode: false
     - service: climate.set_away_mode
       data:

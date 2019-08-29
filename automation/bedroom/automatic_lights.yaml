@@ -1,5 +1,5 @@
 # Turn off all lights in the Bedroom when Nightstand Lamp is turned off
-- alias: "Bedroom turn off all lights wenn nighstand lamp is turned off"
+- alias: "Bedroom turn off all lights when nightstand lamp is turned off"
   id: bedroom_turn_off_slave_nightstand
   trigger:
     - platform: state

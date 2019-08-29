@@ -1,0 +1,4 @@
+platform: mjpeg
+name: Prusa i3 MK3
+mjpeg_url: !secret raspicam_mjpeg_url
+still_image_url: !secret raspicam_still_image_url

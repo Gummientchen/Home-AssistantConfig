@@ -12,7 +12,7 @@
   action:
     - service: climate.set_away_mode
       data:
-        entity_id: climate.thermostat
+        entity_id: climate.netatmo_living_room
         away_mode: true
 
 - alias: "Increase Temperature if Window closed"
@@ -29,5 +29,5 @@
   action:
     - service: climate.set_away_mode
       data:
-        entity_id: climate.thermostat
+        entity_id: climate.netatmo_living_room
         away_mode: false

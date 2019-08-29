@@ -14,7 +14,7 @@
     group.kitchen: off
     light.computer_lamp: off
     group.livingroomlightscouch: off
-    light.living_room_ceiling_lamp: off
+    light.ceiling_panel: off
 
 - name: TV Lights Night
   entities:
@@ -32,7 +32,7 @@
     group.kitchen: off
     light.computer_lamp: off
     group.livingroomlightscouch: off
-    light.living_room_ceiling_lamp: off
+    light.ceiling_panel: off
 
 - name: Gaming Day
   entities:
@@ -54,7 +54,7 @@
     group.bathroom: off
     group.kitchen: off
     group.livingroomlightscouch: off
-    light.living_room_ceiling_lamp: off
+    light.ceiling_panel: off
 
 - name: Gaming Night
   entities:
@@ -76,4 +76,4 @@
     group.bathroom: off
     group.kitchen: off
     group.livingroomlightscouch: off
-    light.living_room_ceiling_lamp: off
+    light.ceiling_panel: off

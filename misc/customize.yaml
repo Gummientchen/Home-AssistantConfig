@@ -432,3 +432,5 @@ device_tracker.88px01wkd:
   friendly_name: Steff GPS Pixel 3
 device_tracker.steff_pixel_3:
   friendly_name: Steff Pixel 3 Traccar GPS
+device_tracker.3c_28_6d_2d_3c_67:
+  friendly_name: Steff Pixel 3

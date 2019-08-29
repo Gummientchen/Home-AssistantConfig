@@ -1,0 +1,3 @@
+outdoor_lights:
+  name: "Outdoor Lights when leaving"
+  duration: '00:10:00'

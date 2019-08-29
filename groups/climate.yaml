@@ -10,7 +10,7 @@ netatmostatus:
 climate:
   name: Climate
   entities:
-    - climate.thermostat
+    - climate.netatmo_living_room
     - sensor.netatmo_bedroom_temperature
     - climate.bathroom
     - sensor.netatmo_office_temperature

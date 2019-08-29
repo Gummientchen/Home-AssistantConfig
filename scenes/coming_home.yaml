@@ -10,9 +10,9 @@
       brightness: 255
       kelvin: 2200
       transition: 2
-    light.living_room_ceiling_lamp:
+    light.ceiling_panel:
       state: on
-      brightness: 255
+      brightness: 50
       kelvin: 2700
       transition: 1
     light.kitchen_2:
@@ -34,4 +34,4 @@
       state: on
       brightness: 255
       kelvin: 2200
-    light.living_room_ceiling_lamp: off
+    light.ceiling_panel: off

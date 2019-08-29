@@ -15,7 +15,7 @@
 
         - name: Thermostat
           entities:
-            - climate.thermostat
+            - climate.netatmo_living_room
             - climate.bathroom
           # text_template: '${entity.state ? entity.state : "unknown"}'
           # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
@@ -51,8 +51,8 @@
           entities:
             - light.kitchen_1
             - light.kitchen_2
-            - light.living_room_ceiling_lamp
-            - light.bedroom_2
+            - light.ceiling_panel
+            - light.celing_panel_bedroom
             - light.outdoor_1
             - light.bedroom_nightstand
             - group.bathroom_ceiling
@@ -103,12 +103,14 @@
               class: 'car-home'
             - state: 'away'
               class: 'car-away'
+            - state: 'Work'
+              class: 'car-away'
 
         - name: Switches
           entities:
             - switch.bathroom_heater
-            - switch.bedroom_fan
-            - switch.ikea_planter
+            #- switch.bedroom_fan
+            - switch.3d_printer_light
             - fan.livingroom_fan
           states:
             - state: 'on'
@@ -165,6 +167,15 @@
               class: 'door-open'
             - state: 'off'
               class: 'door-closed'
+
+        - name: MotioNSensors
+          entities:
+            - binary_sensor.bathroom_presence
+          states:
+            - state: 'on'
+              class: 'motion-sensor-on'
+            - state: 'off'
+              class: 'motion-sensor_off'
 
         - name: Windows
           entities:

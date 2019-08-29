@@ -1,6 +1,7 @@
-leaving_home:
-  alias: Leaving Home
+leaving_home_lights_off:
+  alias: Leaving Home Lights OFF
   sequence:
+    - delay: 30
     - service: light.turn_off
       data:
         entity_id: group.all_lights
@@ -37,7 +38,3 @@ leaving_home:
     - service: remote.turn_off
       data:
         entity_id: remote.harmony_hub
-    - service: lock.nuki_lock_n_go
-      data:
-        entity_id: lock.home
-        unlatch: false

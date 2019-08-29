@@ -1,0 +1,14 @@
+leaving_home_lights_on:
+  alias: Leaving Home Lights ON
+  sequence:
+    - condition: numeric_state
+      entity_id: sensor.tsl2561_ambient_light
+      below: 100
+    - service: light.turn_on
+      data:
+        entity_id: light.outdoor_1
+    - delay:
+        minutes: 5
+    - service: light.turn_off
+      data:
+        entity_id: light.outdoor_1

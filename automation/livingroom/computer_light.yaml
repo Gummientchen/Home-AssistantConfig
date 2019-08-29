@@ -40,3 +40,83 @@
       data:
         entity_id:
           - light.computer_lamp_bulb
+
+- alias: Tradfri Remote Computer Lamp Toggle
+  id: tradfri_remote_computer_lamp_toggle
+  trigger:
+    - platform: mqtt
+      topic: 'zigbee2mqtt/0x000b57fffebe20ca'
+  condition:
+    - condition: template
+      value_template: '{{ "toggle" == trigger.payload_json.action }}'
+  action:
+    - entity_id: light.computer_lamp_bulb
+      service: light.toggle
+
+- alias: Tradfri Remote Computer Lamp Brightness UP
+  id: tradfri_remote_computer_lamp_brightness_up
+  trigger:
+    - platform: mqtt
+      topic: 'zigbee2mqtt/0x000b57fffebe20ca'
+  condition:
+    condition: or
+    conditions:
+      - condition: template
+        value_template: '{{ "brightness_up_click" == trigger.payload_json.action }}'
+      - condition: template
+        value_template: '{{ "brightness_up_release" == trigger.payload_json.action }}'
+  action:
+    - entity_id: light.computer_lamp_bulb
+      service: light.turn_on
+      data_template:
+        brightness: '{{states.light.computer_lamp_bulb.attributes.brightness + 51 - 1}}'
+
+- alias: Tradfri Remote Computer Lamp Brightness DOWN
+  id: tradfri_remote_computer_lamp_brightness_down
+  trigger:
+    - platform: mqtt
+      topic: 'zigbee2mqtt/0x000b57fffebe20ca'
+  condition:
+    condition: or
+    conditions:
+      - condition: template
+        value_template: '{{ "brightness_down_click" == trigger.payload_json.action }}'
+      - condition: template
+        value_template: '{{ "brightness_down_release" == trigger.payload_json.action }}'
+  action:
+    - entity_id: light.computer_lamp_bulb
+      service: light.turn_on
+      data_template:
+        brightness: '{{states.light.computer_lamp_bulb.attributes.brightness - 51 + 1}}'
+
+- alias: Tradfri Remote TV Lamp Toggle
+  id: tradfri_remote_tv_lamp_toggle
+  trigger:
+    - platform: mqtt
+      topic: 'zigbee2mqtt/0x000b57fffebe20ca'
+  condition:
+    condition: or
+    conditions:
+      - condition: template
+        value_template: '{{ "arrow_left_click" == trigger.payload_json.action }}'
+      - condition: template
+        value_template: '{{ "arrow_left_release" == trigger.payload_json.action }}'
+  action:
+    - entity_id: light.tv_light_bulb
+      service: light.toggle
+
+- alias: Tradfri Remote Corner Lamp Toggle
+  id: tradfri_remote_corner_lamp_toggle
+  trigger:
+    - platform: mqtt
+      topic: 'zigbee2mqtt/0x000b57fffebe20ca'
+  condition:
+    condition: or
+    conditions:
+      - condition: template
+        value_template: '{{ "arrow_right_click" == trigger.payload_json.action }}'
+      - condition: template
+        value_template: '{{ "arrow_right_release" == trigger.payload_json.action }}'
+  action:
+    - entity_id: light.living_room_corner_lamp
+      service: light.toggle

@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Informatik Humidity"
+state_topic: "informatik/sensor/multisensor_humidity/state"
+qos: 1
+unit_of_measurement: "%"

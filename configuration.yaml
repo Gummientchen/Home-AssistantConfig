@@ -88,20 +88,6 @@ wake_on_lan:
 
 # Cloud
 cloud: !include cloud.yaml
-# cloud:
-
-# Google Assistant
-googlehome:
-  devices:
-    - host: 192.168.1.59 # Google Home Living Room
-      track_alarms: true
-    - host: 192.168.1.89 # Mini Bedroom
-      track_alarms: true
-    - host: 192.168.1.94 # Mini Kitchen
-    - host: 192.168.1.95 # Mini Bathroom
-
-# Google Home
-#google_assistant: !include google_assistant.yaml
 
 # MQTT Broker
 mqtt:
@@ -111,10 +97,18 @@ mqtt:
   password: !secret msmqtt_password
   port: !secret msmqtt_port
   discovery: true
+  birth_message:
+    topic: 'hass/status'
+    payload: 'online'
+  will_message:
+    topic: 'hass/status'
+    payload: 'offline'
 
 # Text to speech
 tts:
-  - platform: google
+  - platform: google_translate
+    service_name: google_say
+    base_url: !secret tts_base_url
 #    api_key: !secret microsoft_bing_speech_api_key
 
 # Netatmo Config
@@ -123,7 +117,7 @@ netatmo:
   secret_key: !secret netatmo_secret_key
   username: !secret netatmo_username
   password: !secret netatmo_password
-  discovery: false
+  discovery: true
 
 # Nuki Smart Lock
 lock:
@@ -163,8 +157,8 @@ homematic:
       password: !secret homematic_password
 
 # IKEA Tradfri
-tradfri:
-  host: !secret tradfri_host
+# tradfri:
+#   host: !secret tradfri_host
 
 # Philips Hue
 hue:
@@ -192,14 +186,16 @@ history_graph:
 # System health
 system_health:
 
+# World Wide Lightning Location Network (WWLLN)
+wwlln:
+
 # Persons
 person:
   - name: Steff
     id: !secret steff_id
     user_id: !secret steff_user_id
     device_trackers:
-      - device_tracker.steff_pixel_3
-      - device_tracker.steff_phone_pixel
+      - device_tracker.3c_28_6d_2d_3c_67
 
 ########### INCLUDES #####
 sensor: !include_dir_list sensors/
@@ -231,29 +227,29 @@ panel_custom: !include panel_custom.yaml
 weblink: !include misc/weblinks.yaml
 
 
-# Utility Meters TESTING
-utility_meter:
-  bathroom_heater_daily:
-    source: sensor.mystrom_bathroom_heater
-    cycle: monthly
-    tariffs:
-      - peak
-      - offpeak
-  bathroom_heater_monthly:
-    source: sensor.mystrom_bathroom_heater
-    cycle: monthly
-    tariffs:
-      - peak
-      - offpeak
-  mystrom_daily:
-    source: sensor.mystrom_combined
-    cycle: monthly
-    tariffs:
-      - peak
-      - offpeak
-  mystrom_monthly:
-    source: sensor.mystrom_combined
-    cycle: monthly
-    tariffs:
-      - peak
-      - offpeak
+# # Utility Meters TESTING
+# utility_meter:
+#   bathroom_heater_daily:
+#     source: sensor.mystrom_bathroom_heater
+#     cycle: monthly
+#     tariffs:
+#       - peak
+#       - offpeak
+#   bathroom_heater_monthly:
+#     source: sensor.mystrom_bathroom_heater
+#     cycle: monthly
+#     tariffs:
+#       - peak
+#       - offpeak
+#   mystrom_daily:
+#     source: sensor.mystrom_combined
+#     cycle: monthly
+#     tariffs:
+#       - peak
+#       - offpeak
+#   mystrom_monthly:
+#     source: sensor.mystrom_combined
+#     cycle: monthly
+#     tariffs:
+#       - peak
+#       - offpeak

@@ -1,6 +1,0 @@
-platform: mqtt
-name: "Work Temperature"
-state_topic: "dev/arduino/sensor01/temperature"
-qos: 1
-unit_of_measurement: "°C"
-value_template: '{{ value | round(1) }}'

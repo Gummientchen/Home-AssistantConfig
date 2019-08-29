@@ -1,0 +1,11 @@
+- alias: "Turn on Outside Light when dark and leaving home"
+  id: outdoor_light_on_when_dark_leaving
+  trigger:
+    - platform: sun
+      event: sunset
+      offset: '-00:30:00'
+  action:
+    - service: switch.turn_on
+      data:
+        entity_id:
+          - switch.xmas_lights

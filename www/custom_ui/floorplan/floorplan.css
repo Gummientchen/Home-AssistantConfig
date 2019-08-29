@@ -391,3 +391,11 @@ svg .ha-entity{
   visibility: hidden;
   opacity: 0;
 }
+
+.motion-sensor-on{
+  fill: #BB1815 !important;
+}
+
+.motion-sensor_off{
+  fill: #04a600 !important;
+}

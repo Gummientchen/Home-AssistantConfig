@@ -2,7 +2,7 @@
   id: alarmclock
   trigger:
     - platform: time
-      at: '07:00:00'
+      at: '07:10:00'
   condition:
     - condition: state
       entity_id: binary_sensor.is_sleeping
@@ -25,55 +25,3 @@
         transition: 600
         kelvin: 5000
         brightness: 255
-    - delay: "01:30:00"
-    - service: light.turn_on
-      data:
-        entity_id:
-          - light.bedroom_lights
-        transition: 0
-        kelvin: 2200
-        brightness: 128
-    - delay: "00:00:05"
-    - service: light.turn_off
-      data:
-        entity_id:
-          - light.bedroom_lights
-
-- alias: "Alarmclock: Radio Energy"
-  id: alarmclock_radio_energy
-  trigger:
-    - platform: time
-      at: '07:15:00'
-  condition:
-    - condition: state
-      entity_id: binary_sensor.is_sleeping
-      state: 'on'
-    - condition: state
-      entity_id: input_boolean.holidays
-      state: 'off'
-    - condition: time
-      weekday:
-        - mon
-        - tue
-        - wed
-        - thu
-        - fri
-  action:
-    - service: media_player.volume_set
-      entity_id: media_player.bedroom_speaker
-      data:
-        volume_level: 1
-    - delay: 0:00:15
-    - service: media_player.play_media
-      data:
-        entity_id: media_player.bedroom_speaker
-        media_content_id: "https://energyfashionnight.ice.infomaniak.ch/energyfashionnight-high.mp3"
-        media_content_type: "music"
-    - delay: 0:20:00
-    - service: media_player.media_stop
-      data:
-        entity_id: media_player.bedroom_speaker
-    - service: media_player.volume_set
-      entity_id: media_player.bedroom_speaker
-      data:
-        volume_level: 0.5

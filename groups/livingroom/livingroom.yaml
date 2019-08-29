@@ -12,7 +12,7 @@ livingroom:
     - vacuum.roomba
     - binary_sensor.roomba_bin
     # - media_player.kd55x8505c
-    - climate.thermostat
+    - climate.netatmo_living_room
     - sensor.livingroom_temperature_couch
     - sensor.mystrom_computer
     - sensor.mystrom_tv

@@ -14,7 +14,7 @@
   action:
     - service: climate.set_away_mode
       data:
-        entity_id: climate.thermostat
+        entity_id: climate.netatmo_living_room
         away_mode: false
 
 - alias: Living Room Rise Temperature at 17:00
@@ -33,5 +33,5 @@
   action:
     - service: climate.set_away_mode
       data:
-        entity_id: climate.thermostat
+        entity_id: climate.netatmo_living_room
         away_mode: false

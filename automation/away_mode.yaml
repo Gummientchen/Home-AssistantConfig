@@ -14,18 +14,18 @@
       data:
         entity_id:
           - group.all_lights
-    - service: switch.turn_off
-      data:
-        entity_id:
-          - switch.computer_lamp
-          - switch.bedroom_fan
+    # - service: switch.turn_off
+    #   data:
+    #     entity_id:
+    #       - switch.computer_lamp
+    #       - switch.bedroom_fan
     - service: media_player.turn_off
       data:
         entity_id:
           - media_player.sony_bravia_tv
     - service: climate.set_away_mode
       data:
-        entity_id: climate.thermostat
+        entity_id: climate.netatmo_living_room
         away_mode: true
     - service: climate.set_away_mode
       data:

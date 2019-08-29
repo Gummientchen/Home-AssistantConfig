@@ -11,7 +11,7 @@
     - light.living_room_under_couch
     - light.tv_light_bulb
     - light.livingroom_plant
-    - light.living_room_ceiling_lamp
+    - light.ceiling_panel
     - light.living_room_corner_lamp
 
 - platform: group
@@ -29,5 +29,5 @@
     - light.computer_lamp
     - light.livingroom_plant
     - light.living_room_under_couch
-    - light.living_room_ceiling_lamp
+    - light.ceiling_panel
     - light.living_room_corner_lamp

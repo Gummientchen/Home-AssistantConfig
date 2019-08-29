@@ -5,47 +5,28 @@
       brightness: 128
       kelvin: 2200
       transition: 2
-    light.bedroom_4:
-      state: on
-      brightness: 64
-      kelvin: 1500
-      transition: 2
-    #light.bedroom: off
-    light.bedroom_2: off
+    light.celing_panel_bedroom: off
     light.bathroom: off
     light.kitchen_lights: off
     light.living_room: off
-    light.living_room_ceiling_lamp: off
+    light.ceiling_panel: off
     light.living_room_couch: off
     light.living_room_normal_lights: off
     light.living_room_under_couch: off
+    light.living_room_corner_lamp: off
     light.livingroom_plant: off
     light.computer_lamp_bulb: off
     light.office: off
     light.office_ceiling: off
     light.tv_light: off
     light.tv_lights: off
+    light.bedroom_corners: off
     lock.home:
       state: locked
 
 - name: Sleep
   entities:
-    light.bedroom_nightstand: off
-    light.bedroom_4: off
-    light.bedroom_2: off
-    light.bathroom: off
-    light.kitchen_lights: off
-    light.living_room: off
-    light.living_room_ceiling_lamp: off
-    light.living_room_couch: off
-    light.living_room_normal_lights: off
-    light.living_room_under_couch: off
-    light.livingroom_plant: off
-    light.computer_lamp: off
-    light.office: off
-    light.office_ceiling: off
-    light.tv_light: off
-    light.tv_lights: off
+    group.all_lights: off
     lock.home:
       state: locked
 
@@ -68,8 +49,8 @@
       brightness: 128
       kelvin: 2200
     light.bedroom_4: off
-    light.bedroom_2: off
-    light.living_room_ceiling_lamp: off
+    light.celing_panel_bedroom: off
+    light.ceiling_panel: off
     light.living_room_couch: off
     light.living_room_normal_lights: off
     light.livingroom_plant: off

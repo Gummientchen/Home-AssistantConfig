@@ -1,0 +1,3 @@
+kitchen_lights:
+  name: "Kitchen Lights"
+  duration: '00:05:00'

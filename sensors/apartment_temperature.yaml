@@ -6,7 +6,7 @@ sensors:
     value_template: >-
       {% if states.climate.bathroomthermostat
         and states.climate.kitchenthermometer
-          and states.climate.thermostat
+          and states.climate.netatmo_living_room
             and states.sensor.livingroom_temperature_couch
               and states.sensor.netatmo_office_temperature
                 and states.sensor.netatmo_bedroom_temperature
@@ -17,7 +17,7 @@ sensors:
               (
                 (states.climate.bathroomthermostat.attributes.current_temperature | float * 1.5)
                 +(states.climate.kitchenthermometer.attributes.current_temperature | float * 0.5)
-                +(states.climate.thermostat.attributes.current_temperature | float * 2)
+                +(states.climate.netatmo_living_room.attributes.current_temperature | float * 2)
                 +(states.sensor.livingroom_temperature_couch.state | float * 0.1)
                 +(states.sensor.netatmo_office_temperature.state | float * 0.25)
                 +(states.sensor.netatmo_bedroom_temperature.state | float * 2)

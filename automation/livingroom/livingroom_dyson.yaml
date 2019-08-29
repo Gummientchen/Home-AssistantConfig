@@ -24,7 +24,7 @@
   id: livingroom_dyson_filter_warning_200h
   trigger:
     platform: numeric_state
-    entity_id: sensor.living_room_filter_life
+    entity_id: sensor.bedroom_filter_life
     below: 200
     above: 101
   action:
@@ -39,7 +39,7 @@
   id: livingroom_dyson_filter_warning_100h
   trigger:
     platform: numeric_state
-    entity_id: sensor.living_room_filter_life
+    entity_id: sensor.bedroom_filter_life
     below: 100
   action:
     - service: notify.html5

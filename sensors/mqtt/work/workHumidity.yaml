@@ -1,6 +1,0 @@
-platform: mqtt
-name: "Work Humidity"
-state_topic: "dev/arduino/sensor01/humidity"
-qos: 1
-unit_of_measurement: "%"
-value_template: '{{ value | round(1) }}'

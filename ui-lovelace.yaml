@@ -60,7 +60,7 @@ views:
           - vacuum.roomba
           - binary_sensor.roomba_bin
           # - media_player.kd55x8505c
-          - entity: climate.thermostat
+          - entity: climate.netatmo_living_room
             name: Thermostat
           - entity: climate.living_room
             name: Dyson Pure Hot + Cool
@@ -168,7 +168,7 @@ views:
           - type: entities
             title: Climate
             entities:
-              - entity: climate.thermostat
+              - entity: climate.netatmo_living_room
                 name: Living Room
               - entity: sensor.netatmo_bedroom_temperature
                 name: Bedroom
@@ -192,7 +192,7 @@ views:
         cards:
           - type: custom:thermostat-card
             title: Living Room
-            entity: climate.thermostat
+            entity: climate.netatmo_living_room
           - type: custom:thermostat-card
             title: Bathroom
             entity: climate.bathroom

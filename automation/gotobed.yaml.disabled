@@ -1,14 +1,38 @@
+- alias: "Take Medications"
+  id: take_meds
+  trigger:
+    - platform: time
+      at: '21:00:00'
+  condition:
+    - condition: state
+      entity_id: person.steff
+      state: 'home'
+    - condition: time
+      weekday:
+        - mon
+        - tue
+        - wed
+        - thu
+        - fri
+        - sat
+        - sun
+  action:
+    - service: tts.google_say
+      entity_id: media_player.home
+      data:
+        message: "Hey! Take your meds!"
+
 - alias: "Go to bed"
   id: go_to_bed
   trigger:
     - platform: time
-      at: '22:00:00'
+      at: '22:30:00'
   condition:
     - condition: state
       entity_id: input_boolean.holidays
       state: 'off'
     - condition: state
-      entity_id: device_tracker.steff_phone_pixel
+      entity_id: person.steff
       state: 'home'
     - condition: time
       weekday:
@@ -18,17 +42,35 @@
         - thu
         - sun
   action:
-    - service: light.turn_off
+    - service: media_player.media_pause
       data:
         entity_id:
-          - group.all_lights
-    - service: remote.turn_off
-      data:
-        entity_id:
-          - remote.harmony_hub
-    - delay: 0:05
+          - media_player.shield
     - service: light.turn_on
       data:
         entity_id:
           - light.bedroom_nightstand
+    - service: light.turn_off
+      data:
+        entity_id:
+          # Bedroom
+          - light.bedroom_2
           - light.bedroom_4
+          - light.bedroom_corner_left
+          - light.bedroom_corner_right
+          - light.bedroom_4
+          - light.bedroom_4
+          - light.bedroom_4
+          # Living Room
+          - light.living_room_ceiling_lamp
+          - light.tv_light_bulb
+    - delay: '00:00:01'
+    - service: tts.google_say
+      entity_id: media_player.home
+      data:
+        message: "It's eleven PM, go to bed!"
+    - delay: '00:00:10'
+    - service: media_player.media_play
+      data:
+        entity_id:
+          - media_player.shield

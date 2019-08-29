@@ -3,5 +3,5 @@ sensors:
   netatmo_thermostat_temperature:
     friendly_name: "Living Room Temperature"
     unit_of_measurement: "°C"
-    value_template: "{{ states.climate.thermostat.attributes.current_temperature|float }}"
+    value_template: "{{ states.climate.netatmo_living_room.attributes.current_temperature|float }}"
     icon_template: "mdi:thermometer"

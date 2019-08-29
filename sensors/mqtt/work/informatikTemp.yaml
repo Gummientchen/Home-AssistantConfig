@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Informatik Temperature"
+state_topic: "informatik/sensor/multisensor_temperature/state"
+qos: 1
+unit_of_measurement: "°C"

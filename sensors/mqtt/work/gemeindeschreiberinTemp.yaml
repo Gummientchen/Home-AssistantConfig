@@ -1,0 +1,5 @@
+platform: mqtt
+name: "Gemeindeschreiberin Temperature"
+state_topic: "gemeindeschreiberin/sensor/multisensor_temperature/state"
+qos: 1
+unit_of_measurement: "°C"
