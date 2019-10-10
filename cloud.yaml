@@ -17,6 +17,7 @@ google_actions:
       - light.living_room_lights
       - light.outdoor_1
       - script.leaving_home
+      - cover.bedroom_blind
   entity_config:
     script.leaving_home:
       name: Leaving Home
