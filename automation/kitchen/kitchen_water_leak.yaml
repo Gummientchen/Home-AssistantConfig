@@ -1,0 +1,14 @@
+- alias: Kitchen Water Leak
+  id: kitchen_water_leak
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.0x00158d000281fa1f_water_leak
+      from: 'off'
+      to: 'on'
+  action:
+    - service: notify.html5
+      data:
+        message: "Water Leak detected in the kitchen!!!"
+        title: "Water Leak!"
+        data:
+          tag: "water_leak_kitchen"
