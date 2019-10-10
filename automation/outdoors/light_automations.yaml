@@ -17,6 +17,30 @@
       data:
         entity_id: light.outdoor_1
 
+- alias: GPS Entering Home Zone Entrance Lamp ON
+  id: gps_entering_home_zone_entrance_lamp_on
+  trigger:
+    - platform: zone
+      entity_id: device_tracker.steff_pixel_3
+      zone: zone.home_nearby
+      event: enter
+  condition:
+    condition: and
+    conditions:
+      - condition: sun
+        after: sunset
+      - condition: state
+        entity_id: group.presence
+        state: 'not_home'
+  action:
+    - service: light.turn_on
+      data:
+        entity_id: light.outdoor_1
+    - delay: '00:15:00'
+    - service: light.turn_off
+      data:
+        entity_id: light.outdoor_1
+
 - alias: Left Home Entrance Lamp ON
   id: left_home_entrance_lamp_on
   trigger:
