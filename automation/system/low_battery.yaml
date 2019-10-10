@@ -45,7 +45,7 @@
       entity_id: sensor.remote_kitchen
       below: 25
   action:
-    - service: notify.hangouts
+    - service: notify.html5
       data:
         message: "Kitchen Remote is low on Battery"
         title: "Low Battery Warning"
@@ -58,7 +58,7 @@
       entity_id: sensor.remote_nightstand
       below: 25
   action:
-    - service: notify.hangouts
+    - service: notify.html5
       data:
         message: "Nightstand Remote is low on Battery"
         title: "Low Battery Warning"
@@ -71,7 +71,7 @@
       entity_id: sensor.remote_office_1
       below: 25
   action:
-    - service: notify.hangouts
+    - service: notify.html5
       data:
         message: "Office Remote is low on Battery"
         title: "Low Battery Warning"
@@ -84,7 +84,7 @@
       entity_id: sensor.tradfri_remote_control_2
       below: 25
   action:
-    - service: notify.hangouts
+    - service: notify.html5
       data:
         message: "Computer Lamp Remote is low on Battery"
         title: "Low Battery Warning"
@@ -97,7 +97,7 @@
       entity_id: sensor.motion_outdoors
       below: 25
   action:
-    - service: notify.hangouts
+    - service: notify.html5
       data:
         message: "Motion Sensor Outdoor is low on Battery"
         title: "Low Battery Warning"
@@ -110,7 +110,7 @@
       entity_id: sensor.netatmo_bathroom_battery
       to: "Low"
   action:
-    - service: notify.hangouts
+    - service: notify.html5
       data:
         message: "Netatmo Bathroom is low on Battery"
         title: "Low Battery Warning"
@@ -123,7 +123,7 @@
       entity_id: sensor.netatmo_outdoormodule_battery
       to: "Low"
   action:
-    - service: notify.hangouts
+    - service: notify.html5
       data:
         message: "Netatmo Outdoor is low on Battery"
         title: "Low Battery Warning"
