@@ -1,0 +1,11 @@
+- alias: "Bedroom Blinds: Open at sunrise"
+  id: bedroom_blinds_open_sunrise
+  trigger:
+    - platform: sun
+      event: sunrise
+      offset: "00:30:00"
+  action:
+    - service: cover.open_cover
+      data:
+        entity_id:
+          - cover.bedroom_blind

@@ -1,0 +1,20 @@
+- alias: "Coming Home: TV"
+  id: coming_home_tv
+  trigger:
+    platform: state
+    entity_id: group.presence
+    from: 'not_home'
+    to: 'home'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 5
+  condition:
+    - condition: time
+      after: '11:00:00'
+      before: '23:00:00'
+  action:
+    - service: remote.turn_on
+      entity_id: remote.harmony_hub
+      data:
+        activity: "Watch TV"
