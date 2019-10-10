@@ -3,7 +3,7 @@ switches:
   tv:
     friendly_name: "TV"
     entity_id: remote.harmony_hub
-    value_template: "{{ is_state('remote.harmony_hub', 'on') or is_state('binary_sensor.tv_power_status', 'on')}}"
+    value_template: "{{ is_state('remote.harmony_hub', 'on') }}"
     turn_on:
       service: remote.turn_on
       data:
