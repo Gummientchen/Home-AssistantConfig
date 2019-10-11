@@ -13,6 +13,8 @@
     - condition: numeric_state
       entity_id: sensor.netatmo_thermostat_temperature
       above: 20
+    - condition: time
+      after: '11:00:00'
   action:
     - service: fan.turn_on
       data:
@@ -27,7 +29,7 @@
     to: 'not_home'
     for:
       hours: 0
-      minutes: 5
+      minutes: 15
       seconds: 0
   action:
     - service: fan.turn_off

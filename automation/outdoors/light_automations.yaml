@@ -41,25 +41,25 @@
       data:
         entity_id: light.outdoor_1
 
-- alias: Left Home Entrance Lamp ON
-  id: left_home_entrance_lamp_on
-  trigger:
-    - platform: state
-      entity_id: group.presence
-      from: 'home'
-      to: 'not_home'
-      for:
-        hours: 0
-        minutes: 30
-        seconds: 0
-  condition:
-    condition: numeric_state
-    entity_id: group.presence
-    below: 75
-  action:
-    - service: light.turn_on
-      data:
-        entity_id: light.outdoor_1
+# - alias: Left Home Entrance Lamp ON
+#   id: left_home_entrance_lamp_on
+#   trigger:
+#     - platform: state
+#       entity_id: group.presence
+#       from: 'home'
+#       to: 'not_home'
+#       for:
+#         hours: 0
+#         minutes: 30
+#         seconds: 0
+#   condition:
+#     condition: numeric_state
+#     entity_id: group.presence
+#     below: 75
+#   action:
+#     - service: light.turn_on
+#       data:
+#         entity_id: light.outdoor_1
 
 - alias: Sunrise Entrance Lamp OFF
   id: sunset_entrance_lamp_off
@@ -85,7 +85,7 @@
       to: 'home'
       for:
         hours: 0
-        minutes: 10
+        minutes: 15
         seconds: 0
   action:
     - service: light.turn_off
