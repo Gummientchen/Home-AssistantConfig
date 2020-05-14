@@ -3,7 +3,7 @@
 This is my Home Assistant configuration for a small appartment with 4 rooms.
 
 # Included systems
-- DarkSky Weather
+- MeteoSwiss Weather (custom component from HACS)
 - Floorplan
 - Google Messasing API HTML5
 - Homematic CCU2
