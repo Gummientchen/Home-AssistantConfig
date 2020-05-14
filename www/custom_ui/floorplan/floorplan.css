@@ -382,6 +382,10 @@ svg .ha-entity{
   transition: fill 0.5s;
 }
 
+#device_tracker.mazda_6{
+  opacity: 0.5;
+}
+
 .car-home{
   visibility: visible;
   opacity: 1;
@@ -389,7 +393,7 @@ svg .ha-entity{
 
 .car-away{
   visibility: hidden;
-  opacity: 0;
+  opacity: 0.5;
 }
 
 .motion-sensor-on{
