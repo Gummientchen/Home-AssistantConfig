@@ -19,6 +19,3 @@ This is my Home Assistant configuration for a small appartment with 4 rooms.
 - Roomba
 - Synology NAS
 - Unifi Controller
-
-# Last Travis Build
-![](https://travis-ci.org/Gummientchen/Home-AssistantConfig.svg?branch=master)
