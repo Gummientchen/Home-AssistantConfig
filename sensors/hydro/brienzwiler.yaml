@@ -1,0 +1,6 @@
+platform: swiss_hydrological_data
+station: 2019
+monitored_conditions:
+  - temperature
+  - level
+  - discharge

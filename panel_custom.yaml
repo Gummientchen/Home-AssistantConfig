@@ -3,9 +3,3 @@
     sidebar_icon: mdi:home
     url_path: floorplan
     config: !include floorplan.yaml
-
-  - name: remote
-    sidebar_title: TV Remote
-    sidebar_icon: mdi:remote
-    url_path: remote
-    config: !include remote.yaml

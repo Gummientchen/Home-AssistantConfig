@@ -1,0 +1,66 @@
+# binary_sensor.0x0017880102017e7c_occupancy
+
+- alias: Kitchen Lights ON when presence detected DAY
+  id: kitchen_lights_on_when_presence_day
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.0x0017880102017e7c_occupancy
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '07:00:00'
+      before: '23:30:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.kitchen_1
+      data:
+        brightness: 255
+    - service: light.turn_on
+      entity_id: light.kitchen_2
+      data:
+        brightness: 255
+    - service: timer.cancel
+      entity_id: timer.kitchen_lights
+    - delay:
+        seconds: 5
+    # - service: timer.start
+    #   data:
+    #     entity_id: timer.kitchen_lights
+    #     duration: 00:05:00
+
+
+## Needed automations for the presence detection to work for day AND night
+- alias: Kitchen Lights ON TimerStart
+  id: kitchen_lights_on_timerstart
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.0x0017880102017e7c_occupancy
+      from: 'on'
+      to: 'off'
+  action:
+    # - service: light.turn_on
+    #   entity_id: light.kitchen_1
+    # - service: light.turn_on
+    #   entity_id: light.kitchen_2
+    - service: timer.cancel
+      entity_id: timer.kitchen_lights
+    - delay:
+        seconds: 5
+    - service: timer.start
+      data:
+        entity_id: timer.kitchen_lights
+        duration: 00:05:00
+
+- alias: Kitchen Lights OFF TimerFinish
+  id: kitchen_lights_off_timerfinish
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.kitchen_lights
+  action:
+    - service: light.turn_off
+      entity_id: light.kitchen_1
+    - service: light.turn_off
+      entity_id: light.kitchen_2

@@ -7,6 +7,7 @@
     - service: lock.unlock
       data:
         entity_id: lock.home
+    - service: script.lock_unlock_night ## -> scripts/lock_unlock_night.yaml
 
 - alias: Webhook Lock Lock
   id: webhook_lock_lock

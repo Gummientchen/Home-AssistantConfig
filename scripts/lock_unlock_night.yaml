@@ -1,0 +1,11 @@
+lock_unlock_night:
+  # Follow up script for automatic lights when the lock is unlocked
+  # should only execute if the sun is already below the horizon
+  alias: Coming Home Lights for open Lock automation
+  sequence:
+    - condition: state  # from sunset until sunrise
+      entity_id: sun.sun
+      state: 'below_horizon'
+    - service: light.turn_on
+      data:
+        entity_id: light.outdoor_1

@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "weather/thunluft/ozon"
+name: "Ozon (O₃) Thun"
+unit_of_measurement: "µg/m³"

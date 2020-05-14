@@ -1,6 +1,5 @@
 allscripts:
   name: Scripts
-  control: hidden
   entities:
     - script.good_night
     - script.walk_to_bathroom

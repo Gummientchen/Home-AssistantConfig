@@ -4,7 +4,7 @@ good_night:
     # turn off all lights
     - service: light.turn_off
       data:
-        entity_id: group.all_lights
+        entity_id: all
 
     # turn off all fans
     - service: fan.turn_off

@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/thun/wasserstand/last"
+name: Aare Thun Waterlevel
+unit_of_measurement: m ü.M

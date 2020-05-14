@@ -3,6 +3,6 @@ name: "Steff Phone Status"
 state_topic: "dev/pixel2/status"
 value_template: '{{ value_json.batt }}'
 unit_of_measurement: "%"
-json_attributes:
-  - memory
-  - pressure
+# json_attributes:
+#   - memory
+#   - pressure

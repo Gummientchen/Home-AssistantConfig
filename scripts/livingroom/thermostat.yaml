@@ -1,0 +1,15 @@
+livingroom_thermostat_plus_05:
+  alias: Livingroom Thermostat +0.5
+  sequence:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.netatmo_living_room
+        temperature: "{{ (state_attr('climate.netatmo_living_room', 'temperature')|round(1)) + 0.5 }}"
+
+livingroom_thermostat_minus_05:
+  alias: Livingroom Thermostat -0.5
+  sequence:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.netatmo_living_room
+        temperature: "{{ (state_attr('climate.netatmo_living_room', 'temperature')|round(1)) - 0.5 }}"

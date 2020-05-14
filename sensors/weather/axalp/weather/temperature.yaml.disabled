@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "weather/axalp/temperature"
+name: Axalp Temperature

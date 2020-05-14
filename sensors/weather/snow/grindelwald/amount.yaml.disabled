@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "snow/grindelwald/amount"
+name: Snow Height Grindelwald
+unit_of_measurement: cm
+icon: mdi:snowflake

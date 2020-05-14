@@ -1,0 +1,6 @@
+platform: template
+sensors:
+  shield_tv_playing_plex:
+    friendly_name: "Shield TV playing Plex"
+    value_template: >-
+      {{is_state_attr('media_player.shield_tv', 'app_name', 'Plex')}}

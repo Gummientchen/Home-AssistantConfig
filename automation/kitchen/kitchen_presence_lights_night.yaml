@@ -1,0 +1,30 @@
+# binary_sensor.0x0017880102017e7c_occupancy
+
+- alias: Kitchen Lights ON when presence detected NIGHT
+  id: kitchen_lights_on_when_presence_night
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.0x0017880102017e7c_occupancy
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '23:30:00'
+      before: '07:00:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.kitchen_1
+      data:
+        brightness: 50
+    - service: light.turn_on
+      entity_id: light.kitchen_2
+      data:
+        brightness: 50
+    - service: timer.cancel
+      entity_id: timer.kitchen_lights
+    - delay:
+        seconds: 5
+    # - service: timer.start
+    #   data:
+    #     entity_id: timer.kitchen_lights
+    #     duration: 00:05:00

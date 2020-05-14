@@ -17,6 +17,19 @@
       data:
         entity_id: light.outdoor_1
 
+- alias: Turn off outdoor lamp after 15 minutes
+  id: turn_off_outdoor_lamp_after_15_minutes
+  trigger:
+    - platform: state
+      entity_id: light.outdoor_1
+      from: 'off'
+      to: 'on'
+  action:
+    - delay: '15:00'
+    - service: light.turn_off
+      data:
+        entity_id: light.outdoor_1
+
 - alias: GPS Entering Home Zone Entrance Lamp ON
   id: gps_entering_home_zone_entrance_lamp_on
   trigger:

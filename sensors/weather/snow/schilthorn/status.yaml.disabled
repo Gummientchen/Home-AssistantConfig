@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "snow/schilthorn/status"
+name: Snow Status Schilthorn

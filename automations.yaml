@@ -1,0 +1,62 @@
+- id: '1582758401029'
+  alias: Computer off turn off computer lamp
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.computer_power_status
+    for: '30'
+    from: 'on'
+    platform: state
+    to: 'off'
+  condition: []
+  action:
+  - entity_id: light.computer_lamp_bulb
+    service: light.turn_off
+- id: '1588887098547'
+  alias: Prepare Bedtime with Hue Dimmer
+  description: ''
+  trigger:
+  - device_id: cebd3742bc00478ba156515b28bfac68
+    domain: hue
+    platform: device
+    subtype: turn_off
+    type: remote_button_long_release
+  condition: []
+  action:
+  - data:
+      entity_id: scene.prepare_bedtime
+    service: scene.turn_on
+  - entity_id: cover.bedroom_blind
+    service: cover.close_cover
+- id: '1589147375613'
+  alias: Enable Night Mode on Soundsystem at 22:00
+  description: ''
+  trigger:
+  - at: '22:00'
+    platform: time
+  condition:
+  - above: '75'
+    condition: numeric_state
+    entity_id: sensor.mystrom_tv
+  action:
+  - data:
+      command: Night
+      device: '64024837'
+    entity_id: remote.harmony_hub
+    service: remote.send_command
+- id: '1589223786608'
+  alias: TV Lighting for Plex on Shield TV
+  description: ''
+  trigger:
+  - entity_id: media_player.shield_tv
+    platform: state
+    to: playing
+  condition:
+  - condition: template
+    value_template: '{{is_state_attr(''media_player.shield_tv'', ''app_name'', ''Plex'')}}'
+  - condition: state
+    entity_id: media_player.shield_tv
+    state: playing
+  - after: sunset
+    condition: sun
+  action:
+  - scene: scene.tv_lights_night

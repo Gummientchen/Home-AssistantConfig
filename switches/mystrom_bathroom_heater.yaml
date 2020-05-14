@@ -1,3 +1,12 @@
-platform: mystrom
-host: 192.168.1.65
-name: Bathroom Heater
+# platform: mystrom
+# host: 192.168.1.65
+# name: Bathroom Heater
+
+platform: command_line
+switches:
+  bathroom_heater:
+    command_on: "curl -X GET 'http://192.168.1.65/relay?state=1'"
+    command_off: "curl -X GET 'http://192.168.1.65/relay?state=0'"
+    command_state: "curl -X GET 'http://192.168.1.65/report'"
+    value_template: '{{ value_json.relay == true }}'
+    friendly_name: Bathroom Heater

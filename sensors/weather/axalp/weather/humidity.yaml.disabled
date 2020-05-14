@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "weather/axalp/humidity"
+name: Axalp Humidity

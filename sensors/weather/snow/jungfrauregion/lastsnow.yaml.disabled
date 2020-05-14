@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "snow/jungfrauregion/lastsnow"
+name: Last Snowfall Jungfrauregion

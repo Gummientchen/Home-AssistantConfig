@@ -1,0 +1,63 @@
+- alias: Bathroom Lights ON when presence detected day
+  id: bathroom_lights_on_when_presence_day
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_presence
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '07:00:00'
+      before: '23:30:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.bathroom_ceiling_1
+      data:
+        brightness: 255
+    - service: light.turn_on
+      entity_id: light.bathroom_ceiling_2
+      data:
+        brightness: 255
+    - service: timer.cancel
+      entity_id: timer.bathroom_lights
+    - delay:
+        seconds: 5
+    - service: timer.start
+      data:
+        entity_id: timer.bathroom_lights
+        duration: 00:15:00
+
+## Needed automations for the presence detection to work for day AND night
+- alias: Bathroom Lights ON TimerStart
+  id: bathroom_lights_on_timerstart
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_presence
+      from: 'on'
+      to: 'off'
+  action:
+    - service: light.turn_on
+      entity_id: light.bathroom_ceiling_1
+    - service: light.turn_on
+      entity_id: light.bathroom_ceiling_2
+    - service: timer.cancel
+      entity_id: timer.bathroom_lights
+    - delay:
+        seconds: 5
+    - service: timer.start
+      data:
+        entity_id: timer.bathroom_lights
+        duration: 00:15:00
+
+- alias: Bathroom Lights OFF TimerFinish
+  id: bathroom_lights_off_timerfinish
+  trigger:
+    - platform: event
+      event_type: timer.finished
+      event_data:
+        entity_id: timer.bathroom_lights
+  action:
+    - service: light.turn_off
+      entity_id: light.bathroom_ceiling_1
+    - service: light.turn_off
+      entity_id: light.bathroom_ceiling_2

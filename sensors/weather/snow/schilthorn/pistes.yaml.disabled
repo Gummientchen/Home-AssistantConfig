@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "snow/schilthorn/pistes"
+name: Pistes open Schilthorn
+unit_of_measurement: km

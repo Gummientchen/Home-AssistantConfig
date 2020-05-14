@@ -1,0 +1,28 @@
+- alias: Bathroom Lights ON when presence detected night
+  id: bathroom_lights_on_when_presence_night
+  trigger:
+    - platform: state
+      entity_id: binary_sensor.bathroom_presence
+      from: 'off'
+      to: 'on'
+  condition:
+    - condition: time
+      after: '23:30:00'
+      before: '07:00:00'
+  action:
+    - service: light.turn_on
+      entity_id: light.bathroom_ceiling_1
+      data:
+        brightness: 50
+    - service: light.turn_on
+      entity_id: light.bathroom_ceiling_2
+      data:
+        brightness: 50
+    - service: timer.cancel
+      entity_id: timer.bathroom_lights
+    - delay:
+        seconds: 5
+    - service: timer.start
+      data:
+        entity_id: timer.bathroom_lights
+        duration: 00:15:00

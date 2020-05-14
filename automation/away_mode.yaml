@@ -11,9 +11,11 @@
         seconds: 0
   action:
     - service: light.turn_off
+      entity_id: all
+    - service: fan.turn_off
       data:
         entity_id:
-          - group.all_lights
+          - fan.livingroom_fan
     # - service: switch.turn_off
     #   data:
     #     entity_id:

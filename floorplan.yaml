@@ -40,27 +40,27 @@
           #   else
           #     return "temp-high";
           #   '
-        - name: Lightsensor
-          entities:
-            - sensor.tsl2561_ambient_light
-          # text_template: '${entity.state ? entity.state : "unknown"}'
-          # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
-          text_template: '${entity.state ? ""+Math.round(entity.state*10)/10+" lx" : "undefined"}'
+        # - name: Lightsensor
+        #   entities:
+        #     - sensor.tsl2561_ambient_light
+        #   # text_template: '${entity.state ? entity.state : "unknown"}'
+        #   # An example of rounding up a number, i.e. a temperature of 90.1 becomes 91
+        #   text_template: '${entity.state ? ""+Math.round(entity.state*10)/10+" lx" : "undefined"}'
 
         - name: Lights
           entities:
             - light.kitchen_1
             - light.kitchen_2
-            - light.ceiling_panel
-            - light.celing_panel_bedroom
+            - light.living_room_ceiling_2
+            - light.bedroom_ceiling
             - light.outdoor_1
             - light.bedroom_nightstand
             - group.bathroom_ceiling
             - light.office_ceiling
             - light.computer_lamp_bulb
             - light.tv_light_bulb
-            - light.bedroom_corner_right
-            - light.bedroom_corner_left
+            - light.bedroom_corner_right_2
+            - light.bedroom_corner_left_2
             - light.living_room_corner_lamp
           states:
             - state: 'on'
@@ -101,6 +101,8 @@
           states:
             - state: 'home'
               class: 'car-home'
+            - state: 'Home Nearby'
+              class: 'car-home'
             - state: 'away'
               class: 'car-away'
             - state: 'Work'
@@ -110,7 +112,7 @@
           entities:
             - switch.bathroom_heater
             #- switch.bedroom_fan
-            - switch.3d_printer_light
+            # - switch.3d_printer_light
             - fan.livingroom_fan
           states:
             - state: 'on'

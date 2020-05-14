@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "hydro/brienzwiler/danger/level"
+name: Aare Brienzwiler Danger level

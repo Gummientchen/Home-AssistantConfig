@@ -1,0 +1,61 @@
+- id: '1589406631858'
+  name: Watching a Movie
+  entities:
+    light.computer_lamp_bulb:
+      friendly_name: Computer Lamp Bulb
+      icon: mdi:spotlight-beam
+      max_mireds: 454
+      min_mireds: 250
+      state: 'off'
+      supported_features: 35
+    light.living_room_ceiling_2:
+      friendly_name: Living Room Ceiling
+      max_mireds: 454
+      min_mireds: 250
+      state: 'off'
+      supported_features: 35
+    light.living_room_corner_lamp:
+      friendly_name: Living Room Corner Lamp
+      max_mireds: 454
+      min_mireds: 250
+      state: 'off'
+      supported_features: 35
+    light.living_room_under_couch:
+      brightness: 200
+      color_temp: 454
+      effect: none
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Living Room Under Couch
+      icon: mdi:led-strip
+      max_mireds: 500
+      min_mireds: 153
+      state: 'on'
+      supported_features: 63
+    light.livingroom_plant:
+      effect_list:
+      - colorloop
+      - random
+      friendly_name: Living Room Plant
+      icon: mdi:led-strip
+      state: 'off'
+      supported_features: 61
+    light.tv_light_bulb:
+      brightness: 200
+      color_temp: 454
+      friendly_name: TV Light Bulb
+      max_mireds: 454
+      min_mireds: 250
+      state: 'on'
+      supported_features: 35
+- id: '1589406729655'
+  name: Watching a Movie
+  entities:
+    light.computer_lamp_bulb:
+      friendly_name: Computer Lamp Bulb
+      icon: mdi:spotlight-beam
+      max_mireds: 454
+      min_mireds: 250
+      state: 'off'
+      supported_features: 35

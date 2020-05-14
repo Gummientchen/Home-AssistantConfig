@@ -1,0 +1,8 @@
+platform: rest
+name: "Livingroom Temperature Couch"
+resource: http://192.168.1.72/temp
+value_template: '{{ value_json.compensated | round(1) }}'
+unit_of_measurement: "°C"
+#json_attributes:
+#  - measured
+#  - compensation

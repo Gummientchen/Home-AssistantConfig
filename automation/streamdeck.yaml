@@ -1,0 +1,69 @@
+# Documentation: https://github.com/hendricksond/streamdeck-homeassistant-webhook
+
+## TV Stuff
+# Mute
+- alias: Webhook Mute Soundbar
+  id: webhook_soundbar_mute
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_soundbar_mute
+  action:
+    - service: script.remote_volume_mute
+
+# Volume Up
+- alias: Webhook Volume Up Soundbar
+  id: webhook_soundbar_volumeup
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_soundbar_volumeup
+  action:
+    - service: script.remote_volume_up
+
+# Volume Down
+- alias: Webhook Volume Down Soundbar
+  id: webhook_soundbar_volumedown
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_soundbar_volumedown
+  action:
+    - service: script.remote_volume_down
+
+## Light Stuff
+# Lights
+- alias: Webhook Lights
+  id: webhook_lights
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_lights
+  action:
+    - service_template: '{{ trigger.json.service }}'
+      data_template:
+        entity_id: '{{ trigger.json.entities }}'
+
+## Fan Stuff
+# Fans
+- alias: Webhook Fans
+  id: webhook_lfans
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_fans
+  action:
+    - service_template: '{{ trigger.json.service }}'
+      data_template:
+        entity_id: '{{ trigger.json.entities }}'
+        speed: '{{ trigger.json.parameter }}'
+
+## Remote Stuff
+# Remote
+- alias: Webhook Remote
+  id: webhook_remote
+  trigger:
+    - platform: webhook
+      webhook_id: !secret webhook_remotes
+  action:
+    - service_template: remote.send_command
+      data_template:
+        entity_id: remote.harmony_hub
+        device: '{{ trigger.json.entities }}'
+        command: '{{ trigger.json.parameter }}'
+        delay_secs: 0.25

@@ -1,5 +1,4 @@
 rooms:
-  view: yes
   name: Rooms
   entities:
     - group.livingroom
@@ -11,28 +10,24 @@ rooms:
     #- group.work
 
 apartment:
-  view: yes
   name: Apartment
   entities:
     - group.climate
     - group.presence
 
 scenes:
-  view: yes
   name: Scenes
   entities:
     - group.scenes_panel
     - group.bathroom_heater_control
 
 3dPrinter:
-  view: yes
   name: "3D-Printer"
   entities:
     - binary_sensor.3d_printer_power_status
     - camera.prusa_i3_mk3
 
 weather:
-  view: yes
   name: Weather/Hydro
   entities:
     - group.fwbrienz_climate
@@ -44,7 +39,6 @@ weather:
     - group.darksky
 
 webcams:
-  view: yes
   name: Webcams
   entities:
     - camera.webcam_axalp
@@ -53,15 +47,7 @@ webcams:
     - camera.webcam_rothorn
     - camera.webcam_bonigen
 
-phone:
-  view: yes
-  name: "Phone - Pixel 2"
-  entities:
-    - group.pixel2battery
-    - group.pixel2enviroment
-
 network:
-  view: yes
   name: Network
   entities:
     - group.wan

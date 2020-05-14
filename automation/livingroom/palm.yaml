@@ -1,0 +1,17 @@
+# Integration: https://github.com/zewelor/bt-mqtt-gateway
+- alias: "Palm tree is low on water"
+  id: livingroom_plam_low_water
+  trigger:
+    platform: time
+    at: "19:00:00"
+  condition:
+    - condition: state
+      entity_id: person.steff_2
+      state: 'home'
+    - condition: numeric_state
+      entity_id: sensor.miflora_herbs_moisture
+      below: 15
+  action:
+    - service: notify.mobile_app_pixel_3_app
+      data:
+        message: 'Palm is low an Water!'

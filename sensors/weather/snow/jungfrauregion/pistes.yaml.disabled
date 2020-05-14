@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "snow/jungfrauregion/pistes"
+name: Pistes open Jungfrauregion
+unit_of_measurement: km

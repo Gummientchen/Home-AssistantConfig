@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "snow/axalp/pistes"
+name: Pistes open Axalp
+unit_of_measurement: km

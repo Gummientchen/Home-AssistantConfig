@@ -1,0 +1,3 @@
+platform: mqtt
+state_topic: "hydro/ringgenberg/danger/level"
+name: Aare Ringgenberg Danger level

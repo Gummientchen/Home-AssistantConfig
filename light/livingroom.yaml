@@ -11,7 +11,7 @@
     - light.living_room_under_couch
     - light.tv_light_bulb
     - light.livingroom_plant
-    - light.ceiling_panel
+    - light.living_room_ceiling_2
     - light.living_room_corner_lamp
 
 - platform: group
@@ -20,14 +20,29 @@
     - light.living_room_under_couch
     - light.tv_light
     - light.livingroom_plant
-    - light.computer_lamp
+    - light.computer_lamp_bulb
 
 - platform: group
   name: Living Room Lights
   entities:
     - light.tv_light_bulb
-    - light.computer_lamp
+    - light.computer_lamp_bulb
     - light.livingroom_plant
     - light.living_room_under_couch
-    - light.ceiling_panel
+    - light.living_room_ceiling_2
     - light.living_room_corner_lamp
+
+- platform: group
+  name: Living Room Ceiling
+  entities:
+    - light.living_room_ceiling_2
+
+- platform: group
+  name: Living Room Corner
+  entities:
+    - light.living_room_corner_lamp
+
+- platform: group
+  name: Livin Room TV Lamp
+  entities:
+    - light.tv_light_bulb

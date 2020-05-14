@@ -8,8 +8,10 @@
       to: 'off'
   action:
     - service: light.turn_off
+      entity_id: all
+    - service: fan.turn_off
       data:
-        entity_id: light.bedroom_lights
+        entity_id: fan.livingroom_fan
 
 
 # Philips Hue Motion Sensor Light off, turn off IKEA light too

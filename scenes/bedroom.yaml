@@ -2,7 +2,7 @@
   entities:
     light.bedroom_nightstand:
       state: on
-      brightness: 128
+      brightness: 8
       kelvin: 2200
       transition: 2
     light.celing_panel_bedroom: off
@@ -21,12 +21,14 @@
     light.tv_light: off
     light.tv_lights: off
     light.bedroom_corners: off
+    light.living_room_ceiling_2: off
+    fan.livingroom_fan: off
+    light.bedroom_ceiling: off
     lock.home:
       state: locked
 
 - name: Sleep
   entities:
-    group.all_lights: off
     lock.home:
       state: locked
 

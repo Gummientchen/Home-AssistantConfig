@@ -1,0 +1,5 @@
+platform: mqtt
+state_topic: "snow/schilthorn/amount"
+name: Snow Height Schilthorn
+unit_of_measurement: cm
+icon: mdi:snowflake

@@ -1,22 +1,18 @@
 homeassistant:
   # Name of the location where Home Assistant is running
-  name: !secret hass_name
+  #name: !secret hass_name
   # Location required to calculate the time the sun rises and sets
-  latitude: !secret hass_latitude
-  longitude: !secret hass_longitude
+  #latitude: !secret hass_latitude
+  #longitude: !secret hass_longitude
   # Impacts weather/sunrise data (altitude above sea level in meters)
-  elevation: !secret hass_elevation
+  #elevation: !secret hass_elevation
   # metric for Metric, imperial for Imperial
-  unit_system: metric
+  #unit_system: metric
   # Pick yours from here: http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
-  time_zone: !secret hass_timezone
+  #time_zone: !secret hass_timezone
   # Customization file
   customize: !include customize.yaml
   packages: !include_dir_named packages
-
-  # auth_providers:
-  #   - type: homeassistant
-  #   - type: legacy_api_password
 
 auth:
 
@@ -31,26 +27,6 @@ frontend: !include frontend.yaml
 config:
 
 cast:
-
-http:
-  # Uncomment this to add a password (recommended!)
-  api_password: !secret http_password
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-  # base_url: example.duckdns.org:8123
-  # ssl_certificate: !secret ssl_certificate
-  # ssl_key: !secret ssl_key
-  use_x_forwarded_for: true
-  trusted_proxies:
-    - !secret proxy_ip
-
-  base_url: !secret base_url
-
-  trusted_networks:
-    - !secret trusted_ip
-    - !secret trusted_ip_2
-
-  ip_ban_enabled: true
-  login_attempts_threshold: 10
 
 # Checks for available updates
 updater:
@@ -69,10 +45,13 @@ logbook:
 
 # InfluxDB
 influxdb:
-  host: 127.0.0.1
-  exclude:
-    domains:
-      - camera
+  host: 192.168.1.121
+  port: 8086
+  database: !secret influxdb_database
+  username: !secret influxdb_username
+  password: !secret influxdb_password
+  max_retries: 3
+  default_measurement: state
 
 # Recorder
 recorder: !include recorder.yaml
@@ -84,40 +63,28 @@ sun:
 map:
 
 # Wake on LAN
-wake_on_lan:
+# wake_on_lan:
 
 # Cloud
-cloud: !include cloud.yaml
-
-# MQTT Broker
-mqtt:
-  broker: !secret msmqtt_broker
-  client_id: !secret msmqtt_clientid
-  username: !secret msmqtt_username
-  password: !secret msmqtt_password
-  port: !secret msmqtt_port
-  discovery: true
-  birth_message:
-    topic: 'hass/status'
-    payload: 'online'
-  will_message:
-    topic: 'hass/status'
-    payload: 'offline'
+cloud:
+# cloud: !include cloud.yaml
 
 # Text to speech
 tts:
   - platform: google_translate
-    service_name: google_say
-    base_url: !secret tts_base_url
+#    service_name: google_say
+#    base_url: !secret tts_base_url
 #    api_key: !secret microsoft_bing_speech_api_key
 
 # Netatmo Config
 netatmo:
-  api_key: !secret netatmo_api_key
-  secret_key: !secret netatmo_secret_key
-  username: !secret netatmo_username
-  password: !secret netatmo_password
-  discovery: true
+  client_id: !secret netatmo_api_key
+  client_secret: !secret netatmo_secret_key
+  # api_key: !secret netatmo_api_key
+  # secret_key: !secret netatmo_secret_key
+  # username: !secret netatmo_username
+  # password: !secret netatmo_password
+  # discovery: false
 
 # Nuki Smart Lock
 lock:
@@ -135,11 +102,11 @@ dyson:
       device_ip: !secret dyson_pure_ip
 
 # Roomba
-vacuum:
-  - platform: roomba
-    host: !secret roomba_host
-    username: !secret roomba_username
-    password: !secret roomba_password
+# vacuum:
+#   - platform: roomba
+#     host: !secret roomba_host
+#     username: !secret roomba_username
+#     password: !secret roomba_password
 
 # Homematic
 homematic:
@@ -156,46 +123,22 @@ homematic:
       username: !secret homematic_username
       password: !secret homematic_password
 
-# IKEA Tradfri
-# tradfri:
-#   host: !secret tradfri_host
-
 # Philips Hue
 hue:
   bridges:
     - host: 192.168.1.64
 
-geo_location:
-  - platform: usgs_earthquakes_feed
-    feed_type: 'past_hour_m25_earthquakes'
-
-# History Graph Test
-history_graph:
-  synology_nas:
-    name: "Synology NAS"
-    hours_to_show: 48
-    refresh: 1800
-    entities:
-      - sensor.volume_used_volume_1
-      - sensor.status_volume_1
-      - sensor.average_disk_temp_volume_1
-      - sensor.maximum_disk_temp_volume_1
-      - sensor.cpu_load_total
-      - sensor.memory_usage_real
-
 # System health
 system_health:
 
 # World Wide Lightning Location Network (WWLLN)
-wwlln:
+# wwlln:
+
+# Mobile App Support
+mobile_app:
 
 # Persons
 person:
-#   - name: Steff
-#     id: !secret steff_id
-#     user_id: !secret steff_user_id
-#     device_trackers:
-#       - device_tracker.3c_28_6d_2d_3c_67
 
 ########### INCLUDES #####
 sensor: !include_dir_list sensors/
@@ -206,13 +149,14 @@ fan: !include_dir_list fans/
 binary_sensor: !include_dir_list binary_sensors/
 climate: !include_dir_list climate/
 device_tracker: !include_dir_list device_tracker/
-zone: !include_dir_list zones/
+# zone: !include_dir_list zones/
 media_player: !include_dir_list media_players/
 notify: !include_dir_list notify/
 weather: !include_dir_list weather/
 
 light: !include_dir_merge_list light/
-automation: !include_dir_merge_list automation/
+automation old: !include_dir_merge_list automation/
+automation: !include automations.yaml
 scene: !include_dir_merge_list scenes/
 
 input_number: !include_dir_merge_named input_number/
@@ -224,32 +168,20 @@ script: !include_dir_merge_named scripts/
 alert: !include_dir_merge_named alerts/
 
 panel_custom: !include panel_custom.yaml
-weblink: !include misc/weblinks.yaml
 
-
-# # Utility Meters TESTING
-# utility_meter:
-#   bathroom_heater_daily:
-#     source: sensor.mystrom_bathroom_heater
-#     cycle: monthly
-#     tariffs:
-#       - peak
-#       - offpeak
-#   bathroom_heater_monthly:
-#     source: sensor.mystrom_bathroom_heater
-#     cycle: monthly
-#     tariffs:
-#       - peak
-#       - offpeak
-#   mystrom_daily:
-#     source: sensor.mystrom_combined
-#     cycle: monthly
-#     tariffs:
-#       - peak
-#       - offpeak
-#   mystrom_monthly:
-#     source: sensor.mystrom_combined
-#     cycle: monthly
-#     tariffs:
-#       - peak
-#       - offpeak
+plant: # Integration: https://github.com/zewelor/bt-mqtt-gateway
+  palm:
+    sensors:
+      moisture: sensor.miflora_herbs_moisture
+      battery: sensor.miflora_herbs_battery
+      temperature: sensor.miflora_herbs_temperature
+      conductivity: sensor.miflora_herbs_conductivity
+      brightness: sensor.miflora_herbs_light
+    min_moisture: 15
+    max_moisture: 60
+    min_conductivity: 350
+    max_conductivity: 2000
+    min_temperature: 5
+    max_temperature: 35
+    min_brightness: 2500
+    max_brightness: 50000

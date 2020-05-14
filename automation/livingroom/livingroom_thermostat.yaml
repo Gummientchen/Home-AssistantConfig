@@ -12,10 +12,10 @@
         - thu
         - fri
   action:
-    - service: climate.set_away_mode
+    - service: climate.set_preset_mode
       data:
         entity_id: climate.netatmo_living_room
-        away_mode: false
+        preset_mode: 'Schedule'
 
 - alias: Living Room Rise Temperature at 17:00
   id: livingroom_rise_temperature_at_1700
@@ -31,7 +31,7 @@
         - thu
         - fri
   action:
-    - service: climate.set_away_mode
+    - service: climate.set_preset_mode
       data:
         entity_id: climate.netatmo_living_room
-        away_mode: false
+        preset_mode: 'Schedule'

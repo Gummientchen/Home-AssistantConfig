@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/thun/temperatur/last"
+name: Aare Thun Temperature
+unit_of_measurement: °C

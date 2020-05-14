@@ -4,7 +4,7 @@ tv_remote_volume_up:
     - service: remote.send_command
       data:
         entity_id: remote.harmony_hub
-        device: 53457724
+        device: 64024837
         command: VolumeUp
         delay_secs: 0.25
 
@@ -14,7 +14,7 @@ tv_remote_volume_down:
     - service: remote.send_command
       data:
         entity_id: remote.harmony_hub
-        device: 53457724
+        device: 64024837
         command: VolumeDown
         delay_secs: 0.25
 

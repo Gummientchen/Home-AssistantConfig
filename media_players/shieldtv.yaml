@@ -1,0 +1,4 @@
+platform: androidtv
+name: Shield TV
+host: 192.168.1.81
+exclude_unnamed_apps: true

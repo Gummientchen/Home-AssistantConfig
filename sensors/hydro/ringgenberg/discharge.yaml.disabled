@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/ringgenberg/abfluss/last"
+name: Aare Ringgenberg Discharge
+unit_of_measurement: m3/s

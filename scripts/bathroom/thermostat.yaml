@@ -1,0 +1,23 @@
+bathroom_thermostat_plus_1:
+  alias: Bathroom Thermostat +1
+  sequence:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.bathroomthermostat
+        temperature: "{{ (state_attr('climate.bathroom', 'temperature')|round(0)) + 1 }}"
+
+bathroom_thermostat_minus_1:
+  alias: Bathroom Thermostat -1
+  sequence:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.bathroomthermostat
+        temperature: "{{ (state_attr('climate.bathroom', 'temperature')|round(0)) - 1 }}"
+
+bathroom_thermostat_set_25deg:
+  alias: Bathroom Thermostat set 25 degrees
+  sequence:
+    - service: climate.set_temperature
+      data_template:
+        entity_id: climate.bathroomthermostat
+        temperature: 25

@@ -1,11 +1,11 @@
 leaving_home:
   alias: Leaving Home
   sequence:
-    - service: nuki.nuki_lock_n_go
-      data:
-        entity_id: lock.home
-        unlatch: false
-    - delay: 0
+    # - service: nuki.nuki_lock_n_go
+    #   data:
+    #     entity_id: lock.home
+    #     unlatch: false
+    # - delay: 0
     - service: script.turn_on
       data:
         entity_id: script.leaving_home_lights_off

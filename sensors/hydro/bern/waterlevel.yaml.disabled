@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "hydro/bern/wasserstand/last"
+name: Aare Bern Waterlevel
+unit_of_measurement: m ü.M

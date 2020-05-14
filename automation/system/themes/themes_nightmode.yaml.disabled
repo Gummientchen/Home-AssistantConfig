@@ -1,0 +1,18 @@
+- alias: 'Set dark theme for the night'
+  initial_state: True
+  trigger:
+    - platform: time
+      at: '22:00'
+  action:
+    - service: frontend.set_theme
+      data:
+        name: darkorange
+- alias: 'Set day theme for the day'
+  initial_state: True
+  trigger:
+    - platform: time
+      at: '07:00'
+  action:
+    - service: frontend.set_theme
+      data:
+        name: darkorange

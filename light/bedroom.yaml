@@ -1,11 +1,10 @@
 - platform: group
   name: Bedroom Lights
   entities:
-    - light.celing_panel_bedroom
-    - light.bedroom_4
     - light.bedroom_nightstand
-    - light.bedroom_corner_right
-    - light.bedroom_corner_left
+    - light.bedroom_ceiling
+    - light.bedroom_4
+    - light.bedroom_corners
 
 - platform: group
   name: Bedroom YouTube
@@ -16,11 +15,32 @@
 - platform: group
   name: Bedroom Main
   entities:
-    - light.celing_panel_bedroom
+    - light.bedroom_ceiling
     - light.bedroom_4
 
 - platform: group
   name: Bedroom Corners
   entities:
-    - light.bedroom_corner_right
-    - light.bedroom_corner_left
+    - light.bedroom_corner_right_2
+    - light.bedroom_corner_left_2
+
+- platform: group
+  name: Bedroom Corner left
+  entities:
+    - light.bedroom_corner_left2
+
+- platform: group
+  name: Bedroom Corner right
+  entities:
+    - light.bedroom_corner_right2
+
+- platform: group
+  name: Bedroom Ceiling Lamp
+  entities:
+    - light.bedroom_ceiling
+
+- platform: group
+  name: Bedroom Main Lights
+  entities:
+    - light.bedroom_ceiling
+    - light.bedroom_corners

@@ -1,7 +1,7 @@
 google_actions:
   filter:
     include_entities:
-      - group.all_lights
+      - all
       - light.bathroom
       - light.kitchen_lights
       - light.gaming_lights
@@ -29,10 +29,6 @@ google_actions:
         - outdoor light
         - outdoor lamp
         - entrance
-    group.all_lights:
-      name: all Lights
-      aliases:
-        - all Lights
     light.bathroom:
       name: Bathroom
       aliases:

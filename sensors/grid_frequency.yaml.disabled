@@ -1,0 +1,4 @@
+platform: mqtt
+state_topic: "grid/frequency"
+name: Grid Frequency
+unit_of_measurement: "Hz"

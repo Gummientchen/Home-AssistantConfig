@@ -4,7 +4,7 @@ leaving_home_lights_off:
     - delay: 0
     - service: light.turn_off
       data:
-        entity_id: group.all_lights
+        entity_id: all
     - service: fan.turn_off
       data:
         entity_id: fan.livingroom_fan
