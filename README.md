@@ -5,7 +5,7 @@ This is my Home Assistant configuration for a small appartment with 4 rooms.
 # Included systems
 - MeteoSwiss Weather (custom component from HACS)
 - Floorplan
-- Google Messasing API HTML5
+- Google Messaging API HTML5
 - Homematic CCU2
 - HP iLO
 - IKEA Tradfri
